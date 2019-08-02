@@ -1,0 +1,105 @@
+m\documentclass[12pt]{memoireuqam1.3}
+
+% Ajout commentaire pour test par GT
+
+%\documentclass[12pt,twoside]{memoireuqam1.3}
+% Si vous souhaitez en recto-verso
+\usepackage{graphicx}% Pour les figures
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc} % Pour utiliser les caractères accentués
+\usepackage[T1]{fontenc}
+\usepackage{url}
+
+
+%----------------------------------------------------------------
+
+%Autres packages et commandes utiles
+%----------------------------------------------------------------
+\usepackage{amsmath,amsthm,amssymb,amsfonts}	% Pour pouvoir inclure certains symboles et environnements mathématiques
+\usepackage{enumerate,enumitem} % Pour mieux gérer la commande enumerate dans les sections
+\usepackage{graphicx,multicol}	% Pour inclure des images et les colonnes
+\usepackage{array}
+\usepackage{color}	% Pour inclure du texte en couleur
+\usepackage{units}	% Pour pouvoir tapper les unités correctement
+\usepackage{pgf,tikz}	% Utilisation du module tikz, qui permet de tracer des belles images
+\usetikzlibrary{arrows} % Quand on exporte une image GeoGebra, on a besoin de préciser cela
+\usepackage{hyperref}	% Pour include des liens dans le document
+\newcommand{\N}{\mathbb{N}}	% Commande personnelle, plus rapide pour tapper les ensembles
+\newcommand{\Z}{\mathbb{Z}}	% Commande personnelle, plus rapide pour tapper les ensembles
+\newcommand{\R}{\mathbb{R}}	% Commande personnelle, plus rapide pour tapper les ensembles
+\usepackage{cprotect}	% Pour pouvoir personaliser la légende des figures
+\usepackage{float} % Pour pouvoir utiliser d'autres placements de figures tels que H (HERE forcé h!)
+\usepackage{subcaption}
+\usepackage{comment}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%
+% Pour la page titre
+%%%%%%%%%%%%%%%%%%%%
+\title{Établissement des concepts pour un langage de modélisation pour la rédaction d'un Game Design Document}
+% Votre nom complet tel qu'il apparaît à votre dossier du registrariat de l'UQAM
+\author{Ellen Haas}
+% Année et mois courant sauf si spécifié autrement pas \degreemonth et \degreeyear
+%\degreemonth{mois du dépôt}
+%\degreeyear{année du dépôt}
+\uqammemoire %% ou \uqamthese ou \uqamrapport
+\matiere{informatique}
+
+
+\thispagestyle{empty}        % La page titre n'est pas numérotée
+\maketitle
+
+
+
+%%%%%%%%%%%%%%%%%%%%
+% Page préliminaires
+%%%%%%%%%%%%%%%%%%%%
+\renewcommand \bibname{R\'EF\'ERENCES}% FACULTATIF
+%si vous voulez qu'apparaisse le titre RÉFÉRENCES plutôt que BIBLIOGRAPHIE
+
+\renewcommand \listfigurename{LISTE DES FIGURES}
+\renewcommand \appendixname{APPENDICE}
+\renewcommand \figurename{Figure}
+\renewcommand \tablename{Tableau}
+
+\pagenumbering{arabic} % numérotation des pages en chiffres arabes
+\addtocounter{page}{1} % Pour que les remerciements commencent à la page ii
+\include{01_lim/01_remerciements}
+%\include{01_lim/02_dedicace}
+\include{01_lim/03_avant-propos}
+
+\tableofcontents % Pour générer la table des matières
+\listoffigures % Pour générer la liste des figures
+\listoftables % Pour générer la liste des tableaux
+
+\include{01_lim/04_abreviations}
+\include{01_lim/05_abstract}
+% Utilisez l'environnement  abstract pour rédiger votre résumé
+
+
+%%%%%%%%%%%%%%%%%%%%
+% Document principal
+%%%%%%%%%%%%%%%%%%%%
+
+\include{02_cor/06_introduction}
+% Utilisez l'environnement  introduction pour rédiger votre introduction
+
+\include{02_cor/07_problematique}
+\include{02_cor/08_GDD}
+\include{02_cor/09_MDA}
+\include{02_cor/10_UMLprofile}
+\include{02_cor/11_plan_recherche}
+\include{02_cor/12_resultats}
+
+\include{02_cor/13_conclusion}
+% Utilisez l'environnement  conclusion pour rédiger votre conclusion
+
+%%%%%%%%%%%%%%%%%%%%
+% Page liminaires
+%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{apalike-uqam}
+\bibliography{03_post/bib}
+
+\end{document}

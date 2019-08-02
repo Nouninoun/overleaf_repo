@@ -1,0 +1,97 @@
+\chapter{Un profile UML pour aider à la rédaction d'un GDD}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+\chapter{Un langage de modélisation pour l'établissement d'un Game Design Document}
+
+\section{Le concept}
+\subsection{Définition}
+\subsubsection{Quoi ?}
+Un langage permettant de modéliser et stocker des idées lors des phases de Breakthrough et de Conception d'un projet de jeu vidéo. La modélisation peut être graphique et/ou textuelle avec application des modifications en parallèle. \\
+Les informations peuvent contenir tout le nécessaire pour exprimer les idées (textes, informations numériques, chemins de fichiers...). Les champs peuvent être personalisables pour permettre de la souplesse aux utilisateurs.
+
+\subsubsection{Pour quoi faire ?}
+\paragraph{Des outils de modélisation existent pour tous les domaines reliés au développement de logiciels. Ils sont souvent spécifiques à un corps de métier afin de pouvoir proposer un maximum de fonctionnalités spécifiques sans devenir trop compliqué et en utilisant un vocabulaire précis qui correspond au corps de métier concerné.}
+
+\paragraph{Il y a peu ou pas de langages de modélisation plus généraux pour des domaines multi-métiers. Le but est de pouvoir modéliser la réflexion créative en fournissant un élément visuel permettant de mind-mapper les idées, les stocker et les réutiliser. \\
+Il faut que la modélisation soit assez souple pour pouvoir répondre aux besoins de chacun des corps de métier d'où le fait que les éléments et attributs peuvent avoir des identifiants spécifiques définis librement par l'utilisateur.}
+
+\subsubsection{Pour quelles raisons ?}
+\paragraph{Les supports de réflexion actuellement utilisés : cahier des charges, réunions, notes écrites, mails, minds-maps... L'organisation de ces différents supports dans un ensemble cohérent est tr;s compliqué. Dans un cahier des charges il est compliqué de classer les idées à la volée. Un mind-map nécessite une numérisation ou une retranscription sur un outil de mind-mapping qui sont toutes les deux des techniques non péreines et risquées dans la conservation des données. Des notes écrites peuvent se perdre et n'ont pas de durabilité sur le long terme. Des mails sont péreins mais il est difficile de les organiser pour le stockage de l'information.}
+\paragraph{Un langage de modélisation graphique et textuel permettrait de mind-mapper les idées à la volée sous forme de cubes contenant les données nécessaires. La hiérarchisation des éléments permettrait de gérer des héritages et des relations ainsi que d'éviter la répétition trop abondante des mêmes informations. Les faces des cubes permettrait d'isoler les informations nécessaires à chacun des corps de métier.}
+
+
+\section{Formes du langage}
+\subsection{Syntaxe graphique}
+\paragraph{Les éléments sont présentés sous la forme de cubes. Les cubes sont réunis dans des super-cubes pouvant posséder eux-mêmes des propriétés propres. Ces cubes sont inclus dans des ensembles faisant  office de regroupement pour des éléments liés entre eux. Les cubes sont divisés en faces contenant des propriétés et informations sur l'élément. Chaque face représente un corps de métier. Le contenu est générique et extensible afin de permettre de la souplesse dans l'utilisation du langage.}
+
+
+\subsubsection{Les ensembles}
+\paragraph{Élément du langage dont le rôle est de regrouper des éléments dans un ensemble cohérent. Cela fonctionne comme un Package UML. Ils ne servent que de regroupement, ne contiennent aucune propriétés et peuvent contenir des informations.}
+
+
+\subsubsection{Super-cubes}
+\paragraph{Cubes possédant des propriétés et des informations mais servant également d'ensemble. Il peut contenir des cubes. S'il n'en contient qu'un seul cela peut être considéré comme une erreur sauf s'il s'agit d'un lissage pour conserver une cohérence quant à d'autres Banches similaires. (ex : niveaux de profondeur)}
+
+
+\subsubsection{Cube}
+\paragraph{Élément principal du langage de modélisation. Un cube correspond à un élément de jeu. S'il est final il représente alors un élément précis du jeu et devrait comprendre toutes les propriétés et informations restantes pour compléter l'élément.}
+\paragraph{Un cube est divisé en six faces représentant chacune une famille de métiers du processus de développement de jeux vidéos. Par défaut nous pouvons définir ces faces par les familles suivantes : son, scénario, artistes, graphistes, animateurs, développeurs. Les faces du cube contiennent des propriétés, des attributs et des informations.}
+
+
+\subsubsection{Propriétés}
+\paragraph{Éléments de données ayant un impact direct sur le langage de modélisation. C'est ici que sont contenus : les identifications, les hiérarchies, les types de faces, des informations de versions et toutes les autres informations nécessaires au fonctionnement interne du langage de modélisation et des outils connexes (logiciel lui-même, une BDD, un outil de versionning, une génération automatique de code ou d'architecture de dossiers...)}
+
+
+\subsubsection{Attributs}
+\paragraph{Éléments de données ayant un impact direct sur le travail des corps de métier. Les attributs doivent être des données courtes et précises. Ils peuvent être partagés par plusieurs faces.}
+
+
+\subsubsection{Informations}
+\paragraph{Contient toutes les données supplémentaires jugées importantes pour compléter les attributs d'un élément. Cela peut être des explications, des détails ou des informations complémentaires concernant l'élément, pas assez déterminantes pour être considérées comme des attributs, mais suffisamment pour être présentes dans la modélisation.}
+
+
+\subsubsection{Niveau de profondeur}
+\paragraph{Nombre d'ensembles et de super-cubes qu'il est nécessaire de parcourir afin d'accéder à l'élément actuellement visé. Chaque niveau de profondeur peut apporter des informations supplémentaires sur l'élément sous la forme d'un héritage classique.}
+
+
+\subsubsection{Branche}
+\paragraph{Liste de tous les éléments d'héritage depuis L,ensemble racine jusqu'à l'élément final. Elle permet de récupérer toutes les propriétés, attributs et informations qui sont nécessaires à définir un élément dans son entièreté.}
+
+
+\subsection{Syntaxe textuelle}
+\subsubsection{Objectifs}
+Le but est de trouver une proposition de syntaxe textuelle déjà connue des développeur serait plus simple à mettre en place car elle pourrait être :
+\begin{itemize}
+    \item le support pour la syntaxe graphique
+    \item le support de communication avec d'autres systèmes
+    \item plus simple à manipuler
+    \item plus facile à comprendre pour les utilisateurs
+\end{itemize}
+Cette syntaxe écrite doit être légère et avec le moins de dépendances possibles.
+Elle doit être également pérenne pour garder l'historique des données du projet.
+
+\subsubsection{Proposition}
+Langage de stockage et manipulation des données : JSON \\
+Le JSON est un format de données textuel.\\
+\begin{itemize}
+    \item Permet de stocker toutes les données sous la forme clé-valeur $\rightarrow$ souplesse dans les données intégrables. \\
+    \item Manipulable à travers beaucoup de langages de programmation $\rightarrow$ peu importe le langage utilisé par l'application finale. \\
+    \item Basé sur une syntaxe Javascript $\rightarrow$ facilement compréhensible et manipulable même sans connaissances avancées en développement informatique. \\
+    \item Pérein et versionnable $\rightarrow$ lisible sous la forme de fichiers textes par n'importe quel éditeur ou environnement de développement.
+\end{itemize}
+
+Le passage à du BSON sera peut être un avantage pour l'ajout de types et la récupération. \\
+
+Outil de stockage et de manipulation des données : MongoDB \\
+Système de gestion de bases de données permettant de manipuler des données stockées dans des fichiers BSON. \\
+\begin{itemize}
+    \item Outil déjà bien présent dans le marché $\rightarrow$ les compétences techniques sont déjà présentes en entreprise
+    \item noSQL $\rightarrow$ facilité de mise en place, modifications et transfert. Pas de contraintes de champs (au contraire des Syst;mes de Gestion de Bases de Données Relationnelles)
+    \item Gestion de hiérarchies $\rightarrow$ facilite la manipulation ensembles/super-cubes/cubes
+    \item Synchronisation des champs entre eux s'ils sont liés $\rightarrow$ mettre à jour un champs met à jours automatiquement les champs liés.
+\end{itemize}
+
+Note : l'API REST de Jira gère les structures sous forme de JSON $\rightarrow$ piste d'intégration de l'outil vers Jira ?
+\end{comment}

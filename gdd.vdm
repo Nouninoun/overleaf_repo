@@ -1,0 +1,111 @@
+-*- text -*- 
+
+Breves explications sur la notation utilise (style VDM):
+--------------------------------------------------------
+
+* Description semblable a une declaration de classe Foo avec attributs bar, baz et qux:
+  Foo ::
+    bar: string
+    baz: set of string 
+    qux: map string to int # Un Map/Hash avec cle: string et valeur: int
+
+
+* Type avec enumeration explicite de valeurs atomiques possibles:
+  CouleurFeuCirculation = <Rouge> | <Orange> | <Vert>
+
+* Type T est une union, donc soit un U, soit un V
+  T = U | V
+
+* token: type arbitraire, non specifie
+
+
+* Soit m: map int to string
+  Voici une valeur possible de m -- la cle 1 est associee a la chaine "abc", etc.
+  { 1 |-> "abc", 2 |-> "def", 3 |-> "def" }
+
+  Alors:
+    m(2) = "def"
+    dom m = {1, 2, 3}      # Ensemble des cles
+    rng m = {"abc", "def"} # Ensemble des valeurs  
+
+* Element optionnel
+  Foo ::
+    bar: [nat]
+
+  Le champ bar est un entier naturel (>= 0), mais optionnel (donc possiblement nil)
+
+-------------------------------------------------------------------------------------
+
+# Specification de ce qu'est un GDD
+
+GameDesignDocument ::
+  overview: Overview
+  mechanics: Mechanics
+  dynamics: Dynamics
+  aesthetics: Aesthetics
+  experience: Experience
+
+Mechanics ::
+  elementCategories: set of GameElementCategory
+  coreElements: set of CoreGameElement
+  worldElements: set of GameWorldElement
+  interactionRules: set of InteractionRule
+
+AttributeKind 
+  = <Appearance> | <State> | ...
+ActionKind 
+  = MovementAction | OtherAction | ...
+
+MovementAction 
+  = <RunLeft> | <RunRight> | <VerticalJump> | ...
+OtherAction 
+  = token
+
+AttributeDescription 
+  = string | ...
+ActionDescription 
+  = string | ...
+
+
+# Description d'une categorie, donc on specifie son nom, ce qu'elle
+# vise a decrire/representer et les attributs et actions que
+# devront/pourront posseder les elements de cette categorie
+
+GameElementCategory ::
+  parent: [GameElementCategory] # Pour modeliser hierarchie? 
+                                # Mais comment les attributs/actions sont-ils combines?
+                                # Pas clair... donc pas necessairement une bonne idee.
+  name: string
+  description: string
+  attributes: set of AttributeKind
+  actions: set of ActionKind
+
+# Description d'un element de jeu d'une certaine categorie
+
+CoreGameElement ::
+  category: GameElementCategory # Reference a une autre classe => association en UML
+
+  # C'est un map ou chaque attribut requis de la caterogie doit etre specifie
+  # Representation UML = Qualified association
+  attributes: map AttributeKind to AttributeDescription
+    where dom attributes = dom category.attributes
+
+  # C'est un map ou chaque action requise de la caterogie doit etre specifiee
+  actions: map ActionKind to ActionDescription
+    where dom attributes = dom category.attributes
+
+
+GameWorldElement ::
+  ...
+
+
+# Description des interactions
+
+GameElement = CoreGameElement | GameWorldElement
+
+InteractionRule ::
+  actor, otherElement: GameElement
+  interactionResult: string
+
+# GDD ---* IR
+#   Ou IR est une entite associative pour une relation binaire */* entre GameElement
