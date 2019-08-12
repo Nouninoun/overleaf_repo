@@ -33,8 +33,10 @@ m\documentclass[12pt]{memoireuqam1.3}
 \usepackage{comment}
 
 
-\begin{document}
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
 
+\begin{document}
 %%%%%%%%%%%%%%%%%%%%
 % Pour la page titre
 %%%%%%%%%%%%%%%%%%%%
@@ -46,8 +48,6 @@ m\documentclass[12pt]{memoireuqam1.3}
 %\degreeyear{année du dépôt}
 \uqammemoire %% ou \uqamthese ou \uqamrapport
 \matiere{informatique}
-
-
 \thispagestyle{empty}        % La page titre n'est pas numérotée
 \maketitle
 
@@ -85,7 +85,6 @@ m\documentclass[12pt]{memoireuqam1.3}
 
 \include{02_cor/06_introduction}
 % Utilisez l'environnement  introduction pour rédiger votre introduction
-
 \include{02_cor/07_problematique}
 \include{02_cor/08_GDD}
 \include{02_cor/09_MDA}
@@ -95,6 +94,9 @@ m\documentclass[12pt]{memoireuqam1.3}
 
 \include{02_cor/13_conclusion}
 % Utilisez l'environnement  conclusion pour rédiger votre conclusion
+
+
+\include{02_cor/20_annexe1_profile}
 
 %%%%%%%%%%%%%%%%%%%%
 % Page liminaires
