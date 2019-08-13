@@ -1,4 +1,4 @@
-m\documentclass[12pt]{memoireuqam1.3}
+\documentclass[12pt]{memoireuqam1.3}
 
 % Ajout commentaire pour test par GT
 
@@ -33,8 +33,17 @@ m\documentclass[12pt]{memoireuqam1.3}
 \usepackage{comment}
 
 
-\usepackage{titlesec}
-\setcounter{secnumdepth}{4}
+
+%Création du glossary (liste des acronymes)
+\usepackage[toc,section=chapter,acronym,nomain]{glossaries}
+\makeglossaries
+
+% Marquage des chapitres dans la liste des figures
+\usepackage{etoolbox}
+\preto\figure{%
+  \ifnum\value{figure}=0\addtocontents{lof}{{\bfseries \\ Chapter \thechapter\vskip10pt}}\fi
+}
+
 
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%
@@ -58,22 +67,20 @@ m\documentclass[12pt]{memoireuqam1.3}
 %%%%%%%%%%%%%%%%%%%%
 \renewcommand \bibname{R\'EF\'ERENCES}% FACULTATIF
 %si vous voulez qu'apparaisse le titre RÉFÉRENCES plutôt que BIBLIOGRAPHIE
-
 \renewcommand \listfigurename{LISTE DES FIGURES}
 \renewcommand \appendixname{APPENDICE}
 \renewcommand \figurename{Figure}
 \renewcommand \tablename{Tableau}
 
-\pagenumbering{arabic} % numérotation des pages en chiffres arabes
-\addtocounter{page}{1} % Pour que les remerciements commencent à la page ii
-\include{01_lim/01_remerciements}
+\pagenumbering{roman}  %% numérotation des pages liminaires en chiffres romains
+\addtocounter{page}{1} %% les remerciements commencent à la page ii
+%\include{01_lim/01_remerciements}
 %\include{01_lim/02_dedicace}
-\include{01_lim/03_avant-propos}
+%\include{01_lim/03_avant-propos}
 
 \tableofcontents % Pour générer la table des matières
 \listoffigures % Pour générer la liste des figures
 \listoftables % Pour générer la liste des tableaux
-
 \include{01_lim/04_abreviations}
 \include{01_lim/05_abstract}
 % Utilisez l'environnement  abstract pour rédiger votre résumé
