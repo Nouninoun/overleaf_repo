@@ -42,7 +42,7 @@
 % Marquage des chapitres dans la liste des figures
 \usepackage{etoolbox}
 \preto\figure{%
-  \ifnum\value{figure}=0\addtocontents{lof}{{\bfseries \\ Chapter \thechapter\vskip10pt}}\fi
+  \ifnum\value{figure}=0\addtocontents{lof}{{\bfseries Chapter \thechapter\vskip10pt}}\fi
 }
 
 
