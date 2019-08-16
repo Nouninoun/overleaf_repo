@@ -1,8 +1,12 @@
 \chapter{Les documents de game design}
 
-Les documents de game design sont nombreux et très discutés. Selon le niveau d'avancement du développement certains sont plus présents que d'autres mais le domaine est d'accord pour avancer qu'il n'existe pas de template fixe pour un document de game design, encore plus, qu'un template trop précis serait une erreur à ne pas commettre car il entraînerait des difficultés de rédaction et d'adaptation à tous les types de jeux que l'on peut rencontrer. La littérature s'accorde pour dire qu'il n'y a pas de template définit pour les documents de game design mais certaines lignes directrices peuvent être suivies afin que le game design document soit complet et respecte une certaines forme.\\
-Dans sa présentation Librande montre des exemples de livrables de game design de différentes sortes. Il souligne que les documents de design lourds sont des sources d'informations importantes, réunissant tout le design dans un seul document et la création du document aide grandement à designer le jeu par la suite. Cependant ces documents sont compliqués à maintenir, mettre à jours et à parcourir pour trouver une information précise.\\
-Il présente également les "design wiki" qui apportent également beaucoup de points positifs au design. Il est possible d'y avoir accès à n'importe quel endroit tant qu'une connexion est disponible. Les mises à jours sont simplifiées car la recherche l'est également : il devient alors possible de modifier des éléments en "live" lors d'une réunion. Un Wiki permet la contribution d'équipe aux différents éléments, il est possible d'éditer les éléments par article et donc de ne pas avoir à prendre connaissance d'éléments non reliés au travail actuellement effectué. Il est facile de maintenir un versionning et un historique des modifications pour justifier les modifications et les garder en mémoire. Cependant un Wiki requiert une maintenance constante et donc souvent une personne dédiée à la maintenance du Wiki, les relations entre les éléments ne sont pas mises en avant et il est compliqué de mettre ensemble différentes sortes de représentation sous la forme de textes/images dans un Wiki, les images doivent être traitées à l'extérieur du Wiki avant d'y être réintégrées, l'impression d'un article Wiki n'est pas toujours adaptée à une lecture rapide des éléments.\\
+Dans ce chapitre vont être présenté plusieurs documents de Game Design qui sont présents dans un processus de développement de jeu vidéo. Ces documents peuvent être rédigés l'un à la suite de l'autre ou indépendamment et ne sont pas obligatoires dans un projet de jeu vidéo.
+
+Les documents de game design sont nombreux et très discutés. Selon le niveau d'avancement du développement certains sont plus utiles que d'autres mais les acteurs du domaine sont d'accord pour avancer qu'il n'existe pas de template fixe pour un document de game design \cite{GD_theory_rouse}, encore plus, qu'un template trop précis serait une erreur à ne pas commettre car il entraînerait des difficultés de rédaction et d'adaptation à tous les types de jeux que l'on peut rencontrer. Cependant des auteurs présentent des lignes directrices, comme une recette de cuisine \cite{LevelUpRogers2014}, qui peuvent être suivies afin que le \gls{gdd} soit complet et respecte une certaines forme. 
+
+Dans sa présentation Librande \cite{onepage_librande} montre des exemples de livrables de game design de différentes sortes. Il souligne que les documents de design lourds sont des sources d'informations importantes, réunissant tout le design dans un seul document et la création du document aide grandement à designer le jeu par la suite. Cependant ces documents sont compliqués à maintenir, mettre à jours et à parcourir pour trouver une information précise.
+
+Il présente également les "design wiki" qui apportent beaucoup de points positifs au design. Il est possible d'y avoir accès à n'importe quel endroit tant qu'une connexion est disponible. Les mises à jours sont simplifiées car la recherche l'est également : il devient alors possible de modifier des éléments directement lors d'une réunion. Un Wiki permet la contribution d'équipe aux différents éléments, il est possible d'éditer les éléments par article et donc de ne pas avoir à prendre connaissance d'éléments non reliés au travail actuellement effectué. Il est facile de maintenir un versionning et un historique des modifications pour justifier les modifications et les garder en mémoire. Cependant un Wiki requiert une maintenance constante et donc souvent une personne dédiée à sa maintenance. Les relations entre les éléments ne sont pas mises en avant et il est compliqué de mettre ensemble différentes sortes de représentation sous la forme de textes/images. Les images doivent être traitées à l'extérieur du Wiki avant d'y être réintégrées, l'impression d'un article Wiki n'est pas toujours adaptée à une lecture rapide des éléments.\\
 %Scott Rogers Level Up!
 %Game design foundations, R. Pedersen
 %Game design theory & practice Second Edition, Rouse Richard
@@ -11,13 +15,33 @@ Il présente également les "design wiki" qui apportent également beaucoup de p
 
 
 
-\section{Le "one page" : le concept document}
+\section{Le "one page" ou "one-sheet": le concept document}
 %One page designs, Stone Librante (ppt presentation)
 %Game design foundations, R. Pedersen
-Le One page design est une vue d'ensemble du jeu qui est destinée à être vue aussi bine par l'équipe de développement que par les acteurs décisionnels des studios il doit alors contenir assez d'informations à mettre en avant sur jeu mais tout doit tenir sur une page [LevelUP!].
+%Scott Rogers Level Up!
+Le One page design est une vue d'ensemble du jeu. Il est destiné à l'équipe de développement et aux acteurs décisionnels des studios. Il doit alors contenir assez d'informations à mettre en avant à propos du jeu mais tout doit tenir sur une page \cite{LevelUpRogers2014}.
 
-C'est à partir de ces éléments que Librande estime que plus un document est long moins les utilisateurs s'y réfèrent, sa solution : Le One-Page Design.\\
-L'idée est de représenter tous les éléments nécessaires au design sur une seule page et d'y intégrer toutes les informations nécessaires de manière visuelle. Voici les éléments essentiels cités par Librande :
+C'est à partir de ces éléments que Librande \cite{onepage_librande} estime que plus un document est long moins les utilisateurs s'y réfèrent, sa solution : Le One-Page Design.\\
+L'idée est de représenter tous les éléments nécessaires au design sur une seule page et d'y intégrer toutes les informations nécessaires de manière visuelle. 
+Voici les éléments que doivent contenir le One-Sheet de Rogers \cite{LevelUpRogers2014}.
+\begin{itemize}
+    \item Le titre du jeu
+    \item Les systèmes de jeu prévus
+    \item L'age des joueurs visés
+    \item L'\gls{esrb} rating
+    \item Un résumé de l'histoire du jeu en se concentrant sur le gameplay
+    \item Les modes du gameplay
+    \item Les \gls{usp}
+    \item Les produits compétitifs
+\end{itemize}
+
+L'\gls{esrb} est un organisme d'autorégulation qui est à l'origine d'un système de notation et des règles de vie privée des logiciels. Son système de notation permet de définir à partir de points précis l'âge conseillé pour l'utilisation des logiciels. C'est une notation que l'on retrouve systématiquement dans le domaine du jeu vidéo définissant le type de contenu présent dans le jeu et le public pour lequel est recommandé ce contenu : eC (Early Childhood), E (Everyone), E10 (Everyone 10\+), T (Teen), M (Mature 17\+), AO (Adults Only 18\+).
+
+Les \gls{usp} sont des points de marketing représentant le jeu. Ils se situent à l'arrière de la boite de jeu ou sur le descriptif du jeu dans le cas d'une vente dématérialisée. Ce sont des points précis et courts attirant la curiosité de l'acheteur sans être trop descriptifs. 
+
+Les produits compétitifs sont les actuels concurrents du jeu déjà présents sur le marché. Cela permet de donner une idée de ce que le jeu sera. Cette liste doit contenir des jeux connus ou connaissant un grand succès afin qu'ils soient représentatifs pour ceux qui liront le one-sheet. Présenter une liste de jeux obscurs ou qui ont connus que peu de succès découragera les éditeurs qui liront le one-sheet.
+
+Voici les éléments essentiels d'un one page cités par Librande \cite{onepage_librande}:
 \begin{itemize}
     \item Un titre représentatif du design
     \item Dater tous les éléments afin de garder un historique
@@ -32,11 +56,81 @@ Attention, la taille des éléments est importante dans un One-Page Design, les 
 Cependant l'augmentation de taille doit continuer à respecter la lisibilité du One-Page Design. Augmenter en taille ne doit pas correspondre à intégrer trop d'informations dans un One-Page car cela irait à l'encontre de toute la lisibilité du design.
 
 
-\section{Le "five pager" : l'executive summary }
-%Game design foundations, R. Pedersen
-Le five pager est un résumé du concept du jeu vidéo et une description du jeu à venir. Il comprend toutes les informations essentielles au cycle de vie du jeu sous des aspects majeurs, tels que le gameplay, l'audience cible, le scénario, et les features. De taille idéale il est constitué d'environ 5 pages, et permet de présenter le jeu sous sa forme la plus basique à un décideur ou à un financeur.
 
-\section{Le Game Design Document}
+\section{Étendre le one-page vers un résumé}
+Une fois les premières étapes de Game design effectuées celui-ci va être étendu afin de produire un document plus important en taille. Ce second document va préciser les concepts du jeu vidéo en cours de création et va permettre de communiquer un niveau de détails plus précis.
+
+%Game design foundations, R. Pedersen
+Pedersen propose le five pager \cite{GD_foundations_pedersen}. C'est un résumé du concept du jeu vidéo et une description du jeu à venir. Il comprend toutes les informations essentielles au cycle de vie du jeu sous des aspects majeurs, tels que le gameplay, l'audience cible, le scénario, et les features. Le five-pager permet de présenter le jeu sous sa forme la plus basique à un décideur ou à un éditeur.
+
+Rogers \cite{LevelUpRogers2014} quant à lui propose un document plus fournit avec son Ten-Pager. Il présente son document en deux parties qui se différencient radicalement en fonction du destinataire. Le contenu du document doit non seulement contenir des informations pour l'équipe de développement du jeu mais également les informations nécessaires pour concerner les éditeurs impliqués dans le projet. Rogers présente le contenu du ten-pager sous la forme suivante :
+\begin{itemize}
+    \item Page 1 - Informations générales
+    \begin{itemize}
+        \item Le titre du jeu
+        \item Les systèmes de jeu prévus
+        \item L'age des joueurs visés
+        \item L'\gls{esrb} rating
+        \item Un calendrier prévisionnel de sortie
+    \end{itemize}
+    \item Page 2 - L'histoire
+    \begin{itemize}
+        \item Un résumé de l'histoire du jeu permettant de poser les premiers jalons de l'histoire de manière succinte et générale
+        \item Un résumé du déroulement du jeu qui permet de situer les actions du joueur dans l'histoire, les challenges rencontrés par celui-ci, comment se déroule la progression, la place du gameplay dans l'histoire, les conditions de victoire...
+    \end{itemize}
+    \item Page 3 : Détailler le personnage que le joueur contrôle.
+    \begin{itemize}
+        \item L'histoire du personnage, son caractère, des traits importants de son apparence
+        \item Le gameplay particulier associé au personnage, ses mouvements, ses armes
+        \item Proposer une maquette des contrôles proposés au joueurs, comme une représentation des raccourcis claviers
+    \end{itemize}
+    \item Page 4 - Le gameplay
+    \begin{itemize}
+        \item Modèle de séparation de l'histoire (levels, chapitres, monde ouvert)
+        \item Scénarios particuliers (cinématique active)
+        \item Mise en avant des \gls{usp}
+        \item Intégrer des diagrammes et illustrations pour apporter des précisions
+    \end{itemize}
+    \item Page 5
+    \begin{itemize}
+        \item Images et description du monde du jeu
+        \item Découpage des zones de jeu
+        \item Liens entre elles
+    \end{itemize}
+    \item Page 6 - L'expérience de jeu
+    \begin{itemize}
+        \item Description des émotions et sensations que doit générer l'expérience de jeu
+        \item Description de l'interface de jeu et de la manière de les parcourir
+    \end{itemize}
+    \item Page 7 - Les mécaniques de Gameplay
+    \begin{itemize}
+        \item Mécanique : Elément avec lequel un joueur interagit pour effectuer une action (ex : un levier pour ouvrir une porte)
+        \item Danger : Elément du monde qui peut tuer ou blesser le joueur mais sans IA (ex : un bloc de pierre qui tombe)
+        \item Power-up : Objets que le joueur récupère et se sert pour obtenir un avantage (ex : un champignon dans Mario)
+        \item Objets de collections : Objets que le joueur collecte mais qui n'influence par directement le gameplay (ex : une monnaie)
+    \end{itemize}
+    \item Page 8 - Les ennemis
+    \begin{itemize}
+        \item Description des ennemis rencontrés par le joueur et qui sont contrôlés par une \gls{ia}
+        \item Description des boss rencontrés
+    \end{itemize}
+    \item Page 9 - Multijoueur et bonus
+    \begin{itemize}
+        \item Description des succès collectionnables
+        \item Description des secret découvrables
+        \item Description des interactions si le jeu est multijoueur
+    \end{itemize}
+    \item Page 10 - Monétisation
+    \begin{itemize}
+        \item Description du système de monétisation du jeu (Gratuit, Gratuit avec une boutique en jeu, payant à l'achat...)
+        \item Description des boutiques et de leur contenu
+    \end{itemize}
+\end{itemize}
+
+
+
+
+\section{Le Game Design Document (\gls{gdd})}
 %Game design foundations, R. Pedersen
 %Proposal of Game Design Document from Software Engineering Requirements Perspective, Mario Gonzalez Salazar, Hugo A. Mitre, Cuauhtémoc Lemus Olalde, José Luis González Sánchez
 
@@ -49,8 +143,40 @@ Le five pager est un résumé du concept du jeu vidéo et une description du jeu
 
 %GAMASUTRA 5 Alternatives to a Game Design Document, Erin Robinson
 
-Le Game Design Document est un des documents les plus complet trouvable dans le cadre du développement d'un jeu vidéo, il est qualifié par certains de "bible" des jeux vidéos. Il doit contenir, dans l'idéal, toute la vision du game designer sans laisser aucun doute sur ce que celui-ci recherche à travers le jeu. Peut importe le corps de métier lisant le game design document celiui-ci doit être capable de se représenter au maximum le rendu final attendu. Il doit être et rester un élément de communication crucial entre les différentes équipes entourant le développement d'un jeu vidéo et ce sur toutes les étapes depuis la création de l'idée jusqu'au post-mortem.
+\subsection{Le \gls{gdd} un moyen de communication}
+Le \gls{gdd} est un des documents les plus complet trouvable dans le cadre du développement d'un jeu vidéo. Dans la littérature et dans les articles il est souvent qualifié de "Bible du design" \cite{GD_foundations_pedersen}, bien que certains auteurs ne soient pas d'accord sur ce sujet \cite{LevelUpRogers2014}. 
 
-Cependant il doit permettre toute la liberté nécessaire aux designers de créer de nouveaux jeux, de nouveaux gameplay, de nouveaux concepts sans les brider sous quelque forme que ce soit. Beaucoup de travaux essaient de répondre à ce besoin de formalisation du Game Design Document sans pour autant réussir à apporter une solution permettant d'englober tous les types de jeux, tous les types de métiers ou toutes les étapes de développement. De nombreux problèmes annexes se posent concernant l'universalité d'un modèle de Game Design Document : Est-il complet ? Est-il assez précis ? Est-il assez souple ? Est-il utile à l'équipe ? Effectivement si un document est extrêmement complet, permettant d'intégrer tous les détails voulus par le Game Designer, mais que ce document est lourd à parcourir, difficilement partageable, difficilement maintenable et modifiable sera-t-il vraiment efficace dans son rôle d'aide au développement et à la maintenance d'un jeu vidéo ? (LIBRANDE)
+Il doit contenir, dans l'idéal, toute la vision du game designer sans laisser aucun doute sur ce que celui-ci veut représenter et souhaite voir dans le jeu. Peu importe le corps de métier lisant le \gls{gdd} celui-ci doit être capable de se représenter au maximum le rendu final attendu. Le \gls{gdd} doit pouvoir servir de moyen communication entre les différentes équipes entourant le développement d'un jeu vidéo et ce sur toutes les étapes depuis la création de l'idée jusqu'au post-mortem du projet.
 
-Un Game Design Document est l'atout majeur de la phase de production d'un jeu vidéo et pour qu'il soit utile durant toutes les phases celui-ci doit être impérativement complet et sans ambiguité (Game Development Guidelines: Practices To Avoid Conflicts Between Software and Design). Cependant il doit être assez souple afin de suivre le jeu dans son développement et suivre les changements nombreux et soudains qui peuvent arriver au cours du développement. (creating a great design document). Tvzi Freeman avance même dans son article de Gamasutra que le Game Design Document doit non seulement décrire le corps du jeu vidéo mais son "âme". Construire un Game Design Document selon lui doit être un moyen de représenter le résultat attendu dans les moindres détails pour permettre aux équipes de travailler sur une idée précise en faisant appel à des outils graphiques plutôt qu'à des textes si l'idée peut être expliquée plus précisément et plus rapidement. Mais le Game Design Document doit être un moyen d'expliquer toutes les parties du jeu, le "what", mais également le "how", comment le jeu fonctionne et comment l'interaction joueur-jeu prend vie.
+\subsection{Une structure souple mais un contenu précis}
+Dans son article sur Gamasutra \cite{gama_greateGDD}, Tvzi Freeman établit une liste de 10 points qu'il estime nécessaire dans un \gls{gdd} :
+\begin{itemize}
+    \item Décrire le corps du jeu, mais également son âme
+    \item Rendre un \gls{gdd} lisible
+    \item Etablir des priorité dans les tâches
+    \item Rentrer un maximum dans les détails
+    \item Démontrer et décrire les sujets
+    \item Décrire le "quoi" mais également le "comment"
+    \item Proposer des alternatives sur certaines réalisations
+    \item Donner une vie au \gls{gdd}
+    \item La vision du Game Designer doit être suffisamment précise pour ne pas laisser d'éléments non décrits
+    \item Mettre à disposition le \gls{gdd} dans de bonnes conditions
+\end{itemize}
+
+\subsection{Le \gls{gdd} doit contenir tout, mais pas trop}
+Le \gls{gdd} doit fournir des outils et la liberté aux designers de créer de nouveaux jeux, de nouveaux gameplay, de nouveaux concepts sans les brider sous quelque forme que ce soit. Beaucoup de travaux essaient de répondre à ce besoin de formalisation du \gls{gdd} \cite{GDD_software} \cite{multiview} \cite{GDD_GDProject} \cite{gama_greateGDD} sans pour autant réussir à apporter une solution permettant d'englober tous les types de jeux, tous les types de métiers ou toutes les étapes de développement. De nombreux problèmes annexes se posent concernant l'universalité d'un modèle de Game Design Document : Est-il complet ? Est-il assez précis ? Est-il assez souple ? Est-il utile à l'équipe ? Prenons l'exemple d'un projet où le \gls{gdd} est extrêmement complet comprenant tous les détails voulus par le Game Designer. Le \gls{gdd} devient tellement complet qu'il en devient très imposant, lourd à parcourir, difficile à maintenir et à modifier. Il perdra toute l'efficacité de design qu'il aurait pu donner car il deviendra un handicap de temps plutôt qu'une aide au développement \cite{onepage_librande}.
+
+Un \gls{gdd} est l'atout majeur de la phase de production d'un jeu vidéo et pour qu'il soit utile durant toutes les phases celui-ci doit être impérativement complet et sans ambiguité \cite{GD_Guidelines}. Cependant il doit être assez souple afin de suivre le jeu dans son développement et suivre les changements nombreux et soudains qui peuvent arriver au cours du développement.
+
+Dans son article  \cite{gama_greateGDD} Tvzi Freeman écrit que le \gls{gdd} doit non seulement décrire le corps du jeu vidéo mais son "âme". Construire un \gls{gdd} selon lui doit être un moyen de représenter le résultat attendu dans les moindres détails pour permettre aux équipes de travailler sur une idée précise. Faire appel à des outils graphiques plutôt qu'à des textes peut être un moyen d'apporter plus de précision à une idée. Mais le \gls{gdd} doit être un moyen d'expliquer toutes les parties du jeu, le "quoi", mais également le "comment".
+
+Cependant décrire l'intégralité de tous les détails dans le \gls{gdd} peut mener à des dérives importantes décrites par Rouse \cite{GD_theory_rouse}. À vouloir apporter trop de détails dans un \gls{gdd} Un Game Designer peut perdre énormément de temps qui aurait pu être économisé avec plus de communication avec son équipe. Trop de détails peut également apporter trop de limitations aux corps de métier plus artistiques et brider leur créativité. Certaines parties du jeu peuvent également en obstruer d'autres : trop de détails dans la description d'une mécanique peut éclipser le fait qu'une autre n'est pas assez détaillée. Un \gls{gdd} trop complet donne également l'impression que le projet est terminé et qu'il ne nécessite plus d'ajustements, cela nuit à l'évolution du jeu et aux modifications positives qui pourraient lui être appliquées.
+
+
+
+\section{Conclusion}
+Dans ce chapitre nous avons vu quatre sortes de documents de Game Design. Ces documents sont les plus répandus dans le développement de jeux vidéos. Selon le type de gameplay, la quantité d'informations ou la durée de vie du jeu un \gls{gdd} peut avoir une taille plus ou moins importante. 
+
+La structure du \gls{gdd} peut différer d'un Game Designer à l'autre en fonction des habitudes de travail avec son équipe ou son expérience. Le contenue du \gls{gdd} contenu peut être sous formes très diverses : de textes, de graphiques, de diagrammes, de mind mapping. 
+
+C'est pourquoi il est très compliqué d'établir un gabarit précis pour la rédaction de \gls{gdd}. La structure de ces documents n'est donc pas fixe et leur rédaction est effectuée en suivant des bonnes pratiques décrites par des Game Designer expérimentés et trouvent réellement leur forme par la manière dont un Game Designer souhaite partager sa vision du futur jeu.
