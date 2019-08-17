@@ -1,10 +1,12 @@
 \chapter{Le framework Mechanics, Dynamics, Aesthetics}
 
-La conception de jeu est le processus de réflexion nécessaire à la création d'un jeu vidéo ou de n'importe quelle sorte de jeu. C'est le chemin que suit le jeu depuis une idée jusqu'à sa réalisation. De nombreuses étapes permettent de mettre en place tous les aspects du jeu pour le mener à sa version jouable. La mise en place du monde dans lequel le joueur évoluera, les règles qu'il devra suivre pour avancer, les éléments graphiques qu'il rencontrera tout cela est définit lors de la conception. Le jeu vidéo est cependant difficile à concevoir et surtout à documenter. Un logiciel classique répond au besoin d'un utilisateur qui s'en sert pour résoudre une problématique. Un jeu quant à lui doit apporter un but au le joueur, l'envie de continuer à l'utiliser et de générer des émotions pour être apprécié. Il est très compliqué de définir une méthodologie précise pour décrire une émotion générée ainsi que tous les éléments techniques autour d'un jeu vidéo. C'est ce que le Framework \gls{mda} propose.
+La conception de jeu est le processus de réflexion nécessaire à la création d'un jeu vidéo ou de n'importe quelle sorte de jeu. C'est le chemin que suit le jeu depuis une idée jusqu'à sa réalisation. De nombreuses étapes permettent de mettre en place tous les aspects du jeu pour le mener à sa version jouable. La mise en place du monde dans lequel le joueur évoluera, les règles qu'il devra suivre pour avancer, les éléments graphiques qu'il rencontrera tout cela est défini lors de la conception. 
+
+Le jeu vidéo est cependant difficile à concevoir et surtout à documenter. Un logiciel classique répond au besoin d'un utilisateur qui s'en sert pour résoudre une problématique. Un jeu quant à lui doit apporter un but au joueur, l'envie de continuer à l'utiliser et de générer des émotions pour être apprécié. Il est très compliqué de définir une méthodologie précise pour décrire une émotion générée ainsi que tous les éléments techniques autour d'un jeu vidéo. C'est ce que le Framework \gls{mda} propose.
 
 
 \section{Le jeu : un échange entre \emph{Game Designer} et Joueur}
-Un \emph{Game Designer} créé un jeu dans le but de générer une expérience de jeu. Cependant l'utilisation que le joueur fera du produit finit est impévisible \cite{MDA_formal}. Dans leur article Hunicke, LeBlanc et Zubek \cite{MDA_formal} découpent un jeu en trois aspects distincts : les règles, le systéme et le \guillemotleft fun \guillemotright. Ces trois aspects sont à l'origine des trois parties du Framework MDA comme indiqués dans la Figure \ref{fig:mda}.
+Un \emph{Game Designer} créé un jeu dans le but de générer une expérience de jeu. Cependant l'utilisation que le joueur fera du produit fini est imprévisible \cite{MDA_formal}. Dans leur article Hunicke, LeBlanc et Zubek \cite{MDA_formal} découpent un jeu en trois aspects distincts : les règles, le système et le \guillemotleft fun \guillemotright. Ces trois aspects sont à l'origine des trois parties du Framework MDA comme indiqués dans la Figure \ref{fig:mda}.
 \begin{figure}[H]
     \begin{center}
     \includegraphics[width=14cm]{10_img/chap3/mda.png} 
@@ -31,7 +33,7 @@ Afin de définir les \emph{Dynamics} il est possible d'analyser d'autres jeux (d
 
 
 \section{\emph{Aesthetics}}
-Les \emph{Aesthetics} sont, selon Hunicke, LeBlanc et Zubek \cite{MDA_formal}, \guillemotleft ce qui rend le jeu \emph{fun} \guillemotright . Ce sont toutes les émotions générées par le jeu et transmise au joueur via des mécaniques de jeu, les sons ou les graphismes. Ils classifient ces mécanisme en huit catégories :
+Les \emph{Aesthetics} sont, selon Hunicke, LeBlanc et Zubek \cite{MDA_formal}, \guillemotleft ce qui rend le jeu \emph{fun} \guillemotright . Ce sont toutes les émotions générées par le jeu et transmises au joueur via des mécaniques de jeu, les sons ou les graphismes. Ils classifient ces mécanismes en huit catégories :
 \begin{itemize}
     \item Sensation : le jeu comme plaisir des sens
     \item Fantaisie : le jeu comme imaginaire
@@ -59,7 +61,7 @@ Le jeu final peut contenir une ou plusieurs catégories de \guillemotleft fun \g
     \label{fig.dpe}
 \end{figure}
 
-Le \gls{dpe} présenté dans la figure \ref{fig.dpe} est un framework reposant sur les mêmes principes que le MDA . Des modificatiosn sont appliquées au MDA afin d'étendre ses capacité de design pour les jeux sérieux. Il étend le framework MDA afin d'y intégrer plus facilement les notions : d'apprentissage, de  \emph{story telling}, de  \emph{gameplay} et de composants technologiques spécifiques aux jeux sérieux. Dans la figure \ref{fig.dpe_extended} sont présentés les différentes parties du DPE présenté par Winn \cite{Winn2011}.
+Le \gls{dpe} présenté dans la figure \ref{fig.dpe} est un framework reposant sur les mêmes principes que le MDA . Des modifications sont appliquées au MDA afin d'étendre ses capacités de design pour les jeux sérieux. Il étend le framework MDA afin d'y intégrer plus facilement les notions : d'apprentissage, de  \emph{story telling}, de  \emph{gameplay} et de composants technologiques spécifiques aux jeux sérieux. Dans la figure \ref{fig.dpe_extended} sont présentés les différentes parties du DPE présentées par Winn \cite{Winn2011}.
 
 
 \begin{figure}[H]
@@ -70,7 +72,7 @@ Le \gls{dpe} présenté dans la figure \ref{fig.dpe} est un framework reposant s
 \end{figure}
 
 
-Dans le DPE le \emph{Game Designer} a le contrôle direct sur l'ensemble des catégories. Afin d'avoir le contrôle sur la partie Expérience le \emph{Game Designer} définit des objectifs de d'Expérience. Dans la figure \ref{fig.dpe_iteratif} c'est ce qui est représenté par la flèche entre Experience et Design. Cette flèche représente également le processus itératif du design décrit par Salen et Zimmermann \cite{Salen2013}. La conception permet de produire un prototype, et l'expérience sur ce prototype permet de modifier le design afin que l'Expérience corresponde aux attentes du \emph{dame designer}.
+Dans le DPE le \emph{Game Designer} a le contrôle direct sur l'ensemble des catégories. Afin d'avoir le contrôle sur la partie Expérience le \emph{Game Designer} définit des objectifs de d'Expérience. Dans la figure \ref{fig.dpe_iteratif} c'est ce qui est représenté par la flèche entre Experience et Design. Cette flèche représente également le processus itératif du design décrit par Salen et Zimmermann \cite{Salen2013}. La conception permet de produire un prototype, et l'expérience sur ce prototype permet de modifier le design afin que l'Expérience corresponde aux attentes du \emph{game designer}.
 
 \begin{figure}[H]
     \centering
@@ -87,7 +89,7 @@ Dans le DPE le \emph{Game Designer} a le contrôle direct sur l'ensemble des cat
 %ARTICLE DDE Design, Dynamics, Experience (DDE): An Advancement of the MDA framework for Game Design Wolfgang
 
 %GAMASUTRA From MDA to DDE, Wolfgang Walk
-Le framework \gls{dde} décrit dans la figure \ref{fig.dde} est présenté dans l'article de Walk et al \cite{DDE}. Ils apportent une vision critique sur le framework MDA et avancent que celui-ci néglige beaucoup d'aspects du design de jeux vidéos. Ils estiment également que le MDA se concentre trop sur les \emph{Mechanics} et ne permet donc pas de décrire tous les types de \emph{gameplay} présents sur le marché du jeu vidéo. Ce focus sur les \emph{Mechanic} entraîne, selon Walk et al, un manque de contrôle du \emph{game designer} sur les \emph{Dynamics} et \emph{Aesthetics} qui ne font que découler des \emph{Mechanics}
+Le framework \gls{dde} décrit dans la figure \ref{fig.dde} est présenté dans l'article de Walk et al \cite{DDE}. Ils apportent une vision critique sur le framework MDA et avancent que celui-ci néglige beaucoup d'aspects du design de jeux vidéos. Ils estiment également que le MDA se concentre trop sur les \emph{Mechanics} et ne permet donc pas de décrire tous les types de \emph{gameplay} présents sur le marché du jeu vidéo. Ce focus sur les \emph{Mechanics} entraîne, selon Walk et al, un manque de contrôle du \emph{game designer} sur les \emph{Dynamics} et \emph{Aesthetics} qui ne font que découler des \emph{Mechanics}
 
 \begin{figure}[H]
     \begin{center}
@@ -97,7 +99,7 @@ Le framework \gls{dde} décrit dans la figure \ref{fig.dde} est présenté dans 
     \end{center}
 \end{figure}
 
-Afin de définir le framework DDE ils effectuent un découpage différent et intègrent de nouvelles notions dans les catégories comme décrits dans la figure \ref{fig.dde_extended}.
+Afin de définir le framework DDE ils effectuent un découpage différent et intègrent de nouvelles notions dans les catégories comme décrit dans la figure \ref{fig.dde_extended}.
 
 \begin{figure}[H]
     \begin{center}
@@ -109,13 +111,13 @@ Afin de définir le framework DDE ils effectuent un découpage différent et int
 
 \subsubsection{Design}
     \begin{itemize}
-        \item \emph{Blueprint} : Partie du design qui concerne les concepts du monde du jeu : culture, religion, physique, les différents sets de règles, les styles artistiques, le design narratif, le design de personnages et le design sonore qui ensemble créés l'expérience esthétique.
+        \item \emph{Blueprint} : Partie du design qui concerne les concepts du monde du jeu : culture, religion, physique, les différents sets de règles, les styles artistiques, le design narratif, le design de personnages et le design sonore qui ensemble créent l'expérience esthétique.
         \item \emph{Mechanics} : Toute chose créant le jeu, plus précisément le code. L'architecture du code, la prise en charge des entrées/sorties, la prise en charge des objets, l'implémentation des règles de jeu et l'interaction entre les objets, et tous les éléments reliés au code. Cela comprend tous les éléments que le joueur ne perçoit pas dans son utilisation du jeu.
         \item Interface : Toutes les mécaniques qui ont pour but de communiquer le jeu au joueur. Les graphismes, le son, les réactions et interactions entre le joueur et le jeu, ainsi que celles bouclant sur le jeu lui-même. Cette partie comprend également les cinématiques les textes affichés et tout ce qu'il est possible de voir ou d'entendre dans le jeu.
     \end{itemize}
 
 \subsubsection{\emph{Dynamics} }
-    La catégorie \emph{Dynamics} du DDE correspond à celle présente dans le MDA, mais elle classifie les interactions de manière à les rendre plus précises. Cest ainsi que ces Dynamics se retrouvent en trois grande catégories: 
+    La catégorie \emph{Dynamics} du DDE correspond à celle présente dans le MDA, mais elle classifie les interactions de manière à les rendre plus précises. Cest ainsi que ces Dynamics se retrouvent en trois grandes catégories: 
     \begin{itemize}
         \item Player <-> Game
         \item Player <-> Player
@@ -128,13 +130,13 @@ Afin de définir le framework DDE ils effectuent un découpage différent et int
         \item Senses: expérience sensorielle du joueur du début à la fin du jeu.
         \item Cerebellum : les émotions ressenties par le joueur.
         \item Cerebrum : les challenges intellectuels et les décisions prises par le joueur.
-        \item Player<Subject> : partie que le designer ne peut pas contrôler. Il peut se baser sur les trois premières catégories afin de prévoir une réponse spécifique du joueur. N'ayant aucun contrôle sur celle-ci il ne peut que estimer la réaction du joueur en fonction d'objectifs et de logiques psychologiques pour l'amener à la réaction souhaitée.
-        \item Perception : ce que ressent réellement le joueur en fonction des trois première catégories et de sa propre expérience et personnalité en tant que joueur. Cela comprendra son \emph{gameplay}, le type de challenge qu'il perçoit, l'amusement qu'il ressent, la beauté qu'il perçoit, l'écho que génère l'histoire en lui, etc.
+        \item Player<Subject> : partie que le designer ne peut pas contrôler. Il peut se baser sur les trois premières catégories afin de prévoir une réponse spécifique du joueur. N'ayant aucun contrôle sur celle-ci il ne peut qu'estimer la réaction du joueur en fonction d'objectifs et de logiques psychologiques pour l'amener à la réaction souhaitée.
+        \item Perception : ce que ressent réellement le joueur en fonction des trois premières catégories et de sa propre expérience et personnalité en tant que joueur. Cela comprendra son \emph{gameplay}, le type de challenge qu'il perçoit, l'amusement qu'il ressent, la beauté qu'il perçoit, l'écho que génère l'histoire en lui, etc.
     \end{itemize}
 
 
 %GAMASUTRA Revisiting the MDA framework, Luiz Claudio Silveira Duarte
-\subsection{Le MDA est limités à la représentation des jeux vidéos}
-Dans son article Duarte \cite{GAMA_MDA} met en avant des difficultés que le MDA a à représenter des jeux qui ne soient pas des Jeux vidéos. Il explique que les règles d'un jeu vidéo sont souvent implicites au type de \emph{gameplay} ou de genre de classification de jeu vidéos. Cependant dans le cadre des jeux de plateau les règles ne peuvent pas être implicites et acquises par l'expérience. Elles doivent être explicites et explicables dans un manuel d'utilisation. Il fait l'analogie entre un \gls{fps} et un jeu d'échecs. Dans un FPS un joueur sait à quoi s'attendre selon son expérience du genre. Il saura ou trouver les éléments et saura comment faire usage de l'interface graphique qui lui est présentée. Cependant un joueur se retrouvant devant un jeu d'échec pour la première fois ne pourra pas acquérir les connaissances requises pour jouer par l'expérience, les règles devront lui être expliquées à la base et l'expérience ne pourra lui apporter que des aspects tactiques du jeu.
+\subsection{Le MDA est limité à la représentation des jeux vidéos}
+Dans son article Duarte \cite{GAMA_MDA} met en avant des difficultés que l'on rencontre à représenter des jeux qui ne soient pas des Jeux vidéos en faisant usage du MDA. Il explique que les règles d'un jeu vidéo sont souvent implicites au type de \emph{gameplay} ou de genre de classification de jeu vidéos. Cependant dans le cadre des jeux de plateau les règles ne peuvent pas être implicites et acquises par l'expérience. Elles doivent être explicites et explicables dans un manuel d'utilisation. Il fait l'analogie entre un \gls{fps} et un jeu d'échecs. Dans un FPS un joueur sait à quoi s'attendre selon son expérience du genre. Il saura ou trouver les éléments et saura comment faire usage de l'interface graphique qui lui est présentée. Cependant un joueur se retrouvant devant un jeu d'échec pour la première fois ne pourra pas acquérir les connaissances requises pour jouer par l'expérience, les règles devront lui être expliquées à la base et l'expérience ne pourra lui apporter que des aspects tactiques du jeu.
 
 \section{Conclusion}
