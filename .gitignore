@@ -15,4 +15,6 @@ avec-sans-notes.tex
 *.glsdefs
 *.ist
 *.alg
-
+*.lot
+*.lof
+*.synctex
