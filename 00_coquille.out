@@ -1,0 +1,58 @@
+\BOOKMARK [0][-]{chapter*.2}{ LISTE DES FIGURES \040}{}% 1
+\BOOKMARK [0][-]{chapter*.3}{ Liste des tableaux \040}{}% 2
+\BOOKMARK [0][-]{chapter*.4}{ R\351sum\351 \040}{}% 3
+\BOOKMARK [0][-]{chapter*.5}{ INTRODUCTION \040}{}% 4
+\BOOKMARK [0][-]{chapter.1}{ Le d\351veloppement de jeux vid\351os \040}{}% 5
+\BOOKMARK [1][-]{section.1.1}{Les \351tapes de cr\351ation d'un jeu vid\351o}{chapter.1}% 6
+\BOOKMARK [2][-]{subsection.1.1.1}{Breakthrough}{section.1.1}% 7
+\BOOKMARK [2][-]{subsection.1.1.2}{Conception}{section.1.1}% 8
+\BOOKMARK [2][-]{subsection.1.1.3}{Pr\351-production}{section.1.1}% 9
+\BOOKMARK [2][-]{subsection.1.1.4}{Production}{section.1.1}% 10
+\BOOKMARK [2][-]{subsection.1.1.5}{World Simulation}{section.1.1}% 11
+\BOOKMARK [2][-]{subsection.1.1.6}{Operate}{section.1.1}% 12
+\BOOKMARK [1][-]{section.1.2}{Exploitation et exploration}{chapter.1}% 13
+\BOOKMARK [2][-]{subsection.1.2.1}{Exploitation}{section.1.2}% 14
+\BOOKMARK [2][-]{subsection.1.2.2}{Exploration}{section.1.2}% 15
+\BOOKMARK [2][-]{subsection.1.2.3}{L'\351quilibre entre exploitation et exploration}{section.1.2}% 16
+\BOOKMARK [1][-]{section.1.3}{Les moteurs de jeux}{chapter.1}% 17
+\BOOKMARK [1][-]{section.1.4}{Les types de Gameplay}{chapter.1}% 18
+\BOOKMARK [1][-]{section.1.5}{Objectifs de notre travail de recherche}{chapter.1}% 19
+\BOOKMARK [0][-]{chapter.2}{ Les documents de Game design \040}{}% 20
+\BOOKMARK [1][-]{section.2.1}{Le concept document}{chapter.2}% 21
+\BOOKMARK [2][-]{subsection.2.1.1}{ : Le <<one-page>> de Librande onepagelibrande}{section.2.1}% 22
+\BOOKMARK [2][-]{subsection.2.1.2}{Le <<one-sheet>> de Rogers LevelUpRogers2014}{section.2.1}% 23
+\BOOKMARK [1][-]{section.2.2}{\311tendre le One-page vers un r\351sum\351}{chapter.2}% 24
+\BOOKMARK [1][-]{section.2.3}{Le Game Design Document}{chapter.2}% 25
+\BOOKMARK [2][-]{subsection.2.3.1}{Le GDD, un moyen de communication}{section.2.3}% 26
+\BOOKMARK [2][-]{subsection.2.3.2}{Une structure souple mais un contenu pr\351cis}{section.2.3}% 27
+\BOOKMARK [2][-]{subsection.2.3.3}{Un GDD complet mais pas surcharg\351}{section.2.3}% 28
+\BOOKMARK [1][-]{section.2.4}{Conclusion}{chapter.2}% 29
+\BOOKMARK [0][-]{chapter.3}{ Le framework Mechanics, Dynamics, Aesthetics \040}{}% 30
+\BOOKMARK [1][-]{section.3.1}{Le jeu : un \351change entre Game Designer et Joueur}{chapter.3}% 31
+\BOOKMARK [1][-]{section.3.2}{Mechanics}{chapter.3}% 32
+\BOOKMARK [1][-]{section.3.3}{Dynamics}{chapter.3}% 33
+\BOOKMARK [1][-]{section.3.4}{Aesthetics}{chapter.3}% 34
+\BOOKMARK [1][-]{section.3.5}{Les limitations et \351volutions possibles}{chapter.3}% 35
+\BOOKMARK [2][-]{subsection.3.5.1}{DPE : Le Framework Design, Play, Experience}{section.3.5}% 36
+\BOOKMARK [2][-]{subsection.3.5.2}{DDE : Le framework Design, Dynamics, Experience DDE}{section.3.5}% 37
+\BOOKMARK [2][-]{subsection.3.5.3}{Le MDA est limit\351 \340 la repr\351sentation des jeux vid\351os}{section.3.5}% 38
+\BOOKMARK [1][-]{section.3.6}{Conclusion}{chapter.3}% 39
+\BOOKMARK [0][-]{chapter.4}{ Les profiles UML \040}{}% 40
+\BOOKMARK [0][-]{chapter.5}{ Un profile UML pour aider \340 la r\351daction d'un GDD \040}{}% 41
+\BOOKMARK [0][-]{chapter.6}{ Exemple d'application du langage \040}{}% 42
+\BOOKMARK [1][-]{section.6.1}{PlayerUnknown's Battlegrounds \(PUBG\)wikipubg}{chapter.6}% 43
+\BOOKMARK [2][-]{subsection.6.1.1}{L'origine du Battle Royale}{section.6.1}% 44
+\BOOKMARK [2][-]{subsection.6.1.2}{La naissance de la popularit\351 du Battle Royale}{section.6.1}% 45
+\BOOKMARK [2][-]{subsection.6.1.3}{Les r\350gles de PUBG}{section.6.1}% 46
+\BOOKMARK [2][-]{subsection.6.1.4}{Les Battle Royale dans le monde du jeu vid\351o}{section.6.1}% 47
+\BOOKMARK [1][-]{section.6.2}{Repr\351sentation d'une partie des m\351caniques de PUBG}{chapter.6}% 48
+\BOOKMARK [2][-]{subsection.6.2.1}{Les donn\351es}{section.6.2}% 49
+\BOOKMARK [2][-]{subsection.6.2.2}{Le profile}{section.6.2}% 50
+\BOOKMARK [2][-]{subsection.6.2.3}{La mod\351lisation}{section.6.2}% 51
+\BOOKMARK [2][-]{subsection.6.2.4}{Synth\350se sous forme de GDD}{section.6.2}% 52
+\BOOKMARK [1][-]{section.6.3}{Evolutions possibles}{chapter.6}% 53
+\BOOKMARK [2][-]{subsection.6.3.1}{Outil de manipulation visuelle du profile UML}{section.6.3}% 54
+\BOOKMARK [2][-]{subsection.6.3.2}{Transformation du mod\350le en GDD}{section.6.3}% 55
+\BOOKMARK [2][-]{subsection.6.3.3}{Acc\351l\351rateur de description des m\351caniques}{section.6.3}% 56
+\BOOKMARK [0][-]{chapter*.25}{CONCLUSION}{}% 57
+\BOOKMARK [0][-]{appendix.A}{ Diagrammes du profile UML cr\351\351 \040}{}% 58
