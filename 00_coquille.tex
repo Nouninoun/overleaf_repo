@@ -34,24 +34,27 @@
 \input{latex/macros}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
 %Création du glossary (liste des acronymes)
 \usepackage[toc,section=chapter,acronym,nomain]{glossaries}
 \makeglossaries
 
 % Marquage des chapitres dans la liste des figures
-\usepackage{etoolbox}
-\preto\figure{%
-  \ifnum\value{figure}=0\addtocontents{lof}{{\bfseries Chapter \thechapter\vskip10pt}}\fi
-}
+% \usepackage{etoolbox}
+% \preto\figure{%
+%   \ifnum\value{figure}=0\addtocontents{lof}{\par\bfseries Chapitre~\thechapter\vskip10pt}\fi
+% }
+%
+% GT: Pas necessaire, d'autant plus que le numeros de chapitre sont
+% indiques en chiffres arabes, alors qu'ils devraient l'etre en
+% chiffres romains majuscules. J'ai essaye de les mettre en romains,
+% mais sans succces :( 
 
 
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%
 % Pour la page titre
 %%%%%%%%%%%%%%%%%%%%
-\title{Game Genesis \hspace{20cm} Un profil UML pour la conception de jeux vidéos}
+\title{\emph{Game Genesis} \hspace{20cm} Un profil UML pour la conception de jeux vidéos}
 % Votre nom complet tel qu'il apparaît à votre dossier du registrariat de l'UQAM
 \author{Ellen Haas}
 % Année et mois courant sauf si spécifié autrement pas \degreemonth et \degreeyear
@@ -83,6 +86,7 @@
 \tableofcontents % Pour générer la table des matières
 \listoffigures % Pour générer la liste des figures
 \listoftables % Pour générer la liste des tableaux
+
 \include{01_lim/04_abreviations}
 \include{01_lim/05_abstract}
 % Utilisez l'environnement  abstract pour rédiger votre résumé
