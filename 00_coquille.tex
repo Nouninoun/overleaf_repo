@@ -1,4 +1,5 @@
-\documentclass[12pt,twoside]{memoireuqam1.3}
+%\documentclass[12pt,twoside]{memoireuqam1.3}
+\documentclass[12pt]{memoireuqam1.3}
 % Si vous souhaitez en recto-verso
 \usepackage{graphicx}% Pour les figures
 %\usepackage[square,numbers]{natbib}
@@ -30,6 +31,12 @@
 \usepackage{float} % Pour pouvoir utiliser d'autres placements de figures tels que H (HERE forcé h!)
 \usepackage{subcaption}
 \usepackage{comment}
+\usepackage{qtree}
+\usepackage{pdflscape}
+\usepackage{adjustbox}
+\usepackage[edges]{forest}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{latex/macros}
@@ -55,7 +62,7 @@
 %%%%%%%%%%%%%%%%%%%%
 % Pour la page titre
 %%%%%%%%%%%%%%%%%%%%
-\title{\emph{Game Genesis} \hspace{20cm} Un profil UML pour la conception de jeux vidéos}
+\title{\emph{Game Genesis} \hspace{20cm} Un profil UML pour la rédaction d'un \emph{Game Design Document}}
 % Votre nom complet tel qu'il apparaît à votre dossier du registrariat de l'UQAM
 \author{Ellen Haas}
 % Année et mois courant sauf si spécifié autrement pas \degreemonth et \degreeyear
@@ -82,7 +89,7 @@
 
 \pagenumbering{roman}  %% numérotation des pages liminaires en chiffres romains
 \addtocounter{page}{1} %% les remerciements commencent à la page ii
-%\include{01_lim/01_remerciements}
+\include{01_lim/01_remerciements}
 %\include{01_lim/02_dedicace}
 %\include{01_lim/03_avant-propos}
 
@@ -105,8 +112,8 @@
 \include{02_cor/08_GDD}
 \include{02_cor/09_MDA}
 \include{02_cor/10_UMLprofile}
-\include{02_cor/11_plan_recherche}
-\include{02_cor/12_resultats}
+\include{02_cor/11_GG}
+\include{02_cor/12_application}
 
 \include{02_cor/13_conclusion}
 % Utilisez l'environnement  conclusion pour rédiger votre conclusion
