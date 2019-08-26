@@ -38,22 +38,22 @@ Un avion parcourt une ligne droite au-dessus d'un territoire, et les 100 joueurs
 \section{Le \emph{Battle Royale} dans le monde du jeu vidéo}
 Ces dernières années, une grande quantité de jeux vid\'eos de type \emph{Battle Royale} ont vu le jour. De \emph{Fortnite} (\emph{Epic Games}) à PUBG, en passant par \emph{Apex Legends} (\emph{Respawn Entertainement}), \emph{Ring of Elysium} (\emph{Tencent Games}) pour ne citer que les plus importants. Des dizaines de jeux voient le jour ou se réinventent afin de coller à la mode du \emph{Battle Royale}. Les plus grandes licences de FPS (\emph{First-Person Shooter}) s'alignent également à cette tendance, et c'est ainsi que voient le jours les modes de jeu \emph{Z1BR} (\emph{H1Z1}), \emph{Firestorm} (\emph{Battlefield V}), \emph{Blackout} (\emph{Call of Duty Black Ops IV}). Mais cette offre répond à une demande phénoménale du public pour ce mode de jeu qui s'impose dans le marché à la même place que les jeux de type MOBA (\emph{Multiplayer Online Battle Arena}), qui étaient des grands favoris du public depuis une dizaine d'années, notamment avec les jeux \emph{League Of Legends} ou \emph{Dota 2}. Avec le temps, les jeux de \emph{Battle Royale} tentent de se réinventer et de trouver de nouveaux publics en gardant le principe du \emph{Battle Royale}, mais en explorant d'autres univers. C'est ainsi que naissent \emph{Last Tide} et son univers aquatique immergé, \emph{Fall Guys : Ultimate Knockout} et son univers coloré où de petits personnages à la physique étrange se battent pour une couronne, \emph{Cuisine Royale}, qui était à l'origine une blague de développeurs mais qui a rencontré un immense succès, dans lequel les personnages se battent à l'aide d'ustensiles de cuisine.
 
-\section{Une description (partielle) des \'el\'ements de \emph{Mechanics} de PUBG}
-\subsection{Les données}
-Les données concernant les objets de PUBG sont difficile à trouver.
+\section{Une description (partielle) des \'el\'ements de \emph{Mechanics} du jeu PUBG}
+\subsection{Les informations d\'ecrivant le jeu PUBG}
+Les informations concernant les objets de PUBG sont difficile à trouver.
 Cependant, certains site internet se sont spécialisés dans l'extraction (\emph{mining}) d'informations à partir des fichiers du jeu.
 C'est le cas du \emph{Gamepedia} spécialisé pour PUBG (\url{https://pubg.gamepedia.com/}),
 un Wiki régulièrement mis à jour et possédant assez d'informations pour permettre d'identifier les objets du jeu et leurs caractéristiques.
-Les données sont toutefois souvent sujettes à modifications au fur et à mesure des mises à jour du jeu.
-Cependant, l'exactitude des données n'a pas une importance cruciale dans le cadre du pr\'esent travail.
+Les informations disponibles sont toutefois souvent sujettes à modifications au fur et à mesure des mises à jour du jeu.
+Cependant, l'exactitude des informations n'a pas une importance cruciale dans le cadre du pr\'esent travail.
 
 
-\subsection{Le profil}
+\subsection{Le profil pour PUBG}
 
 \begin{figure}
     \centering
     \includegraphics[width=14cm]{10_img/chap6/root(stereotypes).PNG} 
-    \caption{Racine des stéréotypes concernés par l'exemple.}
+    \caption{La racine des stéréotypes concernés par l'exemple.}
     \label{fig.racine_stereo}
 \end{figure}
 
@@ -62,35 +62,71 @@ Afin de mieux comprendre le fonctionnement de \emph{Game Genesis}, nous avons ex
 Cette partie du profil inclut les stéréotypes qui sont utilisés dans les exemples présentés dans la suite du chapitre.
 De nombreux attributs ont été ajoutés dans les stéréotypes. 
 Ceux-ci correspondent aux attributs qui auraient pu être ajoutés par un \emph{game designer} dans le profil.
-Ajouter de tels attributs permet d'automatiser la présence des attributs dans les classes créées à partir du profil UML par l'héritage.
+Ajouter de tels attributs permet d'inclure automatiquement les attributs dans les classes créées à partir du profil UML par l'héritage.
 
-\subsection{La modélisation d'un joueur armé}
+\subsection{La modélisation d'une \AVERIFIER{classe de joueurs avec leurs armes}}
 
 \begin{figure}
     \centering
     \includegraphics[width=14cm]{10_img/chap6/player68.PNG} 
-    \caption{Exemple de modélisation d'un joueur avec son arme.}
+    \caption{La modélisation d'une classe de joueurs avec leurs armes.}
     \label{fig.player+weapon+equip}
 \end{figure}
+
+
+\GT{Dans la figure: tu ne peux pas avoir le nom de classe
+\texttt{Player} qui soit en plus st\'er\'eotyp\'e par
+<<\texttt{Player}>>.}
+
+\GT{De plus: Pourquoi Player68?  Comme indiqu\'e ailleurs, avec les
+st\'er\'eotypes, tu d\'efinis des classes, et non des instances. Or,
+quand on voit <<Name: Player68>>, cela donne vraiment l'impression que
+c'est une instance qui est d\'efinie, et non une classe.}
+
+\GT{Et aussi: si tu veux sp\'ecifiers classes st\'er\'eotyp\'es via
+des valeurs \'etiquet\'ees, alors ce n'est pas la bonne syntaxe.  Il
+faut plut\^ot utiliser la syntaxe 'attribut = valeur' --- le tout (il
+me semble) entre accolades.  Revoir les articles UML \`a ce sujet.}
+
+\GT{Ci-bas: il faut rendre plus clair, plus explicite, le fait que
+c'est une classe de joueurs qui est mod\'elis\'ee, et non un joeur
+sp\'ecifique. Parce qu'un st\'er\'eotype sert \`a d\'efinir/d\'ecrire
+des {\bf classes} et non des {\bf instances}. Les st\'er\'eotypes sont
+utilis\'es dans un mod\`ele de jeu, et non dans une instance
+sp\'ecifique du jeu en cours d'ex\'ecution.}
 
 La Figure~\ref{fig.player+weapon+equip} présente la modélisation d'un joueur.
 Celui-ci est équipé d'un casque \texttt{Tier3} et d'une veste \texttt{T3}. 
 Il est armé d'un fusil \emph{sniper} de type \texttt{Kar98k} lui même équipe d'une lunette \texttt{Scope6x} et d'une ceinture de munitions.
 
-Comme décrit \`a la Section~\ref{sect.gg_what}, nous avons utilisé des classes afin de représenter les éléments du jeu, alors que des associations entre classes représentent les interactions entre éléments.
-Sur ces classes et associations, nous avons appliqué les stéréotypes du profil UML afin de pouvoir classifier et spécialiser les différents éléments modélisés.
+\GT{Si possible, il serait pr\'ef\'erable que Equip soit attach\'e \`a
+un endroit diff\'erent de Wear.  C'est ok il me semble de mettre
+plusieurs fois des instances de la m\^eme association sur une m\^eme
+ligne, mais moins de mettre une association compl\`etement
+diff\'erente!}
+
+\GT{De plus, il me semble que dans les exemples vus \`a diff\'erents
+endroits, le nom d'une association st\'er\'eotyp\'ee doit aussi \^etre
+entre chevrons, <<Wear>>, <<Equip>>, etc.}
+
+Comme décrit \`a la Section~\ref{sect.gg_what}, nous avons utilisé des classes afin de représenter les éléments du jeu, alors que des associations entre classes représentent les interactions possibles entre éléments du jeu.
+Sur ces classes et associations, nous avons appliqué les stéréotypes du profil \emph{Game Genesis} afin de pouvoir classifier et spécialiser les différents éléments modélisés.
 
 
 
-\subsection{La modélisation d'une attaque d'un joueur sur un autre}
+\subsection{La modélisation d'une classe d'attaque d'un joueur sur un autre}
 \begin{figure}
     \centering
     \includegraphics[width=14cm]{10_img/chap6/attack.PNG} 
-    \caption{Exemple d'interaction <<~Player68 <<attack>> Player25~>>.}
+    \caption{Un exemple d'interaction \texttt{Player68} <<\texttt{attack}>> \texttt{Player25}.}
     \label{fig.attack}
 \end{figure}
 
-La Figure~\ref{fig.attack} présente une sp\'ecification d'un joueur qui en attaque un autre.
+\GT{Figure: je vais revoir cette figure ult\'erieurement! Mais tu
+r\'ef\`eres \`a \texttt{Player68} (ou 25) alors que, formellement, n'y
+a pas de classe qui porte ce nom.}
+
+La Figure~\ref{fig.attack} présente une sp\'ecification d'une interaction possible entre joueurs, \`a savoir un joueur qui en attaque un autre.
 L'élément \texttt{Player68} est celui modélisé \`a la section précédente.
 
 Le \emph{game designer} a modifié le stéréotype \texttt{attack} afin que celui-ci comprenne le calcul des dégâts d'un joueur sur un autre.
