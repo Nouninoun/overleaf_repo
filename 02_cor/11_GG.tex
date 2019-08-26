@@ -5,12 +5,12 @@
 Le \emph{Game Design Document}, comme décrit dans la Section~\ref{sect.GDD}, permet de réunir toutes les informations de design nécessaires au développement d'un jeu vidéo. La structure du GDD est définie en respectant des bonnes pratiques et selon les besoins de design du jeu concerné.
 
 
-\GT{Ci-bas: il faut \^etre plus sp\'ecifique pour l'aspect Mechanics
+\gt{Ci-bas: il faut \^etre plus sp\'ecifique pour l'aspect Mechanics
 car si tu dis <<{\bf tous} les \'el\'ements du jeu>>, alors pourquoi
 faudrait-il autre chose que cela!?}
 
 %MDA
-Le \emph{Framework Mechanics, Dynamics, Aesthetics}, comme décrit dans le Chapitre~\ref{chap.MDA}, permet de séparer les différents aspects du design d'un jeu vidéo. L'aspect \emph{Mechanics} permet de représenter tous les éléments du jeu, l'aspect \emph{Dynamics} décrit le comportement des \'el\'ements de \emph{Mechanics}, alors que l'aspect \emph{Aesthetics} d\'ecrit les émotions découlant de la \emph{Dynamics} que le jeu génère chez le joueur.
+Le \emph{Framework Mechanics, Dynamics, Aesthetics}, comme décrit dans le Chapitre~\ref{chap.MDA}, permet de séparer les différents aspects du design d'un jeu vidéo. L'aspect \emph{Mechanics} permet de représenter les éléments du jeu rattachés aux données et aux algorithmes, l'aspect \emph{Dynamics} décrit le comportement des \'el\'ements de \emph{Mechanics}, alors que l'aspect \emph{Aesthetics} d\'ecrit les émotions découlant de la \emph{Dynamics} que le jeu génère chez le joueur.
 
 %UML
 Les profils UML, décrits dans le Chapitre~\ref{chap.profils-UML}, permettent d'étendre les concepts présents dans UML. Mettre en place un profil UML permet de faciliter la cr\'eation d'un modèle et de son contenu pour un domaine particulier. Un profil se compose de stéréotypes, de valeurs étiquetées et de contraintes, qui ensemble permettent de d\'efinir de nouveaux concepts utilisables dans la description de modèles.
@@ -23,7 +23,7 @@ Les profils UML, décrits dans le Chapitre~\ref{chap.profils-UML}, permettent d'
 Plus précisément, \emph{Game Genesis} introduits de nouvelles classes UML --- par le biais de st\'er\'eotypes --- afin de l'adapter à la rédaction d'un GDD.
 
 
-\GT{Ci-bas et ailleurs. Je ne crois pas que tu devrais utiliser
+\gt{Ci-bas et ailleurs. Je ne crois pas que tu devrais utiliser
 directement le terme Mechanics comme dans <<un certain nombre de
 Mechanics>>.  Comme indiqu\'e pr\'ec\'edemment (vieille remarque GT),
 il me semble que Mechanics, en anglais, est plus compris au sens de
@@ -31,14 +31,14 @@ il me semble que Mechanics, en anglais, est plus compris au sens de
 etc.  C'est pour cela que, plus haut, j'ai chang\'e pour <<l'aspect
 Mechanics>>, que ci-bas j'ai indiqu\'e <<\'el\'ements de Mechanics>>.}
 
-\GT{Et je viens de regarder l'article initial sur MDA.  L\`a aussi,
+\gt{Et je viens de regarder l'article initial sur MDA.  L\`a aussi,
 les termes Mechanics, Dynamics et Aesthetics sont consid\'er\'es comme
 des substantifs au singulier: <<Mechanics describes the particular
 components of the game, ...>>, <<Dynamics describes the run-time
 behavior...>>, <<Aesthetics describes...>>.}
 
 
-\GT{Et le terme <<aspect>> me semble aussi appropri\'e --- bien que
+\gt{Et le terme <<aspect>> me semble aussi appropri\'e --- bien que
 celui de <<vue>> ou <<point de vue>> pourrait aussi l'\^etre: <<Each
 component of the MDA framework can be thought of as a 'lens' or a
 'view' of the game...>>.}
@@ -63,10 +63,10 @@ L'utilisation de diagrammes de classes UML apporte certain avantages pour la mod
 \begin{itemize}
     \item Structure
     \item Langage de modélisation formel et normalisé
-    \item Support de communication performant \GT{Pas trop certain de ce que cela veut dire, i.e., un peu vague: <<performant>>!}
+    \item Support de communication visuel \gt{Pas trop certain de ce que cela veut dire, i.e., un peu vague: <<performant>>!}
     \item Utilisation d'outils adaptés
     \item Facilement versionnable
-    \item Assez souple pour s'adapter \GT{s'adapter \`a quoi!?}
+    \item Assez souple pour s'adapter aux domaines ou aux plateformes de développement \gt{s'adapter \`a quoi!?}
 \end{itemize}
 
 Cependant, UML est un langage avant tout destiné à modéliser les systèmes informatiques et les processus d'affaire. 
@@ -79,14 +79,20 @@ C'est à cela que sert le profil \emph{Game Genesis}.
 
 \section{\emph{Game Genesis} en détail}
 
-\ACOMPLETER{Une phrase sur les deux (trois?) sous-sections qui viennent...}
+\emph{Game Genesis} est un profil UML permettant d'adapter un diagramme de classe pour la rédaction d'un GDD.
+Dans les sections ci-dessous nous allons définir les éléments suivants :
+\begin{itemize}
+    \item Les stéréotypes afin d'étendre les classes,
+    \item Les stéréotypes afin d'étendre les associations,
+    \item Les contraintes afin de définir des règles d'utilisation des stéréotypes.
+\end{itemize}
 
 \subsection{Stéréotypes}
 
-\GT{Dans la figure, comme ce sont des \'el\'ements de <<code>> ---
+\gt{Dans la figure, comme ce sont des \'el\'ements de <<code>> ---
 classes UML --- il vaut mieux utiliser la police teletype.}
 
-\GT{Ce serait pr\'ef\'erable que dans les deux parties de la figure,
+\gt{Ce serait pr\'ef\'erable que dans les deux parties de la figure,
 les r\'ef\'erences aux annexes soient pr\'esent\'ees de la m\^eme
 fa\c{c}on pouar Animate, Lore, World et Interaction. Sinon, cela donne
 l'impression que la s\'emantique pourrait \^etre diff\'erente ---
@@ -95,32 +101,32 @@ parce que c'est bien la m\^eme, n'est-ce pas?}
 \begin{figure}
     \begin{adjustbox}{width=\linewidth}
         \begin{forest}
-         [\texttt{Model}
+         [\texttt{Game Genesis}
          [\texttt{Item}
-             [\texttt{Wearable}
+             [\texttt{Wearable},tier=2
                  [\texttt{Weapon},tier=before
-                    [Fig.~\ref{A-Weapon}]
+                    [Fig.~\ref{A-Weapon},tier=bottom]
                  ]
                  [\texttt{Equipment},tier=before
-                    [Fig.~\ref{A-Equipment}]
+                    [Fig.~\ref{A-Equipment},tier=bottom]
                  ]
                  [\texttt{Jewerly},tier=before
-                    [Fig.~\ref{A-Jewerly}]
+                    [Fig.~\ref{A-Jewerly},tier=bottom]
                  ]
                  [\texttt{Tool},tier=before
-                    [Fig.~\ref{A-Tool}]
+                    [Fig.~\ref{A-Tool},tier=bottom]
                  ]
              ]
-             [\texttt{Add-on},tier=before
+             [\texttt{Add-on},tier=2
                     [Fig.~\ref{A-Add-on},tier=bottom]
              ]
-             [\texttt{Usable},tier=before
+             [\texttt{Usable},tier=2
                     [Fig.~\ref{A-Usable},tier=bottom]
              ]
-             [\texttt{Craft},tier=before
+             [\texttt{Craft},tier=2
                     [Fig.~\ref{A-Craft},tier=bottom]
             ]
-             [\texttt{Currency},tier=before
+             [\texttt{Currency},tier=2
                     [Fig.~\ref{A-Currency},tier=bottom]
             ]
          ]
@@ -134,16 +140,32 @@ parce que c'est bien la m\^eme, n'est-ce pas?}
 \begin{figure}
     \begin{adjustbox}{width=\linewidth}
         \begin{forest}
-         [\texttt{Model}
-         [\texttt{Animate} Fig.\ref{A-Animate},tier=bottom]
-         [\texttt{CharacterSheet},tier=before
-                [Fig.~\ref{A-Statistic},tier=bottom]
-                [Fig.~\ref{A-Attribute},tier=bottom]
-                [Fig.~\ref{A-Information},tier=bottom]
+         [\texttt{Game Genesis}
+         [\texttt{Animate} ,tier=2
+                [Fig.\ref{A-Animate},tier=bottom]
          ]
-         [\texttt{Lore} Fig.~\ref{A-Lore},tier=bottom]
-         [\texttt{World} Fig.~\ref{A-World},tier=bottom]
-         [\texttt{Interaction} Fig.~\ref{A-Interaction},tier=bottom]
+         [\texttt{CharacterSheet},tier=2
+                [\texttt{Statistic},tier=before
+                    [Fig.~\ref{A-Statistic},tier=bottom]
+                ]
+                [\texttt{Attribute},tier=before
+                    [Fig.~\ref{A-Attribute},tier=bottom]
+                ]
+                [\texttt{Information},tier=before
+                    [Fig.~\ref{A-Information},tier=bottom]
+                ]
+                [\texttt{Experience},tier=before]
+                [\texttt{Ability},tier=before]
+         ]
+         [\texttt{Lore} ,tier=2
+                [Fig.~\ref{A-Lore},tier=bottom]
+         ]
+         [\texttt{World} ,tier=2
+                [Fig.~\ref{A-World},tier=bottom]
+         ]
+         [\texttt{Interaction},tier=2
+                [Fig.~\ref{A-Interaction},tier=bottom]
+         ]
          ]
         \end{forest}
     \end{adjustbox}
@@ -152,65 +174,58 @@ parce que c'est bien la m\^eme, n'est-ce pas?}
 \end{figure}
 
 
-\GT{Ci-bas: dans le cas pr\'esent, ce n'est pas tant une
+\gt{Ci-bas: dans le cas pr\'esent, ce n'est pas tant une
 <<red\'efinition>> qu'une extension, qu'une cr\'eation de nouvelles
 classes, de nouveaux concepts! Donc, j'ai modifi\'e en cons\'equence.}
 
-Dans la Section~\ref{sect.uml.ster}, nous avons décrit le mécanisme de définition de nouveaux concepts par le biaisi des Stéréotypes. 
-Dans \emph{Game Genesis}, nous faisons donc usage des stéréotypes afin de définir de nouvelles classes d'un modèle de jeu et ainsi permettre la rédaction de GDD.
+Dans la Section~\ref{sect.uml.ster}, nous avons décrit le mécanisme de d'extension de metaclass afin d'introduire de nouveaux concepts par le biais des Stéréotypes. 
+Dans \emph{Game Genesis}, nous faisons donc usage des stéréotypes afin d'étendre les classes d'un modèle de jeu et ainsi permettre la rédaction de GDD.
 Dans un article de Salazar \emph{et al.}~\cite{GDD_software}, plus particulièrement dans la documentation additionnelle de cet article~\cite{salazar_gdd}, nous avons identifié un certain nombre d'\'el\'ements de \emph{Mechanics} typiquement présents dans un GDD.
 Nous avons constaté que tous les éléments étaient répartis dans des catégories possédant elles-mêmes certaines caractéristiques communes. 
 Nous avons extrait les catégories suivantes :
+
 \begin{itemize}
-    \item \texttt{PlayerCharacter}
-    \item \texttt{NonPlayerCharacter}
-    \item \texttt{Enemy}
-    \item \texttt{FinalEnemy}
-    \item \texttt{HelpObject}
-    \item \texttt{ExtraObject}
-    \item \texttt{OtherObject}
+    \item Player Character
+    \item Non Player Character
+    \item Enemy
+    \item Final Enemy
+    \item Help Object
+    \item Extra Object
+    \item Other Object
 \end{itemize}
 
 
-\GT{Ci-haut: Si ce sont des noms de classes, pr\'esents dans le
+\gt{Ci-haut: Si ce sont des noms de classes, pr\'esents dans le
 mod\`ele/profil UML, alors il faut utiliser la convention des noms de
 classe UML, i.e., un seul <<mot>> en CamelCase: PlayerCharacter,
 FinalEnemy, etc.}
+\EH{J'ai enlevé le txt teletype dans cet itemize car ce sont des éléments présents dans l'exemple de GDD Donkey Kong de l'article (sous forme textuel) et non pas des éléments du profil qui sont cités}
 
-Les classes UML fonctionnent avec un systéme d'héritage de classes.
+Les classes UML fonctionnent avec un système d'héritage de classes.
 La classe enfant hérite des attributs et méthodes de la classe parent.
 Dans un GDD, un \'el\'ement de \emph{Mechanics} hérite des attributs énoncés dans les catégories parentes.
+C'est ainsi que nous avons décidé d'utiliser un diagramme de classes afin de représenter les \emph{Mechanics} comme des classes et de spécifier leurs caractéristiques dans les attributs.
 %
-\GT{Je crois que les phrases qui suivent sont redondantes, n'apportent
+\gt{Je crois que les phrases qui suivent sont redondantes, n'apportent
 rien de plus. Sinon, il faut les reformuler, car je ne comprends pas
 bien ce qu'elles introduisent de nouveau.}
+\eh{Supprimées}
 %
-Une fois chaque \'el\'ement de \emph{Mechanics} de jeu définies les attributs des catégories étaient spécifiés dans les \emph{Mechanics}.
-Cela fonctionne de la même manière qu'un héritage de classe.
-
-
-\begin{figure}
-    \centering
-    \includegraphics[width=5cm]{10_img/chap5/heritage.PNG} 
-    \caption{Héritage implicite associ\'e à un objet \texttt{SR} (\emph{\texttt{S}niper \texttt{R}ifle}).}
-    \label{fig.herit}
-\end{figure}
-
-\GT{Idem pour ce qui suit!}
-%
-C'est ainsi que nous avons décidé d'utiliser un diagramme de classes afin de représenter les \emph{Mechanics} comme des classes et de spécifier leurs caractéristiques dans les attributs.
-Nous présentons un exemple d'héritage présent dans le profil \emph{Game Genesis} dans la Fig.~\ref{fig.herit}.
-
-La figure~\ref{fig.sniper} pr\'esente un exemple d'une classe \texttt{Sniper1}, un objet de \emph{Mechanics} du GDD d\'efini avec le profil \emph{Game Genesis}.
-Nous voyons que la classe hérite ainsi des attributs des Stéréotypes précédents dans la logique d'héritage de classes.
 \begin{figure}
     \centering
     \includegraphics[width=5cm]{10_img/chap5/sniper.PNG} 
-    \caption{Exemple d'une classe \texttt{Sniper1} utilisant le stéréotype \texttt{SR}.}
+    \caption{Héritage d'une classe \texttt{Sniper1} utilisant le stéréotype \texttt{SR}.}
     \label{fig.sniper}
 \end{figure}
 
-\GT{Ci-haut et dans la figure: non, ce n'est pas ainsi qu'il faut
+\gt{Idem pour ce qui suit!}
+%
+
+La figure~\ref{fig.sniper} pr\'esente un exemple d'une classe \texttt{Sniper1}, un élément de \emph{Mechanics} du GDD d\'efini avec le profil \emph{Game Genesis}.
+Nous voyons que la classe hérite ainsi des attributs des Stéréotypes précédents dans la logique d'héritage de classes.
+Dans son implémentation la classe <<~Sniper1~>> possèdera les attributes des stéréotypes <<~Item~>>, <<~Wearable~>>, <<~Weapon~>> et <<~SR~>>.
+
+\gt{Ci-haut et dans la figure: non, ce n'est pas ainsi qu'il faut
 pr\'esenter cela il me semble. Plusieurs remarques. 1) Ce serait bien
 de toujours distinguer, par les couleurs, la sp\'ecification du profil
 (bleu!) de son utilisation (vert!). Or, la sp\'ecification de Sniper1
@@ -224,7 +239,7 @@ nom mais o\`u tous les attributs sont maintenant pr\'esents ---
 justement \`a cause de l'h\'eritage {\bf implicite} associ\'e \`a ta
 hi\'erarchie de st\'er\'eotypes.}
 
-\GT{En d'autres mots, il me semble que tu dois insister plus sur le
+\gt{En d'autres mots, il me semble que tu dois insister plus sur le
 fait que la sp\'ecification d'un st\'er\'eotype introduit un nouveau
 {\bf concept} --- une nouvelle classe ---, lequel concept peut
 \'evidemment poss\'eder des attributs --- indiqu\'es directement (dans
@@ -237,7 +252,6 @@ indirects).}
 \GT{De plus, puisque tu as un exemple d'utilisation du st\'er\'eotype
 SR, tu devrais aussi donner un exemple de sp\'ecification/utilisation
 des valeurs \'etiquet\'ees pour sp\'ecifier des attributs.}
-
 
 
 
