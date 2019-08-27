@@ -98,10 +98,10 @@ fa\c{c}on pouar Animate, Lore, World et Interaction. Sinon, cela donne
 l'impression que la s\'emantique pourrait \^etre diff\'erente ---
 parce que c'est bien la m\^eme, n'est-ce pas?}
 
-\begin{figure}
+\begin{figure}[H]
     \begin{adjustbox}{width=\linewidth}
         \begin{forest}
-         [\texttt{Game Genesis}
+         [\texttt{GameGenesis}
          [\texttt{Item}
              [\texttt{Wearable},tier=2
                  [\texttt{Weapon},tier=before
@@ -137,10 +137,10 @@ parce que c'est bien la m\^eme, n'est-ce pas?}
     \label{fig.GG}
 \end{figure}
     
-\begin{figure}
+\begin{figure}[H]
     \begin{adjustbox}{width=\linewidth}
         \begin{forest}
-         [\texttt{Game Genesis}
+         [\texttt{GameGenesis}
          [\texttt{Animate} ,tier=2
                 [Fig.\ref{A-Animate},tier=bottom]
          ]
@@ -173,6 +173,12 @@ parce que c'est bien la m\^eme, n'est-ce pas?}
     \label{fig.GG2}
 \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{10_img/chap5/metaclass_class.PNG} 
+    \caption{Les stéréotypes appliqués à la  <<~metaclass~>> Classe}
+    \label{fig.meta_class}
+\end{figure}
 
 \gt{Ci-bas: dans le cas pr\'esent, ce n'est pas tant une
 <<red\'efinition>> qu'une extension, qu'une cr\'eation de nouvelles
@@ -256,6 +262,13 @@ des valeurs \'etiquet\'ees pour sp\'ecifier des attributs.}
 
 
 \subsection{Interactions}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=5cm]{10_img/chap5/metaclass_association.PNG} 
+    \caption{Les stéréotypes appliqués à la  <<~metaclass~>> Association}
+    \label{fig.meta_assoc}
+\end{figure}
 Les éléments de \emph{Mechanics} ne sont pas tous des éléments isolés et une expérience de jeu ne serait rien sans les interactions que le joueur peut avoir avec les divers \'el\'ements du jeu.
 Ces interactions sont présentées dans le gabarit de GDD de Salazar \emph{et al.}~\cite{salazar_gdd} sous forme de règles d'interaction.
 Ces règles sont composées de divers éléments, notamment les suivants :
@@ -266,22 +279,49 @@ Ces règles sont composées de divers éléments, notamment les suivants :
 \end{itemize}
 Les interactions que nous avons identifi\'ees comme int\'eressantes sont les suivantes --- voir aussi la Figure~\ref{A-Interaction}~:
 \begin{itemize}
+\item \texttt{Use}
+\item \texttt{Drop}
+\item \texttt{Grab}
+\item \texttt{Move}
+\item \texttt{Loot}
+\item \texttt{Destroy}
+\item \texttt{Trade}
+\item \texttt{Stack}
+\item \texttt{Drive}
 \item \texttt{Attack}
-\item \ACOMPLETER{Donner ici la liste des noms des diverses interactions que tu as identifi\'ees}
-\item 
+\item \texttt{Equip}
+\item \texttt{Wear}
+\item \texttt{Attach}
+
 \end{itemize}
 
 
-\GT{Il faut aussi que tu montres clairement, parce que c'est dans le
+\gt{Il faut aussi que tu montres clairement, parce que c'est dans le
 contexte d'un profil UML, qu'il s'agit d'extension de la Metaclass
 fAssociation d'UML --- comme \'evoqu\'e l'autre fois (quand on s'est
 rencontr\'es? je ne suis plus certain.}
 
-\GT{Idem pour les st\'er\'eotypes de classes de la section
+\gt{Idem pour les st\'er\'eotypes de classes de la section
 pr\'ec\'edente: on devrait voir ici -- et possiblement aussi dans
 l'annexe --- qu'il s'agit d'extension de la Metaclass Class!}
 
 \subsection{Contraintes}
+
+Dans un profile UML il est fréquent d'imposer des contraintes d'utilisation du profile afin de le rendre plus précis et d'éviter des problèmes de compréhension ou d'incohérence du modèle.
+Dans \emph{Game Genesis} il est compliqué d'établir un grand nombre de contraintes, le profil devant s'appliquer à de nombreux types de \emph{gameplays}.
+C'est en essayant de laisser assez de liberté aux \emph{game designers} que certaines contraintes ne peuvent pas être appliquées ou sont situationnelles.
+Voici une liste des contraintes envisageables dans un profil tel que \emph{Game Genesis} :
+\begin{itemize}
+    \item Une interaction entre \texttt{Player} et \texttt{Weapon} ne peut être que \texttt{Grab} ou \texttt{Equip}
+    \item Une interaction entre \texttt{Player} et \texttt{Equipment} ne peut être que \texttt{Grab} ou \texttt{Equip}
+    \item Une interaction sur un \texttt{AddOn} doit être entre trois parties telles que : \texttt{Player} \texttt{<<attach>>} \texttt{Addon} on \texttt{Weapon/Equipment}
+\end{itemize}
+
+Certaines contraintes peuvent être situationnelles comme celles ci dessous :
+\begin{itemize}
+    \item Si le jeu est PvP (\emph{Player versus Player}) alors \texttt{Player} \texttt{<<attack>>} \texttt{Player} est possible,
+    \item Si le jeu n'est pas PvP alors \texttt{Player} \texttt{<<attack>>} \texttt{Player} n'est pas possible.
+\end{itemize}
 
 \GT{Quelques contraintes? Ou pas? Ce serait bien d'en d\'ecrire un
 certain nombre, ne serait-ce que pour illustrer le principe que les
