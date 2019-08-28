@@ -19,8 +19,8 @@ Les profils UML, décrits dans le Chapitre~\ref{chap.profils-UML}, permettent d'
 \section{Un aper\c{c}u de \emph{Game Genesis}}
 \label{sect.gg_what}
 %quoi
-\emph{Game Genesis} est un profil UML que nous avons d\'evelopp\'e et qui permet d'adapter UML au domaine du design de jeu vidéos. 
-Plus précisément, \emph{Game Genesis} introduits de nouvelles classes UML --- par le biais de st\'er\'eotypes --- afin de l'adapter à la rédaction d'un GDD.
+\emph{Game Genesis} est un profil UML que nous avons d\'evelopp\'e et qui permet d'adapter UML au domaine du design de jeux vidéos. 
+Plus précisément, \emph{Game Genesis} introduit de nouvelles classes UML --- par le biais de st\'er\'eotypes --- afin de permettre la rédaction de GDD.
 
 
 \gt{Ci-bas et ailleurs. Je ne crois pas que tu devrais utiliser
@@ -80,11 +80,11 @@ C'est à cela que sert le profil \emph{Game Genesis}.
 \section{\emph{Game Genesis} en détail}
 
 \emph{Game Genesis} est un profil UML permettant d'adapter un diagramme de classe pour la rédaction d'un GDD.
-Dans les sections ci-dessous nous allons définir les éléments suivants :
+Dans les sections, ci-dessous nous allons définir les éléments suivants :
 \begin{itemize}
-    \item Les stéréotypes afin d'étendre les classes,
-    \item Les stéréotypes afin d'étendre les associations,
-    \item Les contraintes afin de définir des règles d'utilisation des stéréotypes.
+    \item Les stéréotypes qui permettent d'étendre les classes.
+    \item Les stéréotypes qui permettent d'étendre les associations.
+    \item Les contraintes qui d\'efinissent des règles d'utilisation des stéréotypes.
 \end{itemize}
 
 \subsection{Stéréotypes}
@@ -176,7 +176,7 @@ parce que c'est bien la m\^eme, n'est-ce pas?}
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{10_img/chap5/metaclass_class.PNG} 
-    \caption{Les stéréotypes appliqués à la  <<~metaclass~>> Classe}
+    \caption{Les stéréotypes appliqués à la m\'etaclasse \texttt{Class}.}
     \label{fig.meta_class}
 \end{figure}
 
@@ -184,20 +184,20 @@ parce que c'est bien la m\^eme, n'est-ce pas?}
 <<red\'efinition>> qu'une extension, qu'une cr\'eation de nouvelles
 classes, de nouveaux concepts! Donc, j'ai modifi\'e en cons\'equence.}
 
-Dans la Section~\ref{sect.uml.ster}, nous avons décrit le mécanisme de d'extension de metaclass afin d'introduire de nouveaux concepts par le biais des Stéréotypes. 
+Dans la Section~\ref{sect.uml.ster}, nous avons décrit le mécanisme de d'extension de m\'etaclasses afin d'introduire de nouveaux concepts par le biais des Stéréotypes. 
 Dans \emph{Game Genesis}, nous faisons donc usage des stéréotypes afin d'étendre les classes d'un modèle de jeu et ainsi permettre la rédaction de GDD.
 Dans un article de Salazar \emph{et al.}~\cite{GDD_software}, plus particulièrement dans la documentation additionnelle de cet article~\cite{salazar_gdd}, nous avons identifié un certain nombre d'\'el\'ements de \emph{Mechanics} typiquement présents dans un GDD.
 Nous avons constaté que tous les éléments étaient répartis dans des catégories possédant elles-mêmes certaines caractéristiques communes. 
 Nous avons extrait les catégories suivantes :
 
 \begin{itemize}
-    \item Player Character
-    \item Non Player Character
-    \item Enemy
-    \item Final Enemy
-    \item Help Object
-    \item Extra Object
-    \item Other Object
+    \item \emph{Player Character}
+    \item \emph{Non Player Character}
+    \item \emph{Enemy}
+    \item \emph{Final Enemy}
+    \item \emph{Help Object}
+    \item \emph{Extra Object}
+    \item \emph{Other Object}
 \end{itemize}
 
 
@@ -205,12 +205,15 @@ Nous avons extrait les catégories suivantes :
 mod\`ele/profil UML, alors il faut utiliser la convention des noms de
 classe UML, i.e., un seul <<mot>> en CamelCase: PlayerCharacter,
 FinalEnemy, etc.}
-\EH{J'ai enlevé le txt teletype dans cet itemize car ce sont des éléments présents dans l'exemple de GDD Donkey Kong de l'article (sous forme textuel) et non pas des éléments du profil qui sont cités}
+\eh{J'ai enlevé le txt teletype dans cet itemize car ce sont des éléments présents dans l'exemple de GDD Donkey Kong de l'article (sous forme textuel) et non pas des éléments du profil qui sont cités}
+
+\GT{Par contre, comme ce sont des termes en anglais, il vaut mieux les
+mettre en italiques.}
 
 Les classes UML fonctionnent avec un système d'héritage de classes.
 La classe enfant hérite des attributs et méthodes de la classe parent.
 Dans un GDD, un \'el\'ement de \emph{Mechanics} hérite des attributs énoncés dans les catégories parentes.
-C'est ainsi que nous avons décidé d'utiliser un diagramme de classes afin de représenter les \emph{Mechanics} comme des classes et de spécifier leurs caractéristiques dans les attributs.
+C'est ainsi que nous avons décidé d'utiliser un diagramme de classes afin de représenter les \'el\'ements de \emph{Mechanics} comme des classes et de spécifier leurs caractéristiques dans les attributs.
 %
 \gt{Je crois que les phrases qui suivent sont redondantes, n'apportent
 rien de plus. Sinon, il faut les reformuler, car je ne comprends pas
@@ -220,7 +223,8 @@ bien ce qu'elles introduisent de nouveau.}
 \begin{figure}
     \centering
     \includegraphics[width=5cm]{10_img/chap5/sniper.PNG} 
-    \caption{Héritage d'une classe \texttt{Sniper1} utilisant le stéréotype \texttt{SR}.}
+    \caption{Une classe \texttt{Sniper1} utilisant le stéréotype
+    \texttt{SR} et qui h\'erite des attributs associ\'es.}
     \label{fig.sniper}
 \end{figure}
 
@@ -229,7 +233,7 @@ bien ce qu'elles introduisent de nouveau.}
 
 La figure~\ref{fig.sniper} pr\'esente un exemple d'une classe \texttt{Sniper1}, un élément de \emph{Mechanics} du GDD d\'efini avec le profil \emph{Game Genesis}.
 Nous voyons que la classe hérite ainsi des attributs des Stéréotypes précédents dans la logique d'héritage de classes.
-Dans son implémentation la classe <<~Sniper1~>> possèdera les attributes des stéréotypes <<~Item~>>, <<~Wearable~>>, <<~Weapon~>> et <<~SR~>>.
+Dans son implémentation la classe \texttt{Sniper1} possèdera les attributs des stéréotypes \texttt{Item}, \texttt{Wearable}, \texttt{Weapon} et \texttt{SR}.
 
 \gt{Ci-haut et dans la figure: non, ce n'est pas ainsi qu'il faut
 pr\'esenter cela il me semble. Plusieurs remarques. 1) Ce serait bien
@@ -266,7 +270,7 @@ des valeurs \'etiquet\'ees pour sp\'ecifier des attributs.}
 \begin{figure}[H]
     \centering
     \includegraphics[width=5cm]{10_img/chap5/metaclass_association.PNG} 
-    \caption{Les stéréotypes appliqués à la  <<~metaclass~>> Association}
+    \caption{Les stéréotypes appliqués à la  m\'etaclasse \texttt{Association}.}
     \label{fig.meta_assoc}
 \end{figure}
 Les éléments de \emph{Mechanics} ne sont pas tous des éléments isolés et une expérience de jeu ne serait rien sans les interactions que le joueur peut avoir avec les divers \'el\'ements du jeu.
@@ -307,14 +311,15 @@ l'annexe --- qu'il s'agit d'extension de la Metaclass Class!}
 
 \subsection{Contraintes}
 
-Dans un profile UML il est fréquent d'imposer des contraintes d'utilisation du profile afin de le rendre plus précis et d'éviter des problèmes de compréhension ou d'incohérence du modèle.
-Dans \emph{Game Genesis} il est compliqué d'établir un grand nombre de contraintes, le profil devant s'appliquer à de nombreux types de \emph{gameplays}.
+Dans un profil UML, il est fréquent d'imposer des contraintes d'utilisation sur les \'el\'ements du profil afin de le rendre plus précis et d'éviter des problèmes de compréhension ou d'incohérence du modèle.
+Dans \emph{Game Genesis}, il est difficile d'établir un grand nombre de contraintes, le profil devant s'appliquer à de nombreux types de \emph{gameplay}.
 C'est en essayant de laisser assez de liberté aux \emph{game designers} que certaines contraintes ne peuvent pas être appliquées ou sont situationnelles.
-Voici une liste des contraintes envisageables dans un profil tel que \emph{Game Genesis} :
+
+Voici quand m\^eme une br\`eve liste de contraintes envisageables dans un profil tel que \emph{Game Genesis} :
 \begin{itemize}
     \item Une interaction entre \texttt{Player} et \texttt{Weapon} ne peut être que \texttt{Grab} ou \texttt{Equip}
     \item Une interaction entre \texttt{Player} et \texttt{Equipment} ne peut être que \texttt{Grab} ou \texttt{Equip}
-    \item Une interaction sur un \texttt{AddOn} doit être entre trois parties telles que : \texttt{Player} \texttt{<<attach>>} \texttt{Addon} on \texttt{Weapon/Equipment}
+    \item Une interaction sur un \texttt{AddOn} doit être entre trois parties telles que \texttt{Player} \texttt{<<attach>>} \texttt{Addon} on \texttt{Weapon/Equipment}
 \end{itemize}
 
 Certaines contraintes peuvent être situationnelles comme celles ci dessous :
@@ -322,10 +327,6 @@ Certaines contraintes peuvent être situationnelles comme celles ci dessous :
     \item Si le jeu est PvP (\emph{Player versus Player}) alors \texttt{Player} \texttt{<<attack>>} \texttt{Player} est possible,
     \item Si le jeu n'est pas PvP alors \texttt{Player} \texttt{<<attack>>} \texttt{Player} n'est pas possible.
 \end{itemize}
-
-\GT{Quelques contraintes? Ou pas? Ce serait bien d'en d\'ecrire un
-certain nombre, ne serait-ce que pour illustrer le principe que les
-interactions ne sont pas entre n'importe quels items.}
 
 
 \section{Conclusion}
