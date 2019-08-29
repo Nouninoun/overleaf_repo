@@ -1,5 +1,7 @@
 \chapter{Un exemple d'application du profil \emph{Game Genesis}~: Le jeu PUBG}
 
+\EH{Tout le chapitre est à revoir avec les nouveaux modèles etc.}
+
 PUBG est un jeu vidéo, sorti en 2017, qui compte d\'ej\`a des millions d'adeptes à travers le globe. Développé par \emph{PUBG Corporation} (filiale de B\emph{luehole, Inc.}, plus récemment de \emph{Krafton Game Union}), PUBG est un des premiers jeux \emph{standalone}%
 \footnote{Standalone : Logiciel informatique qui peut s'exécuter de manière indépendante}
 %
@@ -52,17 +54,24 @@ Cependant, l'exactitude des informations n'a pas une importance cruciale dans le
 
 \begin{figure}
     \centering
-    \includegraphics[width=14cm]{10_img/chap6/profile_base.PNG}
-    \caption{Les stéréotypes de \emph{Game Genesis} utilisés dans l'exemple}
+    \includegraphics[width=6cm]{10_img/chap6/profile_gg_apply_pubg.PNG}
+    \caption{Modélisation de l'application du profil à PUBG}
     \label{fig.racine_stereo}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=14cm]{10_img/chap6/profile_evo.PNG}
-    \caption{Les stéréotypes modifiés pour l'utilisation pour PUBG.}
+    \includegraphics[width=14cm]{10_img/chap6/final_profile.PNG}
+    \caption{Les stéréotypes de \emph{Game Genesis} utilisés dans l'exemple}
     \label{fig.racine_stereo}
 \end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=14cm]{10_img/chap6/profile_evo.PNG}
+%    \caption{Les stéréotypes modifiés pour l'utilisation pour PUBG.}
+%    \label{fig.racine_stereo}
+%\end{figure}
 
 Les stéréotypes présents dans \emph{Game Genesis} permettent de classifier les \'el\'ements de \emph{Mechanics} pour la rédaction d'un GDD.
 Afin de mieux comprendre le fonctionnement de \emph{Game Genesis}, nous avons extrait une partie du profil et la pr\'esentons dans la Figure~\ref{fig.racine_stereo}.
@@ -70,6 +79,79 @@ Cette partie du profil inclut les stéréotypes qui sont utilisés dans les exem
 De nombreux attributs ont été ajoutés dans les stéréotypes.
 Ceux-ci correspondent aux attributs qui auraient pu être ajoutés par un \emph{game designer} dans le profil.
 Ajouter de tels attributs permet d'inclure automatiquement les attributs dans les classes créées à partir du profil UML par l'héritage.
+
+
+\subsection{La modélisation d'une partie de PUBG}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{10_img/chap6/final_model.PNG}
+    \caption{Modèle de l'initialisation d'une partie de PUBG.}
+    \label{fig.attack}
+\end{figure}
+
+\gt{Figure: je vais revoir cette figure ult\'erieurement! Mais tu
+r\'ef\`eres \`a \texttt{Player68} (ou 25) alors que, formellement, n'y
+a pas de classe qui porte ce nom.}
+
+La Figure~\ref{fig.attack} présente l'état d'une partie de PUBG à son initialisation ainsi que les interactions possibles entre les éléments de \emph{mechanics} présentés.
+
+Cependant décrire l'intégralité du système serait extrêmement long et ne serait pas un apport important pour ce mémoire. Nous allons donc nous concentrer sur certaines parties choisies qui seront décrites plus en détails.
+
+\subsubsection{Un joueur en attaque un autre}
+
+Le \emph{game designer} a modifié le stéréotype \texttt{attack} afin que celui-ci comprenne le calcul des dégâts d'un joueur sur un autre.
+Afin de calculer ces dégâts, nous avons besoin d'un certain nombre d'informations.
+Dans un FPS, il est possible d'avoir plusieurs types de dégâts en fonction de l'emplacement de l'attaque.
+C'est le cas dans PUBG qui différencie les dégâts en trois types : tête, torse, autres.
+Ensuite le calcul des dommages s'effectue en prenant en compte les protections portées par le joueur adverse.
+Afin d'exprimer le calcul des dégâts nous avons mis en place la formule suivante :
+
+\begin{equation*}
+\begin{split}
+Damages& = Attacker(Weapon(Damages(Type(Value)))\\
+Protection& = Defender(Protection(DamageReduction))\\
+Calcul& = Defender(health) - (Damages - Protection)
+\end{split}
+%\label{calc.damages}
+\end{equation*}
+
+\GT{Ci-haut pour l'\'equation: si par la suite tu ne r\'ef\`eres pas
+explicitement \`a cette \'equation, alors pas besoin de lui donner un
+num\'ero et un label.}
+
+
+\GT{Ci-haut et ci-bas: pas besoin de mettre en guillemets si tu
+utilises la police appropri\'ee~: \texttt{Attack}.}
+
+Nous retrouvons cette formule de calcul dans la Figure~\ref{fig.attack}.
+Elle est présente dans l'association entre les deux joueurs sur laquelle un stéréotype \texttt{Attack} est appliqué.
+On considère alors que le \emph{game designer} a modifié le stéréotype de \emph{Game Genesis} afin que toutes les actions d'attaque soient régies par cette formule.
+
+Dans cette figure, il est spécifié que le joueur \texttt{Player68} effectue un tir à la tête sur le joueur \texttt{Player25}.
+Le calcul des dommages renvoie un résultat de 118.5 points de dégats.
+Le joueur \texttt{Player25} ne possède cependant que 100 points de vie (\texttt{Health}).
+On peut donc considérer qu'à la suite de cette action d'attaque, le joueur \texttt{Player25} est éliminé,
+ce qui peut être exprimé par les contraintes suivantes~:
+
+{
+\footnotesize
+\begin{framed}
+    Player(health) : is max 100.\\
+    (IF Player(health) < 0)\\
+    \{\\
+    IF Gamemode is "solo" ==> Player is dead and eliminated.\\
+    IF Gamemode is "duo" OR "squad" ==> Player is knocked.\\
+    \}
+\end{framed}
+}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
 
 \subsection{La modélisation d'une \AVERIFIER{classe de joueurs avec leurs armes}}
 
@@ -121,67 +203,15 @@ entre chevrons, <<Wear>>, <<Equip>>, etc.}
 Comme décrit \`a la Section~\ref{sect.gg_what}, nous avons utilisé des classes afin de représenter les éléments du jeu, alors que des associations entre classes représentent les interactions possibles entre éléments du jeu.
 Sur ces classes et associations, nous avons appliqué les stéréotypes du profil \emph{Game Genesis} afin de pouvoir classifier et spécialiser les différents éléments modélisés.
 
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\subsection{La modélisation d'une instance d'attaque d'un joueur sur un autre}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=8cm]{10_img/chap6/playervsplayer.PNG}
-    \caption{Un exemple d'interaction \texttt{Player} <<\texttt{attack}>> \texttt{Player}.}
-    \label{fig.attack}
-\end{figure}
-
-\GT{Figure: je vais revoir cette figure ult\'erieurement! Mais tu
-r\'ef\`eres \`a \texttt{Player68} (ou 25) alors que, formellement, n'y
-a pas de classe qui porte ce nom.}
-
-La Figure~\ref{fig.attack} présente une sp\'ecification d'une interaction possible entre joueurs, \`a savoir un joueur qui en attaque un autre.
-L'élément \texttt{Player68} est celui modélisé \`a la section précédente.
-
-Le \emph{game designer} a modifié le stéréotype \texttt{attack} afin que celui-ci comprenne le calcul des dégâts d'un joueur sur un autre.
-Afin de calculer ces dégâts, nous avons besoin d'un certain nombre d'informations.
-Dans un FPS, il est possible d'avoir plusieurs types de dégâts en fonction de l'emplacement de l'attaque.
-C'est le cas dans PUBG qui différencie les dégâts en trois types : tête, torse, autres.
-Ensuite le calcul des dommages s'effectue en prenant en compte les protections portées par le joueur adverse.
-Afin d'exprimer le calcul des dégâts nous avons mis en place la formule suivante :
-
-\begin{equation*}
-\begin{split}
-Damages& = Attacker(Weapon(Damages(Type(Value)))\\
-Protection& = Defender(Protection(DamageReduction))\\
-Calcul& = Defender(health) - (Damages - Protection)
-\end{split}
-%\label{calc.damages}
-\end{equation*}
-
-\GT{Ci-haut pour l'\'equation: si par la suite tu ne r\'ef\`eres pas
-explicitement \`a cette \'equation, alors pas besoin de lui donner un
-num\'ero et un label.}
 
 
-\GT{Ci-haut et ci-bas: pas besoin de mettre en guillemets si tu
-utilises la police appropri\'ee~: \texttt{Attack}.}
 
-Nous retrouvons cette formule de calcul dans la Figure~\ref{fig.attack}.
-Elle est présente dans l'association entre les deux joueurs sur laquelle un stéréotype \texttt{Attack} est appliqué.
-On considère alors que le \emph{game designer} a modifié le stéréotype de \emph{Game Genesis} afin que toutes les actions d'attaque soient régies par cette formule.
 
-Dans cette figure, il est spécifié que le joueur \texttt{Player68} effectue un tir à la tête sur le joueur \texttt{Player25}.
-Le calcul des dommages renvoie un résultat de 118.5 points de dégats.
-Le joueur \texttt{Player25} ne possède cependant que 100 points de vie (\texttt{Health}).
-On peut donc considérer qu'à la suite de cette action d'attaque, le joueur \texttt{Player25} est éliminé,
-ce qui peut être exprimé par les contraintes suivantes~:
 
-{
-\footnotesize
-\begin{framed}
-    Player(health) : is max 100.\\
-    (IF Player(health) < 0)\\
-    \{\\
-    IF Gamemode is "solo" ==> Player is dead and eliminated.\\
-    IF Gamemode is "duo" OR "squad" ==> Player is knocked.\\
-    \}
-\end{framed}
-}
+
 
 \section{Conclusion}
