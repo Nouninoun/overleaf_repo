@@ -8,7 +8,7 @@ Ces diagrammes permettent de visualiser, spécifier, construire et documenter de
 UML utilise des diverses notations,  surtout graphiques, pour exprimer le design et l'architecture de projets logiciels.
 Les spécifications du standard UML sont en ligne sur le site de l'OMG (\emph{Object Management Group})~\cite{OMG_UML}.
 
-\GT{Comme indiqu\'e pr\'ec\'emment, sauf certaines exceptions, on
+\gt{Comme indiqu\'e pr\'ec\'emment, sauf certaines exceptions, on
 n'utilise pas trop le positionnement [H], i.e., on laisse flotter, on
 laisse \LaTeX\ d\'ecider o\`u mettre la figure. Par contre, on met les
 figures ou tableaux *avant* la r\'ef\'erence.}
@@ -28,7 +28,7 @@ figures ou tableaux *avant* la r\'ef\'erence.}
 \end{figure}
 
 
-\GT{Il vaut mieux utiliser une forme <<active>> --- <<La figure
+\gt{Il vaut mieux utiliser une forme <<active>> --- <<La figure
 pr\'esente>> --- qu'une forme passive --- <<Dans la figure sont
 pr\'esent\'es\ldots>>.}
 
@@ -42,14 +42,14 @@ nous nous concentrerons dans le pr\'esent chapitre plus particulièrement à dé
 
 \section{La notion de profil en UML}
 
-\GT{UML pr\'esente diverses notions, qui peuvent \^etre
+\gt{UML pr\'esente diverses notions, qui peuvent \^etre
 repr\'esent\'ees de fa\c{c}on graphique ou textuelle.  Donc, en soit,
 aucun item UML n'est un diagramme.  Le diagramme est une des
 repr\'esentations possibles d'une notion.}
 
 
 Un profil UML est une forme de m\'ecanisme d'extension, qui
-permet d'étendre les mécanismes d'UML afin d'adapter les mod\`eles (diagrammes) et leur contenu à un domaine particulier (par ex.,  domaines d'activité spécifique) ou \`a une plateforme particulière (par ex.,  .NET, J2EE).
+permet d'étendre les mécanismes d'UML afin d'adapter les mod\`eles et leur contenu à un domaine particulier (par ex.,  domaines d'activité spécifique) ou \`a une plateforme particulière (par ex.,  .NET, J2EE).
 
 Les extensions qu'un profil d\'efinit permettent d'ajouter des caractéristiques aux éléments standards d'UML.
 Elles ne permettent pas de retirer des caractéristiques des éléments, et ce pour ne pas aller à l'encontre de la sémantique standard d'UML.
@@ -90,14 +90,14 @@ Un stéréotype s'applique à un mod\`ele UML, permettant ainsi de le rendre sp�
 \end{figure}
 
 
-\GT{Dans la figure \ref{fig.uml_but_definition}, tu dois \^etre plus explicite
+\gt{Dans la figure \ref{fig.uml_but_definition}, tu dois \^etre plus explicite
 quant au fait que cela \'etend une classe.
 %
 Donc, ta boite/classe Bouton doit \^etre une sous-classe d'une boite contenant "<<metaclass>> Class".
 %
 Voir d\'ebut de la page \url{https://www.uml-diagrams.org/stereotype.html}.}
 
-\GT{Tu devrais utiliser ce stereotype pour d\'efinir au moins un des
+\gt{Tu devrais utiliser ce stereotype pour d\'efinir au moins un des
 boutons, par ex.: "<<bouton>> Marche". Cf. partie <<Stereotype
 Application>> de
 \url{https://www.uml-diagrams.org/stereotype.html}. Pr\'ef\'erablement
@@ -111,7 +111,7 @@ Dans notre exemple, nous avons plusieurs éléments : un tableau de bord, des bo
 Un stéréotype, comme celui présent dans la figure~\ref{fig.uml_but_definition}, pourrait être d\'efini afin de sp\'ecifier les caractéristiques communes des boutons.
 %
 Une fois d\'efini, ce st\'er\'eotype pourra alors \^etre utilis\'e pour
-d\'efinir diff\'erentes instances de \texttt{Bouton} --- voir ci-bas (figure~\ref{fig.uml_but_utilisation}).
+d\'efinir diff\'erentes instances de \texttt{Bouton} --- voir ci-bas (Figure~\ref{fig.uml_marche}).
 
 
 %\newpage
@@ -120,24 +120,25 @@ d\'efinir diff\'erentes instances de \texttt{Bouton} --- voir ci-bas (figure~\re
 
 Les valeurs \'etiquet\'ees (\emph{tagged values}) permettent d'ajouter \`a un \'el\'ement des propriétés qui lui sont spécifiques.
 Plus pr\'ecis\'ement, ce m\'ecanisme permet d'ajouter de l'information spécifique aux éléments \`a l'aide de paires clé/valeur.
-Ces éléments se retrouvent appliqués au modèle entre crochets.
+Les attributs présents dans un stereotype seront affichés visuellement dans une classe faisant usage du stéréotype.
+Ces couples clé-valeur se trouveront entre crochet sous le nom de la classe comme dans la Figure~\ref{fig.uml_marche}.
 
-\GT{Je ne comprends pas la derni\`ere phrase!?}
+\gt{Je ne comprends pas la derni\`ere phrase!?}
 
 \subsection{Exemple d'application}
 
 \begin{figure}
     \begin{center}
-    \includegraphics[width=5cm]{10_img/chap4/machine.PNG}
-    \caption{Une valeur \'etiquet\'ee permettant de spécifier le modèle de la machine.}
-    \label{fig.uml_mac}
+    \includegraphics[width=5cm]{10_img/chap4/start.PNG}
+    \caption{Des valeurs \'etiquet\'ees permettant de spécifier le bouton \texttt{Marche}}
+    \label{fig.uml_marche}
     \end{center}
 \end{figure}
 
 Dans notre exemple, nous pouvons supposer que la machine est un modèle spécifique et donc que le diagramme ne s'applique qu'à ce modèle précis (par ex., Modèle 1.2.3).
-Nous trouverons donc dans notre diagramme UML la notation de la figure~\ref{fig.uml_mac}.
+Nous trouverons donc dans notre diagramme UML la notation de la figure~\ref{fig.uml_marche}.
 
-\GT{Je crois, comme indiqu\'e plus haut, qu'une utilisation de Bouton serait pr\'ef\'erable.}
+\gt{Je crois, comme indiqu\'e plus haut, qu'une utilisation de Bouton serait pr\'ef\'erable.}
 
 %\newpage
 
@@ -187,9 +188,8 @@ Nous pouvons, par exemple, décider d'attribuer une ic\^one spécifique aux bout
 \section{L'utilisation d'un profil UML pour la conception de jeux vidéos}
 
 
-UML est un langage de modélisation permettant de représenter divers types de systèmes et permettant de les documenter de manière rigoureuse.
+UML est un langage de modélisation permettant de représenter divers types de systèmes et permettant de les documenter de manière rigoureuse en apportant les caractéristiques suivantes :
 
-Permettre un \emph{mind mapping} à l'aide d'un outil tel qu'UML retirerait tous les désavantages d'un \emph{mind mapping} classique car :
 \begin{itemize}
     \item UML est un langage formel et normalisé;
     \item UML est manipulable avec de nombreux outils déjà approuvés;
@@ -197,7 +197,7 @@ Permettre un \emph{mind mapping} à l'aide d'un outil tel qu'UML retirerait tous
     \item UML est un langage qui permet le \emph{versionning} et la conservation de l'information de manière efficace.
 \end{itemize}
 
-\GT{Ci-haut: Pas certain que j'aime la comparaison avec les mind maps.
+\gt{Ci-haut: Pas certain que j'aime la comparaison avec les mind maps.
 Dans mon esprit, un mind map a un r\^ole tout \`a fait diff\'erent ---
 plus exploratoire, parce que plus libre, avec moins de
 contraintes. Donc, je crois que tes items pourraient rester, mais sans
@@ -215,7 +215,7 @@ La mise en place d'un profil UML aurait plusieurs avantages :
 \begin{itemize}
     \item Les outils supportant UML sont nombreux et efficaces. Ils sont déjà présents sur le marché et répondent aux besoins de la modélisation UML.
 
-    \item La port\'ee des objets utilisables en UML est adaptable dans un profil, ce qui permet de réduire la quantité de connaissances à acquérir pour se servir d'UML dans le cadre de la rédaction d'un GDD.
+    \item En utilisant un profil il est possible de simplifier la compréhension des différents objets UML à utiliser pour exprimer un concept, ce qui permet de réduire la quantité de connaissances à acquérir pour se servir d'UML dans le cadre de la rédaction d'un GDD.
 
     \item Les stéréotypes permettent d'intégrer des notions spécifiques au \emph{game design}.
 
@@ -227,7 +227,7 @@ La mise en place d'un profil UML aurait plusieurs avantages :
 \end{itemize}
 
 
-\GT{Ci-haut: 2e item: je ne comprends l'histoire de <<port\'ee>> des objets!?}
+\gt{Ci-haut: 2e item: je ne comprends l'histoire de <<port\'ee>> des objets!?}
 
-Grâce aux ajustement et extensions permis par les profils, UML semble être un langage int\'eressant pour permettre la représentation graphique d'un GDD.
-C'est pourquoi dans le chapitre~\ref{game-genesis.sect} nous proposons un profil UML permettant la description des éléments d'un GDD.
+Grâce aux ajustements et extensions permis par les profils, UML semble être un langage int\'eressant pour permettre la représentation graphique d'un GDD.
+C'est pourquoi dans le Chapitre~\ref{game-genesis.sect} nous proposons un profil UML permettant la description des éléments d'un GDD.
