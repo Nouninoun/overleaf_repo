@@ -54,7 +54,7 @@ Cependant, l'exactitude des informations n'a pas une importance cruciale dans le
 
 \begin{figure}
     \centering
-    \includegraphics[width=6cm]{10_img/chap6/profile_gg_apply_pubg.PNG}
+    \includegraphics[width=5cm]{10_img/chap6/profile_gg_apply_pubg.PNG}
     \caption{Modélisation de l'application du profil à PUBG}
     \label{fig.racine_stereo}
 \end{figure}
@@ -86,54 +86,131 @@ Ajouter de tels attributs permet d'inclure automatiquement les attributs dans le
     \centering
     \includegraphics[width=\linewidth]{10_img/chap6/final_model.PNG}
     \caption{Modèle de l'initialisation d'une partie de PUBG.}
-    \label{fig.attack}
+    \label{fig.PUBG_model}
 \end{figure}
 
 \gt{Figure: je vais revoir cette figure ult\'erieurement! Mais tu
 r\'ef\`eres \`a \texttt{Player68} (ou 25) alors que, formellement, n'y
 a pas de classe qui porte ce nom.}
 
-La Figure~\ref{fig.attack} présente l'état d'une partie de PUBG à son initialisation ainsi que les interactions possibles entre les éléments de \emph{mechanics} présentés.
+La Figure~\ref{fig.PUBG_model} présente l'état d'une partie de PUBG à son initialisation ainsi que les interactions possibles entre les éléments de~\emph{mechanics} présentés.
 
 Cependant décrire l'intégralité du système serait extrêmement long et ne serait pas un apport important pour ce mémoire. Nous allons donc nous concentrer sur certaines parties choisies qui seront décrites plus en détails.
 
-\subsubsection{Un joueur en attaque un autre}
+\subsubsection{Représentation des \texttt{item}}
 
-Le \emph{game designer} a modifié le stéréotype \texttt{attack} afin que celui-ci comprenne le calcul des dégâts d'un joueur sur un autre.
-Afin de calculer ces dégâts, nous avons besoin d'un certain nombre d'informations.
-Dans un FPS, il est possible d'avoir plusieurs types de dégâts en fonction de l'emplacement de l'attaque.
-C'est le cas dans PUBG qui différencie les dégâts en trois types : tête, torse, autres.
+Dans la Figure~\ref{fig.PUBG_model} on voit la présence de cinq classes abstraites : \texttt{Equipment}, \texttt{Weapon}, \texttt{Attachment}, \texttt{Ammunition}, \texttt{Heal}.
+
+Ces éléments sont représentés par des classes abstraites afin de représenter des catégories de classes. Le nombre de classes présentes dans ces catégories est très important et le détail de ces éléments n'est pas essentiel à la compréhension du modèle.
+
+Afin de mieux comprendre le contenu de ces catégories nous allons donner un exemple rapide qui servira à la Section~\ref{sect.attack}.
+
+PUBG est un \emph{Battle Royal} comprenant énormément d'armes différentes. \emph{Game Genesis} classifie ces armes dans la partie \texttt{Weapon}\ref{A-Weapon}. Dans PUBG nous retrouvons des armes catégorisées comme \texttt{SniperRifle}. C'est le cas du \texttt{Kar98k}, du \texttt{M24} et de l'\texttt{AWM}.
+
+Afin de comprendre comment fonctionnent les classes abstraites décrites dans la Figure~\ref{fig.PUBG_model} nous allons représenter le modèle qui amènerait de la classe abstraite (Figure~\ref{fig.abstract_weapon}) vers les trois armes citées précédemment dans la Figure~\ref{fig.example_sniper}.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=6cm]{10_img/chap6/weap.PNG}
+    \caption{La classe abstraite \texttt{Weapon}}
+    \label{fig.abstract_weapon}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=10cm]{10_img/chap6/snipers.PNG}
+    \caption{De la classe abstraite \texttt{Weapon} vers les classes de \texttt{SniperRifle} spécifiques}
+    \label{fig.example_sniper}
+\end{figure}
+
+
+Pour représenter toutes les armes de PUBG il faudrait reproduire la Figure~\ref{fig.PUBG_kar98} pour l'intégralit des 52 armes présentes dans PUBG.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6cm]{10_img/chap6/kar98k.PNG}
+    \caption{Représentation finale simulée d'un \texttt{Kar98k} avec ses attributs}
+    \label{fig.PUBG_kar98}
+\end{figure}
+
+
+
+
+\subsubsection{Un joueur en attaque un autre}
+\label{sect.attack}
+Dans une partie de PUBG le but ultime pour un joueur est d'éliminer les autres joueurs et de sortir vainqueur en tant que dernier survivant. La notion d'attaque entre joueurs est donc essentielle dans la description des éléments de \emph{mechanics} de PUBG et elle est représentée par une association récursive sur \texttt{Soldier} avec l'interaction \texttt{Attack} (présentée dans la Figure~\ref{fig.PUBG_attack_min}. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=6cm]{10_img/chap6/attack_min.PNG}
+    \caption{Un \texttt{Soldier} en attaque un autre.}
+    \label{fig.PUBG_attack_min}
+\end{figure}
+
+Afin de définir plus précisément l'interaction d'\texttt{Attack} le \emph{game designer} peut décider d'y intégrer des attributs et des méthodes afin de mieux représenter et mieux document la notion d'attaque entre deux joueurs. Par définition une attaque sur PUBG consiste en : un joueur tire sur un autre joueur pour lui faire subir des dégâts.
+
+Afin de calculer ces dégâts, nous avons besoin d'un certain nombre d'informations comme la quantité de dégâts ou les protections possible contre les dégâts.
+Dans un FPS, il également est possible d'avoir plusieurs types de dégâts en fonction de l'emplacement de l'attaque.
+C'est le cas dans PUBG qui différencie les dégâts en trois types classés du plus fort au moins fort : tête > torse > autres.
 Ensuite le calcul des dommages s'effectue en prenant en compte les protections portées par le joueur adverse.
 Afin d'exprimer le calcul des dégâts nous avons mis en place la formule suivante :
 
+\begin{figure}[H]
 \begin{equation*}
 \begin{split}
 Damages& = Attacker(Weapon(Damages(Type(Value)))\\
 Protection& = Defender(Protection(DamageReduction))\\
 Calcul& = Defender(health) - (Damages - Protection)
 \end{split}
-%\label{calc.damages}
 \end{equation*}
+\end{figure}
 
-\GT{Ci-haut pour l'\'equation: si par la suite tu ne r\'ef\`eres pas
+\gt{Ci-haut pour l'\'equation: si par la suite tu ne r\'ef\`eres pas
 explicitement \`a cette \'equation, alors pas besoin de lui donner un
 num\'ero et un label.}
 
 
-\GT{Ci-haut et ci-bas: pas besoin de mettre en guillemets si tu
+\gt{Ci-haut et ci-bas: pas besoin de mettre en guillemets si tu
 utilises la police appropri\'ee~: \texttt{Attack}.}
 
-Nous retrouvons cette formule de calcul dans la Figure~\ref{fig.attack}.
-Elle est présente dans l'association entre les deux joueurs sur laquelle un stéréotype \texttt{Attack} est appliqué.
-On considère alors que le \emph{game designer} a modifié le stéréotype de \emph{Game Genesis} afin que toutes les actions d'attaque soient régies par cette formule.
+Cette formule de calcul des dégâts est présente dans l'association entre les deux joueurs sur laquelle un stéréotype \texttt{Attack} est appliqué (Figure~\ref{fig.PUBG_attack_min}).
 
-Dans cette figure, il est spécifié que le joueur \texttt{Player68} effectue un tir à la tête sur le joueur \texttt{Player25}.
-Le calcul des dommages renvoie un résultat de 118.5 points de dégats.
-Le joueur \texttt{Player25} ne possède cependant que 100 points de vie (\texttt{Health}).
-On peut donc considérer qu'à la suite de cette action d'attaque, le joueur \texttt{Player25} est éliminé,
-ce qui peut être exprimé par les contraintes suivantes~:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6cm]{10_img/chap6/p_attack_p.PNG}
+    \caption{Calcul des dégâts d'une attaque.}
+    \label{fig.PUBG_attack_min}
+\end{figure}
 
-{
+On considère alors que le \emph{game designer} a modifié le stéréotype \texttt{Attack} de \emph{Game Genesis} afin que toutes les actions d'attaque soient régies par cette formule.
+
+Appliquer ce calcul des dégâts donnerait la simulation suivante :
+
+\begin{table}[H]
+\footnotesize
+\begin{framed}
+Un \texttt{Soldier}, appelé \emph{Soldier25}, possédant une arme de type \texttt{Kar98k} effectue un tir à la tête sur un autre joueur, appelé \emph{Soldier26}, portant un \texttt{HelmetT2}.
+
+
+\begin{equation*}
+\begin{split}
+Damages& = Attacker:\texttt{Soldier25}(\texttt{Weapon}:\texttt{Kar98k}(Damages(Type:HeadShot(197.50)))\\
+Protection& = Defender:\texttt{Soldier26}(Protection:\texttt{HelmetT2}(DamageReduction:40\%))\\
+Calcul& = Defender:\texttt{Soldier26}(Health:100) - (197.50 - (Protection:40\%))\\
+Result& = -18.5
+\end{split}
+\end{equation*}
+
+
+Dans cet exemple l'attaque génère 118.5 points de dégâts, laissant le \texttt{Soldier26} avec un total de vie de -18.5. Ce total négatif indique la mort du \texttt{Soldier26}.
+\end{framed}
+\end{table}
+
+
+La mort du \texttt{Soldier26} si sa vie est inférieure à 0 peut être exprimée par les contraintes suivantes~:
+
+\begin{table}[H]
 \footnotesize
 \begin{framed}
     Player(health) : is max 100.\\
@@ -143,7 +220,7 @@ ce qui peut être exprimé par les contraintes suivantes~:
     IF Gamemode is "duo" OR "squad" ==> Player is knocked.\\
     \}
 \end{framed}
-}
+\end{table}
 
 
 
