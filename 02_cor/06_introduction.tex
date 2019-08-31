@@ -6,5 +6,128 @@
 %comment
 
 
+Le développement de jeux vidéos est un domaine en pleine expansion.
+%
+Les jeux deviennent plus complexes, les projets plus compliqués, les
+budgets plus importants, les d\'elais de développement plus serr\'es.
+%
+De nombreux défis entourent donc le développement de jeux vidéos et
+les outils et méthodes pour y parvenir sont variées~: moteurs de jeu,
+environnements de développement intégrés, outils de gestion de projet,
+logiciels de création 3D, aide au développement d'intelligences
+artificielles, gestion des animations, etc.
+
+Cependant, un pan complet de la création de jeux vidéos reste encore
+peu formalisé et peu outillé : le~\emph{game design}.
+%
+Pourtant, la réflexion sur le~\emph{game design} et la documentation des concepts d'un jeu vidéo sont des étapes cruciales.
+%
+Sans une solide documentation et des concepts formul\'es de fa\c{c}on claire, un
+projet de développement peut être rapidement voué à l'échec.
+%
+En outre, un \emph{Game designer} se doit d'être précis et concis dans ses
+descriptions et ses communications afin de transmettre un maximum
+d'informations et, surtout, afin de pouvoir dédier plus de temps à l'exploration, à
+la recherche artistique et au développement d'un prototype.
+
+%quoi
+Dans ce mémoire, nous présentons \gls{gg}, un profil~UML qui permet d'outiller le processus de pré-conception d'un jeu vidéo, facilitant ainsi la documentation et la rédaction des documents descriptifs du jeu vidéo en cours d'élaboration.
+
+\begin{comment}
+\GT{Ci-bas: il vaut mieux ne pas parler <<d'acc\'el\'eration>>, car tu
+n'apportes aucune preuve/justification que cela permet d'aller plus
+rapidement.}
+\end{comment}
+
+
+%
+Destiné à être utilisé dans les premières phases du développement,
+\emph{Breaktrough} et Pré-conception, le profil \emph{Game Genesis}
+permet de documenter, à l'aide d'une notation graphique, les
+\'el\'ements de \emph{\bf mécanique} d'un jeu --- au sens du
+\emph{framework} \gls{mda}, c'est-\`a-dire,
+les principaux éléments du jeu et les association et interactions
+entre eux.
+%
+En d'autres mots, l'utilisation de \emph{Game Genesis} aide \`a
+documenter le \emph{mod\`ele conceptuel} d'un jeu, les principaux
+concepts qui le caract\'erisent.
+
+
+\begin{comment}
+%cohérence
+L'utilisation d'un profil UML permet d'apporter une structure précise et un cadre de travail rigoureux lors de la conception afin d'assurer la cohérence des modèles durant toute leur durée de vie.
+
+
+\GT{Ci-bas: ok d'insister sur l'aspect documentation visuelle, mais
+moins pertinent d'insister sur l'aspect facilit\'e de
+modification. Comme tu as pu le constater en produisant le mod\`ele de
+PUBG, ce n'est pas si facile de modifier un tel mod\`ele et de le
+faire \'evoluer! Donc \`a reformuler!}
+
+
+%maintenance & modifications
+Lors de sa conception, un jeu vidéo est destiné à évoluer rapidement et sa documentation se verra modifiée de nombreuses fois afin de toujours être la plus pertinente possible.
+L'utilisation d'UML permet d'apporter un support visuel à cette documentation et permet également de rendre les modifications plus faciles en accédant aux objets concernés rapidement et efficacement. 
+
+
+\GT{Ci-bas: je crois que cette partie sur le mind mapping n'est pas
+utile/n\'ecessaire, car elle arrive de fa\c{c}on un peu abrupte,
+inattendue, comme un <<cheveu sur la soupe>> --- pourquoi
+sp\'ecifiquement le mind mapping, et pas d'autres approches? Je
+sugg\`ere donc de la supprimer.}
+
+%pérennité
+Effectuer des \emph{mind mapping} est un moyen simple et efficace permettant d'illustrer des idées de manière visuelle.
+Cependant, le manque de rigueur (modifications erratiques, contenu incohérents, manque de structure) et les supports utilisés (feuille de papier ou tableau) lors d'un travail de \emph{mind mapping} n'assurent pas du tout la pérennité des informations stockées.
+Bien qu'il existe des logiciels de \emph{mind-mapping} qui conservent les informations sous la forme d'un fichier XML, il n'existe pas réellement de <<~standard~>> définissant de manière formelle un langage de \emph{mind-mapping}.
+De plus, chaque outil de \emph{mind-mapping} possède ses propres notations, méthodes et représentations.
+
+De par sa structure standardis\'ee et précise, la notation UML permet de structurer les concepts, de les stocker sous un format précis et g\'en\'eralement portable.
+Ceci permet un stockage beaucoup plus pérenne des informations contenues dans un modèle.
+%
+En outre,
+UML étant un langage de modélisation largement utilisé et approuvé dans le domaine informatique, il est possible d'utiliser de nombreux outils existants, d'assurer son intégration et sa réutilisation dans différents cadres et sous différentes formes.
+
+
+\GT{Partie pas n\'ecessaire ici. Peut-\^etre dans la section introductive
+sur UML dans le chapitre sur ce que sont les profils UML?}
+
+%gdd
+Un modèle UML pourra également servir de support à la rédaction d'un \gls{gdd} (cf.~Chap.~\ref{chap.design_doc}), en organisant les \'el\'ements de mécanique d'un jeu sous forme de catégories réutilisables.
+Le GDD est la <<~bible du design~>>~\cite{GD_foundations_pedersen} du jeu.
+Il permet de définir tout le contenu du jeu et toutes les informations nécessaires à son développement, et ce sur toute sa durée de vie. 
+
+%generation de code
+UML étant reconnu comme langage de modélisation de logiciels, il peut également être possible d'utiliser les modèles créés en pré-conception afin de faciliter le développement informatique du jeu.
+Le modèle peut permettre de créer une structure de projet ou du pseudo code pouvant servir de squelette en début de développement.
+\end{comment}
+
+
+\GT{Ci-bas: \`a compl\'eter en d\'ecrivant en une courte phrase ce que
+pr\'esente le chapitre en question.}
+
+Dans ses grandes lignes, ce m\'emoire est organis\'e comme suit.
+%
+Le chapitre~\ref{chap.dev_jv} pr\'esente les principaux concepts
+li\'es au d\'eveloppement de jeux vid\'eos, notamment la notion de \emph{gameplay}.
+%
+Le chapitre~\ref{chap.design_doc} pr\'esente diff\'erentes approches
+propos\'ees dans la litt\'erature pour documenter un \emph{game design}.
+%
+Le chapitre~\ref{chap.MDA} pr\'esente le \emph{framework} MDA, \ACOMPLETER{\ldots}.
+%
+Le chapitre~\ref{chap.profils-UML} pr\'esente la notion de <<profil>>
+en UML, qui permet \ACOMPLETER{\ldots}.
+%
+Le chapitre~\ref{chap.game-genesis} pr\'esente \emph{Game Genesis}, le
+profil UML que nous avons d\'evelopp\'e, pour aider \`a la
+mod\'elisation des \'el\'ements de m\'ecanique d'un jeu vid\'eo.
+%
+Finalement, le chapitre~\ref{chap.pubg} pr\'esente une \ACOMPLETER{\ldots}.
+
+
+
+
 \end{introduction}
 
