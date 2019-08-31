@@ -1,26 +1,51 @@
 \begin{abstract}
-Le développement de jeux vidéos est un domaine en pleine expansion depuis plusieurs années.
-Les jeux deviennent de plus en plus complexes et de plus en plus importants en taille.
-Les projets deviennent beaucoup plus compliqués, les budgets plus importants et le temps de développement de plus en plus réduit.
-Afin d'accélérer toutes les étapes du développement d'un jeu vidéo de nombreux outils émergent dans ce domaine.
-Les moteurs de jeu mettent à disposition des environnement clé en main afin d'aider les équipes de développement ils incluent : 
-les environnements de développement intégrés, les outils de gestion de projet, les logiciels de création 3D, les environnements de développement d'intelligences artificielles, la gestion des animations, etc.
-Cependant un pan complet de la création de jeux vidéos reste encore peu formalisé et peu outillé : le~\emph{game design}.
-Pourtant la réflexion sur le~\emph{game design} et la documentation des concepts d'un jeu vidéo sont des étapes cruciales du développement de jeu vidéo.
-Sans une solide documentation et des concepts clairement énoncés un projet de développement peut être rapidement voué à l'échec.
-Nous avons recherché les bonnes pratiques de rédaction d'un~\emph{Game Design Document} ainsi que les outils actuellement utilisés pour les étapes de~\emph{game design} et de pré-conception.
-Dans ce mémoire nous allons proposer~\emph{Game Genesis}, un profil UML pour faciliter la rédaction d'un~\emph{Game Design Document}.
-UML introduit : un langage formel, une structure précise, des outils performants et un support de communication efficace.
+
+\GT{Dans le cadre du mémoire, tu décris <<ce que tu as fait>>. Il est donc
+généralement préférable d'utiliser le passé plutôt que le futur.}
+
+\GT{Oops! Comme indiqu\'e hier, j'ai des probl\`emes avec mon MacOS --
+au niveau du termial utilis\'e.  J'utilise donc un nouveau
+terminal. Le bon point: il me permet de voir correctement les accents,
+et donc spontan\'ement j'en ai mis quelques-uns... jusqu'\`a ce que je
+r\'ealise que peut-\^etre que toi, sur Windows, tu ne les vois pas
+correctement.  Donc, je continue \`a utiliser des accents \LaTeX, mais
+si tu vois des caract\`eres bizarres dans le dernier commit ou dans le
+r\'esum\'e, c'est a cause de cela.}
+
+
+\GT{Ci-bas: j'ai simplifi\'e un peu, car le r\'esum\'e me semblait un peu long.}
+
+Le développement de jeux vidéos est un domaine en pleine expansion.
+Les jeux deviennent plus complexes,
+les projets plus compliqués, les budgets plus importants, les d\'elais de développement plus serr\'es.
+Afin d'accélérer les étapes du développement d'un jeu, de nombreux outils émergent~: 
+ moteurs de jeu, environnements de développement intégrés, outils de gestion de projet, logiciels de création 3D, aide au développement d'intelligences artificielles, gestion des animations, etc.
+Cependant, un pan complet de la création de jeux vidéos reste encore peu formalisé et peu outillé : le~\emph{game design}.
+%
+Pourtant, la réflexion sur le~\emph{game design} et la documentation des concepts d'un jeu vidéo sont des étapes cruciales.
+Sans une solide documentation et des concepts clairement énoncés, un projet de développement peut être rapidement voué à l'échec.
+
+Dans le cadre de notre recherche,
+nous avons cherché à identifier les bonnes pratiques de rédaction d'un~\emph{Game Design Document} ainsi que les outils utilisés pour les étapes de~\emph{game design} et de pré-conception.
+Comme r\'esultat de ce travail, nous proposons~\emph{Game Genesis}, un profil UML pour faciliter la rédaction d'un~\emph{Game Design Document}.
+
+UML introduit un langage formel, une structure précise, des outils performants et un support de communication efficace.
 Le domaine du développement de jeux vidéos est cependant très vaste. 
-La taille des équipes de développement, les genres de jeux vidéos, les types de~\emph{gameplay}, les spécificités de~\emph{game design} entraînent une difficulté à anticiper tous les éléments nécessaires à la rédaction de~\emph{Game Design Document}.
-La liste des stéréotypes définis dans~\emph{Game Genesis} est donc non exhaustive et les éléments répertoriés sont assez généraux afin de ne pas représenter d'obstacles à la représentation de certains types de jeux vidéos.
-Afin de structurer ce profil nous allons faire usage du~\emph{Framework MDA} qui sépare le~\emph{game design} en trois catégories d'éléments :~\emph{Mechanics},~\emph{Dynamics},~\emph{Aesthetics}.
-Avec~\emph{Game Genesis} nous proposons une structure pré-existante afin de représenter les~\emph{Mechanics} d'un jeu vidéo.
-Nous avons pu établir une liste d'éléments de~\emph{Mechanics} permettant de représenter les jeux vidéos.
-L'utilisation de~\emph{Game Genesis} 
+La taille des équipes de développement, les genres de jeux vidéos, les types de~\emph{gameplay}, les spécificités de~\emph{game design} entraînent une difficulté à anticiper tous les éléments nécessaires à la rédaction d'un \emph{Game Design Document}.
+La liste des \'el\'ements introduits dans~\emph{Game Genesis} est donc non exhaustive et ces éléments sont assez généraux afin de ne pas faire obstacle à la représentation de certains types de jeux vidéos.
+
+\GT{Ci-haut: un peu trop tot (contexte insuffisant) pour parler de
+<<st\'er\'eotypes>>, donc <<\'el\'ements>> devrait suffire.}
+
+Afin de structurer le profil \emph{Game Genesis}, nous avons fait usage du~\emph{Framework MDA}, qui sépare le~\emph{game design} en trois aspect~: \emph{Mechanics}, \emph{Dynamics} et \emph{Aesthetics}.
+Plus sp\'ecifiquement, avec~\emph{Game Genesis}, nous proposons un profil pour aider \`a mod\'eliser les \'el\'ements de~\emph{Mechanics} d'un jeu vidéo.
+%
+Nous illustrons l'utilisation de ce profil en mod\'elisant les
+\'el\'ements de \emph{Mechanics} de PUBG (\emph{PlayerUnknown's
+Battlegrounds}), un jeu vid\'eo populaire sorti en 2017.
 
 
-MOTS CLÉS :~\emph{Game Design}, jeux vidéos,~\emph{Game Design Document},~\emph{Framework MDA}, profil UML.
+MOTS CLÉS :~\emph{Game design}, jeux vidéos,~\emph{Game Design Document},~\emph{Framework MDA}, profil UML.
 
 \end{abstract}
 
