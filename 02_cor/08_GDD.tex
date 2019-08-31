@@ -3,16 +3,27 @@
 \label{chap.design_doc}
 \gt{Limiter forme <<passive>>.}
 
-Dans ce chapitre, nous allons pr\'esenter plusieurs documents de \emph{Game design} --- \glsfirst{gdd} --- qui peuvent être présents dans un processus de développement de jeu vidéo.
-Ces documents peuvent être rédigés l'un à la suite de l'autre, ou indépendamment l'un de l'autre --- et ils ne sont pas obligatoires dans chaque projet de jeu vidéo.
+Dans ce chapitre, nous pr\'esentons plusieurs documents de \emph{Game design} --- \glsfirst{gdd} --- qui peuvent être utilisés dans un processus de développement de jeux vidéos.
+Ces documents peuvent être rédigés l'un à la suite de l'autre, ou indépendamment l'un de l'autre --- et ils ne sont pas obligatoires ou nécessaires dans chaque projet de jeu vidéo.
 
 
 \gt{Je ne comprends pas <<tr\`es discut\'es>>!?}
 
-Les documents de \emph{Game design} sont nombreux et leurs formes ainsi que leurs contenus sont souvent discut\'es dans la littérature.
+
+\GT{Comme tu entres dans les détails des wikis, ce qui semble plus ou
+moins approprié pour un paragraphe introduction, je me demande si une
+section additionnelle ne serait pas appropriée. Je l'ai ajoutée... À
+voir/revoir.  Note que dans cette même section, après les wikis, tu
+pourrais aussi ajouter les bouts que tu avais écrits sur le
+mind-mapping!?}
+
+
+\section{Des formes variées de documents de \emph{game design}}
+
+Les documents de \emph{game design} sont nombreux et leurs formes ainsi que leurs contenus sont souvent discut\'es dans la littérature.
 Selon le niveau d'avancement du développement, certains documents sont plus utiles que d'autres mais la plupart des acteurs du domaine sont d'accord pour avancer qu'il n'existe pas de gabarit fixe pour un document de \emph{Game design}~\cite{GD_theory_rouse}.
 En fait, l'utilisation d'un gabarit trop sp\'ecifique et précis serait une erreur à \'eviter, car cela pourrait entraîner des difficultés de rédaction et d'adaptation face aux divers types de jeux que l'on peut rencontrer.
-Cependant, certains auteurs présentent des lignes directrices, un peu comme une recette de cuisine~\cite{LevelUpRogers2014}, qui peuvent être suivies afin que le GDD soit complet et respecte une certaines forme. 
+Cependant, certains auteurs présentent des lignes directrices, un peu comme une recette de cuisine~\cite{LevelUpRogers2014}, qui peuvent être suivies ou dont on peut s'inspirer afin que le GDD soit complet et respecte une certaines forme. 
 
 Librande~\cite{onepage_librande} montre des exemples de livrables de \emph{game design} de différentes sortes.
 Il souligne que les documents de design lourds sont des sources d'informations importantes, réunissant tout le design dans un seul document et la création du document aide grandement à designer le jeu par la suite.
@@ -23,9 +34,9 @@ Cependant, ces documents sont compliqués à maintenir, \`a mettre à jour et à
 \gt{Je ne comprends pas <<la contribution d'\'equipe>>?!}
 
 Librande présente également les <<\emph{design wikis}>> qui apportent de nombreux points positifs au design.
-Il est possible d'y avoir accès à n'importe quel endroit tant qu'une connexion est disponible.
-Les mises à jours sont simplifiées car la recherche l'est également : il devient alors possible de modifier des éléments directement au cours d'une réunion.
-Un \emph{wiki} permet aussi la contribution de tous les membres de l'équipe de développement aux différents éléments car la modification est possible par de nombreux utilisateurs.
+Il est possible d'y avoir accès à partir de n'importe quel endroit tant qu'une connexion réseau est disponible.
+Les mises à jours sont simplifiées et la recherche l'est également : il devient alors possible de modifier des éléments directement au cours d'une réunion.
+Un \emph{wiki} permet aussi la contribution de tous les membres de l'équipe de développement aux différents éléments car la modification est possible par plusieurs utilisateurs.
 Il est possible d'éditer les éléments par article et donc de ne pas avoir à prendre connaissance d'éléments non reliés au travail actuellement effectué.
 Il est facile de maintenir un historique des versions et des modifications pour justifier les modifications et les garder en mémoire.
 Cependant, un \emph{wiki} requiert une maintenance constante et donc, souvent, une personne dédiée à sa maintenance.
@@ -47,7 +58,7 @@ jeu}, mais sans entrer dans les détails, en indiquant uniquement les
 principales lignes directrices.
 
 
-\subsection{Le <<\emph{one-page}>> de Librande}
+\subsection{Le <<\emph{One-Page}>> de Librande}
 
 \gt{<<Le concept document>> ou <<La documentation des concepts du jeu>>?}
 
@@ -78,11 +89,11 @@ appropri\'e. }
 \eh{J'ai modifié les *gls pour ne les afficher que la première fois qu'ils apparaissent et je les met tous entre --- aftin d'alléger leur apparition}
 
 
-Voici les caract\'eristiques essentielles d'un \emph{One-page design} tels que d\'ecrits par Librande~\cite{onepage_librande}:
+Voici les caract\'eristiques essentielles d'un \emph{One-Page design} tels que d\'ecrits par Librande~\cite{onepage_librande}:
 \begin{itemize}
     \item Un titre représentatif du jeu.
     \item Les dates des divers éléments --- afin de garder un historique.
-    \item Des espaces entre les informations --- afin de séparer chaque sujet et de faciliter la compréhension à la lecture.
+    \item Des espaces entre les informations --- afin de séparer chaque sujet et faciliter la compréhension.
 
 \gt{Pour <<ne pas cr\'eer des blocs>>? J'aurais plut\^ot tendance \`a
 penser que mettre des espaces cr\'ee justement des blocs!}
@@ -94,21 +105,21 @@ penser que mettre des espaces cr\'ee justement des blocs!}
     \item Des barres latérales --- pour ajouter des \emph{checklists}, des objectifs principaux ou des informations diverses.
 \end{itemize}
 
-Selon Librande, la taille des éléments est importante dans un \emph{One-page design}: les tailles indiquent l'importance de l'information.
+Selon Librande, la taille des éléments est importante dans un \emph{One-Page design}: les tailles indiquent l'importance de l'information.
 Si nécessaire, un \emph{One-Page design} peut être étendu à la taille nécessaire pour contenir toute l'information, y compris sous forme d'un poster.
 Cependant, l'augmentation de taille de la page doit quand même permettre d'assurer sa lisibilité --- augmenter en taille ne doit pas conduire à intégrer trop d'informations, ce qui irait à l'encontre de la lisibilité.
 
 
-\subsection{Le <<\emph{one-sheet}>> de Rogers}
+\subsection{Le <<\emph{One-Sheet}>> de Rogers}
 
 \gt{Pas besoin de dire <<Dans son article>>, <<Dans un livre>>,
 etc. On le saura via la bibliographie. Tu donnes simplement l'auteur,
 comme sujet de la phrase...}
 
 
-Rogers présente le <<\emph{one-sheet}>> comme vue d'ensemble d'un jeu~\cite{LevelUpRogers2014}.
+Rogers présente le <<\emph{One-Sheet}>> comme vue d'ensemble d'un jeu~\cite{LevelUpRogers2014}.
 Il insiste sur le fait que ce document doit être intéressant, informatif et court.
-Voici les éléments que doit contenir le \emph{One-Sheet} de Rogers~\cite{LevelUpRogers2014}.
+Voici les éléments que doit contenir le \emph{One-Sheet} de Rogers~\cite{LevelUpRogers2014}~: 
 \begin{itemize}
     \item Le titre du jeu.
     \item Les systèmes de jeu prévus.
@@ -138,10 +149,10 @@ Ce sont des points précis et courts attirant la curiosité de l'acheteur sans �
 
 \gt{Je ne comprends pas le d\'ebut de la phrase suivante --- produits comp\'etitifs? Comp\'etiteurs?}
 
-Les jeux compétiteurs liste les concurrents actuels du jeu, c'est-\`a-dire, les jeux déjà présents sur le marché.
-Cette liste doit contenir des jeux connus ou connaissant un grand succès, afin qu'ils soient représentatifs du type du jeu d\'ecrit par le \emph{one-sheet}.
+Les jeux compétiteurs indiquent les concurrents actuels du jeu, c'est-\`a-dire, les jeux déjà présents sur le marché.
+Cette liste doit contenir des jeux connus ou connaissant un grand succès afin qu'ils soient représentatifs du type du jeu d\'ecrit par le \emph{One-Sheet}.
 Cela permet alors de donner une bonne idée de ce que sera le jeu.
-Présenter une liste de jeux obscurs ou qui n'ont connu que peu de succès découragera les éditeurs qui liront le \emph{one-sheet}.
+Présenter une liste de jeux obscurs ou qui n'ont connu que peu de succès découragera les éditeurs qui liront le \emph{One-Sheet}.
 
 \gt{Ci-bas: Comme c'est une liste d'\'elements, il faut que tous
 soient des substantifs --- et non des actions (verbes).}
@@ -149,13 +160,13 @@ soient des substantifs --- et non des actions (verbes).}
 
 
 \section{Des extensions du document d'une page vers un résumé}
-Une fois les premières étapes de \emph{Game design} effectuées, le document \emph{One-page} ou \emph{One-sheet} va être étendu afin de produire un document plus important.
+Une fois les premières étapes de \emph{Game design} effectuées, le document \emph{One-Page} ou \emph{One-Sheet} va être étendu afin de produire un document plus important.
 Ce second document va préciser les concepts du jeu en cours de création et va permettre de communiquer un niveau de détails plus précis.
 
 %Game design foundations, R. Pedersen
-Pedersen propose le \emph{five pager}~\cite{GD_foundations_pedersen}. C'est un résumé du concept du jeu vidéo et une description du jeu à venir.
-Il comprend toutes les informations essentielles au cycle de vie du jeu sous ses aspects majeurs, tels que le \emph{gameplay}, l'audience cible, le scénario, et les \emph{features}.
-Le \emph{five-pager} permet de présenter le jeu de manière plus poussée que le \emph{One-page} à un décideur ou à un éditeur.
+Pedersen propose le \emph{Five-Pager}~\cite{GD_foundations_pedersen}, un résumé du concept du jeu et une description du jeu à venir.
+Le \emph{Five-Pager} comprend toutes les informations essentielles au cycle de vie du jeu sous ses aspects majeurs, tels que le \emph{gameplay}, l'audience cible, le scénario, et les \emph{features}.
+Il permet de présenter le jeu de manière plus poussée que le \emph{One-Page} à un décideur ou à un éditeur.
 
 \gt{Ci-haut: cela me semble contradictoire/ambigue/m\'elangeant de
 dire que le document de 5 pages pr\'esente le jeu sous sa forme <<la
@@ -164,7 +175,7 @@ seule page. Reformuler?}
 
 
 \gt{Il faut \'eviter de mettre dans le corps du texte des longues
-s\'eries de d\'etails tel que le contenu du \emph{Ten-pager}.  Dans le
+s\'eries de d\'etails tel que le contenu du \emph{Ten-Pager}.  Dans le
 cas pr\'esent, je crois qu'une table serait plus appropri\'ee.}
 
 
@@ -175,9 +186,9 @@ i.e., substantifs partout --- et non pas m\'elanger substantifs et
 verbes (actions).}
 
 
-Quant \`a Rogers~\cite{LevelUpRogers2014}, il  propose un document plus \emph{fourni} avec son \emph{Ten-pager}.
+Quant \`a Rogers~\cite{LevelUpRogers2014}, il  propose un document plus \emph{fourni} avec son \emph{Ten-Pager}.
 Le contenu du document doit non seulement contenir des informations pour l'équipe de développement du jeu, mais également les informations nécessaires pour int\'eresser les éditeurs impliqués dans le projet.
-Rogers présente le contenu du \emph{Ten-pager} sous la forme indiqu\'ee dans le tableau~\ref{ten-pager.table}.
+Rogers présente le contenu du \emph{Ten-Pager} sous la forme indiqu\'ee dans le tableau~\ref{Ten-Pager.table}.
 
 \gt{Ci-bas. Il faut utiliser des temps de verbes uniformes. Et j'ai
 mis des bullets: plus clair au niveau structure.}
@@ -243,7 +254,7 @@ veut vraiment qu'elle apparaisse au point pr\'ecis sp\'ecifi\'e.}
 
 \end{itemize}
 \end{framed}
-\caption{Contenu du \emph{Ten-pager} selon Rogers~\cite{LevelUpRogers2014}.}
+\caption{Le contenu du \emph{Ten-Pager} selon Rogers~\cite{LevelUpRogers2014}.}
 \end{table}
 
 \addtocounter{table}{-1}
@@ -269,7 +280,7 @@ veut vraiment qu'elle apparaisse au point pr\'ecis sp\'ecifi\'e.}
     \end{itemize}
     \item Page 8~: Ennemis
     \begin{itemize}
-        \item Description des ennemis rencontrés par le joueur et qui sont contrôlés par une IA
+        \item Description des ennemis rencontrés par le joueur et qui sont contrôlés par une~IA
         \item Description des \emph{boss} rencontrés
     \end{itemize}
     \item Page 9~: Multijoueur et bonus
@@ -285,8 +296,8 @@ veut vraiment qu'elle apparaisse au point pr\'ecis sp\'ecifi\'e.}
     \end{itemize}
 \end{itemize}
 \end{framed}
-\caption{Contenu du \emph{Ten-pager} selon Rogers~\cite{LevelUpRogers2014} (suite).}
-\label{ten-pager.table}
+\caption{Le contenu du \emph{Ten-Pager} selon Rogers~\cite{LevelUpRogers2014} (suite).}
+\label{Ten-Pager.table}
 \end{table}
 
 
@@ -306,14 +317,14 @@ veut vraiment qu'elle apparaisse au point pr\'ecis sp\'ecifi\'e.}
 
 %GAMASUTRA 5 Alternatives to a Game Design Document, Erin Robinson
 
+Le \glsfirst{gdd} est un des documents les plus complets utilis\'es dans le cadre du développement d'un jeu vidéo.
+Dans la littérature, il est souvent qualifié de <<Bible du design>>~\cite{GD_foundations_pedersen} --- bien que certains auteurs ne soient pas d'accord sur ce sujet~\cite{LevelUpRogers2014}. 
+
 \subsection{Le GDD, un moyen de communication}
 
 \gt{L'utilisation de glsfirst semble permettre, quand on trouve cela
 appropri\'e, de mettre \`a nouveau de fa\c{c}on explicite le texte
 descriptif de l'acronyme. Ici, cela me semblait indiqu\'e.}
-
-Le \glsfirst{gdd} est un des documents les plus complets utilis\'es dans le cadre du développement d'un jeu vidéo.
-Dans la littérature, il est souvent qualifié de <<Bible du design>>~\cite{GD_foundations_pedersen} --- bien que certains auteurs ne soient pas d'accord sur ce sujet~\cite{LevelUpRogers2014}. 
 
 Le GDD doit contenir, dans l'idéal, toute la vision du \emph{game designer} sans laisser de doute sur ce que celui-ci veut représenter et souhaite voir dans le jeu.
 Peu importe le corps de métier de la personne lisant le GDD, celle-ci doit pouvoir se représenter au maximum le rendu final attendu.
@@ -323,17 +334,17 @@ Le GDD doit donc pouvoir servir de moyen communication entre les différentes é
 
 \gt{Lorsqu'on indique un auteur, il suffit de mettre le nom de famille, sans le pr\'enom.}
 
-Freeman, dans un article sur Gamasutra~\cite{gama_greateGDD}, établit une liste de 10 pratiques qu'il estime nécessaire de respecter pour d\'ecrire un GDD :
+Freeman, dans un article sur Gamasutra~\cite{gama_greateGDD}, établit une liste de 10 pratiques qu'il estime nécessaire de respecter pour produire un GDD de qualité :
 \begin{itemize}
     \item Décrire le corps du jeu, mais également son âme.
     \item Rendre le GDD lisible.
-    \item Etablir des priorité dans les tâches.
+    \item Établir des priorité dans les tâches.
     \item Entrer au maximum dans les détails.
-    \item Décrire précisément les idées compliquées des concepts, quitte à les démontrer, les illustrer ou en faire des mini prototypes \gt{Qu'est-ce qu'un <<sujet>>!?}
+    \item Décrire précisément les idées compliquées des concepts, quitte à les démontrer, les illustrer ou en faire des mini prototypes.
     \item Décrire le <<quoi>> mais également le <<comment>>.
-    \item Proposer des alternatives de mise en \oe{}uvre. \gt{Pas clair: des alternatives de mises en oeuvres?}
+    \item Proposer des alternatives de mise en \oe{}uvre.
     \item Donner une vie au GDD.
-    \item Pr\'eciser la vision du \emph{Game designer} de fa\c{c}on suffisamment précise pour ne pas laisser d'éléments non décrits.
+    \item Pr\'eciser la vision du \emph{game designer} de fa\c{c}on suffisamment précise pour ne pas laisser d'éléments non décrits.
     \item Mettre à disposition le GDD dans de bonnes conditions.
 \end{itemize}
 
@@ -347,37 +358,30 @@ Le GDD doit \^etre un outil pour les \emph{game designers}, tout en leur donnant
 De nombreux travaux essaient de répondre au besoin de formalisation du GDD~\cite{GDD_software,multiview,GDD_GDProject,gama_greateGDD} sans pour autant réussir à apporter une solution permettant d'englober tous les types de jeux, tous les types de métiers ou toutes les étapes de développement.
 Et de nombreux problèmes annexes se posent concernant l'universalité d'un modèle de GDD : Est-il complet ? Est-il assez précis ? Est-il assez souple ? Est-il utile à l'équipe ? 
 
-Prenons l'exemple d'un projet où le GDD est extrêmement complet, comportant tous les détails voulus par le \emph{Game designer}.
+Prenons l'exemple d'un projet où le GDD est extrêmement complet, comportant tous les détails voulus par le \emph{game designer}.
 Le GDD peut alors devenir tellement complet qu'il en devient imposant, lourd à parcourir, difficile à maintenir et à modifier.
 Il perdra alors toute l'efficacité de design qu'il aurait pu donner, pouvant devenir un handicap plutôt qu'une aide au développement~\cite{onepage_librande}.
 
 Un GDD est l'atout majeur de la phase de production d'un jeu vidéo et pour qu'il soit utile durant toutes les phases, celui-ci doit être impérativement complet et sans ambiguité~\cite{GD_Guidelines}.
 Cependant, il doit être assez souple afin de suivre le jeu dans son développement et suivre les changements nombreux et spontan\'es qui peuvent survenir au cours du développement.
 
-Freeem~\cite{gama_greateGDD} écrit que le GDD doit non seulement décrire le corps du jeu vidéo mais son <<âme>>.
+Freeman~\cite{gama_greateGDD} écrit que le GDD doit non seulement décrire le corps du jeu vidéo mais son <<âme>>.
 Selon lui, construire un GDD doit être un moyen de présenter le résultat attendu dans les moindres détails pour permettre aux équipes de travailler sur une idée précise.
 Faire appel à des outils graphiques plutôt qu'à des textes peut être un moyen d'apporter plus de précision à une idée.
 Mais le GDD doit être un moyen d'expliquer toutes les parties du jeu, le <<quoi>>, mais également le <<comment>>.
 
-Cependant décrire l'intégralité des détails dans le GDD peut mener à des dérives décrites par Rouse~\cite{GD_theory_rouse}.
-À vouloir apporter trop de détails dans un GDD, un \emph{Game designer} peut perdre énormément de temps, qui aurait pu être économisé en ayant plus de communication avec son équipe.
+Cependant, décrire l'intégralité des détails dans le GDD peut mener à des dérives décrites par Rouse~\cite{GD_theory_rouse}.
+À vouloir apporter trop de détails dans un GDD, un \emph{game designer} peut perdre énormément de temps, qui aurait pu être économisé en ayant plus de communication avec son équipe.
 Trop de détails peut également apporter trop de limitations aux corps de métier plus artistiques et brider leur créativité.
 Certaines parties du jeu peuvent également en obstruer d'autres : trop de détails dans la description d'une mécanique peut éclipser le fait qu'une autre mécanique n'est pas assez détaillée.
 Un GDD trop complet donne également l'impression que le projet est terminé et qu'il ne nécessite plus d'ajustements, ce qui peut nuire à l'évolution du jeu et aux modifications positives qui pourraient devoir lui être apport\'ees.
-
-
-\GT{Il va falloir que je relise cette derni\`ere section --- en fait,
-le chapitre au complet --- car j'ai l'impression qu'il y a certaines
-redondances/r\'ep\'etitions, mais aussi quelques aspects manquants
-dans le fil logique.}
-
 
 
 \section{Conclusion}
 Dans ce chapitre, nous avons vu trois types de documents de \emph{Game design}~: 
 \begin{itemize}
     \item Le \emph{One-Page} et le \emph{One-Sheet}, qui servent de premier aperçu du jeu.
-    \item Le \emph{Five-Pager} et le \emph{Ten-Pager}, qui permettent de présenter le jeu à une équipe de développement et permettent de référencer les premières pistes de \emph{Game design}
+    \item Le \emph{Five-Pager} et le \emph{Ten-Pager}, qui permettent de présenter le jeu à une équipe de développement et permettent de référencer les premières pistes de \emph{Game design}.
     \item Le \emph{Game Design Document}, qui permet de regrouper tous les éléments de design pour un jeu en cours de conception ou de développement.
 \end{itemize}
 
@@ -389,10 +393,10 @@ Ces documents sont les plus répandus dans le monde du développement de jeux vi
 
 Selon le type de \emph{gameplay}, la quantité d'informations ou la durée de vie du jeu, un GDD peut avoir une taille plus ou moins importante. 
 %
-La structure du GDD peut différer d'un \emph{Game designer} à l'autre en fonction des habitudes de travail avec son équipe ou son expérience.
+La structure du GDD peut différer d'un \emph{game designer} à l'autre en fonction des habitudes de travail avec son équipe ou son expérience.
 Le contenu du GDD peut aussi être sous formes diverses :  textes,  graphiques, diagrammes,  \emph{mind mapps}. 
 
-%La structure de tels documents n'est pas fixe et leur rédaction peut \^etre effectuée en suivant des bonnes pratiques décrites par des \emph{Game designer} expérimentés et trouvent réellement leur forme par la manière dont un \emph{Game designer} souhaite partager sa vision du futur jeu.
+%La structure de tels documents n'est pas fixe et leur rédaction peut \^etre effectuée en suivant des bonnes pratiques décrites par des \emph{game designer} expérimentés et trouvent réellement leur forme par la manière dont un \emph{game designer} souhaite partager sa vision du futur jeu.
 
 \gt{Derni\`ere phrase \`a relire!!!}
 \eh{Je l'ai modifiée et reformulée pour celle en dessous.}
@@ -401,3 +405,9 @@ C'est pour ces raisons qu'il est compliqué d'établir un gabarit précis pour l
 Aucun standard n'existe afin de définir précisément l'architecture des documents de \emph{game design}.
 La rédaction de ces documents se fait en suivant des bonnes pratiques décrites par des \emph{game designers} expérimentés.
 Chaque \emph{game designer} peut définir son propre gabarit en fonction de ses besoins et de ses habitudes.
+%
+\GT{Je crois qu'il manque quelque chose en conclusion, en transition vers le prochain chapitre, du genre de ce qui suit --- ébauche...}
+%
+Toutefois, tout GDD bien structuré et complet se devra de modéliser
+certains aspects clés d'un jeu. Dans le prochain chapitre, nous
+présentons le \emph{framework} MDA, qui \ACOMPLETER{blah blah}
