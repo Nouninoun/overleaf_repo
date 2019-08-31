@@ -1,11 +1,75 @@
 \begin{conclusion}
 
-\begin{comment}
-\section{Evolutions possibles}
-Outil de manipulation visuelle du profil UML
-Extension à d'autres diagrammes UML
-Transformation du modèle en GDD
-Accélérateur de description des mécaniques
+%le but => Faciliter la modélisation des mecha dans le proc de pre conception d'un jv
+Un projet de développement informatique est une tâche de longue haleine rythmée par de nombreux changements en cours de développement.
+La conception et la description des concepts est essentielle au bon déroulement du projet ainsi qu'à sa réussite.
 
-\end{comment}
+C'est encore plus marqué dans le domaine du développement de jeux vidéos.
+Le développement de jeux vidéos implique non seulement des développeurs mais également beaucoup d'autres corps de métier comme des artistes faisant des planches pour représenter les éléments, des musiciens créant la bande originale du jeu, des modéleurs 3D et animateurs qui s'occupent de créer les éléments présents dans le jeu, des scénaristes mettant en place le cadre et l'histoire du jeu, etc.
+Réussir à apporter toutes les informations nécessaires à tous ces corps de métier est un défi que le~\emph{game designer} affronte au quotidien.
+
+Les documents de~\emph{game design} deviennent donc un pilier des projets de développement de jeux vidéos.
+Leur rédaction est compliquée, chronovore et nécessite une rigueur exemplaire des~\emph{game designer}.
+Cependant aucun template préconçu n'existe pour répondre à tous les besoins des~\emph{game designer}.
+Chaque projet est différent, chaque jeu possède des spécificités, chaque équipe de développement est différente et cela empêche l'établissement d'un modèle générique de~\emph{game design document}.
+
+Dans la littérature nous avons pu trouver de nombreuses listes de bonnes pratiques de design, chacune essayant de généraliser leurs conseils pour tous les genres de jeu vidéo.
+C'est le cas du~\emph{Framework MDA} qui propose un découpage d'un jeu vidéo afin de structurer les différents éléments dans des catégories et lier tous ces éléments pour qu'ils fonctionnent ensemble.
+
+Définir tous les éléments d'un système et décrire leurs interactions est une approche déjà présente dans le développement logiciel classique.
+C'est ce que l'on retrouve à travers la modélisation UML dans un projet informatique classique.
+Cependant UML est un langage spécifique au domaine du développement informatique et il est donc compliqué pour les autres corps de métier d'acquérir les connaissances nécessaires à sa compréhension.
+Il est cependant possible de créer des profils UML afin d'adapter les modèles UML et les étendre afin d'intégrer un vocabulaire spécifique à un domaine d'activité.
+
+Une fois le vocabulaire adapté à la conception de jeux vidéos UML a la capacité d'apporter beaucoup de ses points forts à la conception.
+C'est un langage formel, permettant la description de systèmes et de processus, efficace, extensible et largement documenté.
+Les outils qui l'accompagnent sont fiables et respectent une rigueur qui permet la réutilisation des modèles de façon linéaire et en respectant le contenu des données.
+Sa formalisation permet également d'assurer la pérennité des modèles dans le temps et leur cohérence peu importe le nombre de modifications et la durée de leur utilisation.
+
+C'est ce que nous recherchions dans notre problématique : apporter une description fiable, modifiable, compréhensible et précise dans la pré-conception d'un jeu vidéo et la rédaction de son~\emph{Game design document}.
+
+C'est dans cette optique que nous avons mis en place~\emph{Game Genesis}, un profil UML permettant d'intégrer le vocabulaire adapté à la conception de jeux vidéos dans des modèles.
+
+Nous avons étudié différents~\emph{Game design document} afin de définir des caractéristiques communes à ces documents.
+Nous nous sommes concentrés sur la modélisation des éléments de~\emph{Mechanics} présents dans ces documents afin d'établir une liste d'éléments qui se retrouvent dans de nombreux genres et donc de nombreux projets de développement de jeux vidéos.
+Une fois cette liste établie nous avons établis une liste de stéréotypes correspondant à ces éléments.
+Il a fallut établir une structure hiérarchique de ces éléments afin de les classifier dans des catégories de regroupement conceptuel.
+Afin de représenter cette hiérarchie nous avons utilisé le mécanisme d'héritage d'UML.
+Cela nous a permit de définir des caractéristiques dans les catégories et les éléments qui leur sont associés héritent des attributs.
+
+Afin de décrire les interactions entre les éléments de~\emph{Mechanics} nous avons utilisé les Associations d'UML.
+Les stéréotypes de~\emph{Game Genesis} comprennent une catégorie~\texttt{Interaction} qui s'appliquent sur les associations UML.
+Ces stéréotypes décrivent les interactions entre les éléments et peuvent porter les attributs et méthodes nécessaires.
+
+Nous avons ensuite testé ce profil dans un exemple d'application réel à travers le jeu PlayerUnknown's BattleGround.
+Nous avons réussi à modéliser les concepts généraux d'une partie de ce jeu en utilisant un diagramme de classes sur lequel était appliqué~\emph{Game Genesis}.
+Par ce modèle nous avons réussis à décrire une partie des éléments de~\emph{Mechanics} du jeu et leurs interactions.
+
+Cependant~\emph{Game Genesis} ne se concentre que sur la description des éléments de~\emph{Mechanics}.
+Ce n'est qu'une partie du design de jeux vidéos, de la rédaction de~\emph{Game design document} et du~\emph{Frameowrk MDA}.
+Nous avons décidé de nous concentrer sur ces éléments uniquement car le travail de représentation de tous les éléments du framework était trop complexe à réaliser.
+
+La représentation des éléments dans un diagramme de classes ouvre de nombreuses possibilités pour la rédaction de~\emph{Game design document} et pour le développement de jeux vidéos.
+En effet il est possible de réutiliser les modèles facilement, UML étant un langage informatique il est possible de le manipuler et de générer d'autres documents.
+En réutilisant les modèles il serait possible d'extraire des informations des modèles afin de générer le début d'un~\emph{Game Design Document} décrivant les éléments de~\emph{Mechanics} du jeu en question.
+Il serait également possible de générer un squelette d'application à partir des modèles, un diagramme de classe étant tout indiqué pour cette transformation.
+Nous pourrions imaginer un outil de versionning permettant de faire un différentiel entre les versions des modèles.
+Il serait alors possible de stocker les justifications d'une modification effectuée et documenter ces modifications pour le futur.
+
+Finalement nous espérons que cette recherche permettra d'apporter un outil adapté au domaine du développement de jeux vidéos. La finalité étant d'apporte une représentation graphique des éléments de~\emph{Mechanics} permettant de structurer et de documenter le processus de pré-conception et d'accompagner les~\emph{game designer} tout au long d'un projet de conception.
+
+
+%la nature et l’envergure du travail
+%les sujets traités => Dev jv, gdd, mda, profils
+%les problèmes à résoudre => formaliser une représentation des Mecha, faciliter la representation, 
+%les objectifs fixés => apporter un outil fiable, langage adapté aux JV, malléable pour tous les gameplay, 
+%les méthodes utilisées => profil UML,Établir un profil UML pour représenter les éléments de Mechanics dans le processus de pré-conception d'un JV
+%la démarche adoptée => GDD (exemples et bonnes pratiques), MDA (section Mecha), Profil UML
+%les résultats les plus saillants => Exemple d'application ok, possibilité de decrire les mecha et leurs relations efficacement
+%les limites et les conclusions => Représentation des Mecha (no dyna no aesth)
+%les recommandations et les pistes de recherche => utilisation des modeles générés pour : générer un squelette de GDD, générer un squelette de code, stocker les données pour le versionning
+
+
 \end{conclusion}
+
+
