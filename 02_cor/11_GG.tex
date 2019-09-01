@@ -3,7 +3,7 @@
 \label{game-genesis.sect}
 
 %GDD
-Le \emph{Game Design Document}, comme décrit dans la Section~\ref{sect.GDD}, permet de réunir toutes les informations de design nécessaires au développement d'un jeu vidéo. La structure du GDD est définie en respectant des bonnes pratiques et selon les besoins de design du jeu concerné.
+Un \emph{Game Design Document}, tel que décrit à la Section~\ref{sect.GDD}, permet de réunir toutes les informations de design nécessaires au développement d'un jeu vidéo. La structure du GDD est définie en respectant des bonnes pratiques et selon les besoins de design du jeu concerné.
 
 
 \gt{Ci-bas: il faut \^etre plus sp\'ecifique pour l'aspect Mechanics
@@ -11,18 +11,43 @@ car si tu dis <<{\bf tous} les \'el\'ements du jeu>>, alors pourquoi
 faudrait-il autre chose que cela!?}
 
 %MDA
-Le \emph{Framework Mechanics, Dynamics, Aesthetics}, comme décrit dans le Chapitre~\ref{chap.MDA}, permet de séparer les différents aspects du design d'un jeu vidéo. L'aspect \emph{Mechanics} permet de représenter les éléments du jeu rattachés aux données et aux algorithmes, l'aspect \emph{Dynamics} décrit le comportement des \'el\'ements de \emph{Mechanics}, alors que l'aspect \emph{Aesthetics} d\'ecrit les émotions découlant de la \emph{Dynamics} que le jeu génère chez le joueur.
+Le \emph{Framework Mechanics, Dynamics, Aesthetics}, décrit au Chapitre~\ref{chap.MDA}, permet de séparer les différents aspects du design d'un jeu vidéo. L'aspect \emph{Mechanics} permet de représenter les éléments du jeu rattachés aux données et aux algorithmes, l'aspect \emph{Dynamics} décrit le comportement des \'el\'ements de \emph{Mechanics}, alors que l'aspect \emph{Aesthetics} d\'ecrit les émotions découlant de la \emph{Dynamics} que le jeu génère chez le joueur.
 
 %UML
-Les profils UML, décrits dans le Chapitre~\ref{chap.profils-UML}, permettent d'étendre les concepts présents dans UML. Mettre en place un profil UML permet de faciliter la cr\'eation d'un modèle et de son contenu pour un domaine particulier. Un profil se compose de stéréotypes, de valeurs étiquetées et de contraintes, qui ensemble permettent de d\'efinir de nouveaux concepts utilisables dans la description de modèles.
+Les profils UML, décrits au Chapitre~\ref{chap.profils-UML}, permettent d'étendre les concepts présents dans UML. Mettre en place un profil UML permet de faciliter la cr\'eation d'un modèle et de son contenu pour un domaine particulier. Un profil se compose de stéréotypes, de valeurs étiquetées et de contraintes, qui ensemble permettent de d\'efinir de nouveaux concepts utilisables dans la description de modèles.
 
 
 \section{Un aper\c{c}u de \emph{Game Genesis}}
 \label{sect.gg_what}
 %quoi
 \emph{Game Genesis} est un profil UML que nous avons d\'evelopp\'e et qui permet d'adapter UML au domaine du design de jeux vidéos. 
-Plus précisément, \emph{Game Genesis} introduit de nouvelles classes UML --- par le biais de st\'er\'eotypes --- afin de permettre la rédaction de GDD.
+Plus précisément, \emph{Game Genesis} introduit de nouvelles classes et associations --- par le biais de st\'er\'eotypes --- afin de décrire les {\bf éléments de \emph{Mechanics}} d'un GDD.
 
+\begin{comment}
+\GT{J'ai mis ici la partie ci-bas (2 paragraphes), qui était
+auparavant à la fin de la section, car sinon ça semblait
+redondant. Par contre, je me demande si elle ne devrait pas simplement
+être supprimé, car elle semble simplement répéter ce qui a été dit à
+la fin du chapitre précédent, non? Il me semble que oui, donc je mets
+en commentaire: à vérifier si tu es d'accord.}
+
+%pourquoi
+L'utilisation de diagrammes de classes UML apporte certains avantages pour la modélisation des \'el\'ements de \emph{Mechanics}:
+\begin{itemize}
+    \item Structure;
+    \item Langage de modélisation formel et normalisé;
+    \item Support de communication visuel; \gt{Pas trop certain de ce que cela veut dire, i.e., un peu vague: <<performant>>!}
+    \item Facilement versionnable
+    \item Assez souple pour s'adapter aux domaines ou aux plateformes de développement; \gt{s'adapter \`a quoi!?}
+    \item Utilisation d'outils adaptés.
+\end{itemize}
+
+Cependant, UML est un langage avant tout destiné à modéliser les systèmes informatiques et les processus d'affaire. 
+Il est donc nécessaire de l'adapter afin de lui apporter le vocabulaire et les logiques nécessaires à la description de l'aspect \emph{Mechanics} d'un jeu vidéo.
+C'est à cela que sert le profil \emph{Game Genesis}.
+   
+\GT{Fin de la partie déplacée, qui devrait probablement être supprimée, non?}
+\end{comment}
 
 \gt{Ci-bas et ailleurs. Je ne crois pas que tu devrais utiliser
 directement le terme Mechanics comme dans <<un certain nombre de
@@ -47,57 +72,9 @@ component of the MDA framework can be thought of as a 'lens' or a
 
 
 Afin de rédiger un GDD, un \emph{game designer} doit d'abord définir les bases du jeu.
-Durant cette étape le \emph{game designer} va devoir définir un certain nombre d'\'el\'ements de \emph{Mechanics} qui correspondent aux objets présents dans le jeu ainsi que leurs actions et interactions.
+Durant cette étape, le \emph{game designer} va devoir définir un certain nombre d'\'el\'ements de \emph{Mechanics} qui correspondent aux objets présents dans le jeu ainsi que leurs actions et interactions.
 Ces \'el\'ements de \emph{Mechanics} peuvent aussi bien être des objets visibles dans le jeu --- comme des personnages, des ennemis, des armes, des bâtiments --- mais également des \'el\'ements autour du jeu --- comme des cartes, des chronomètres, des statistiques, etc.
-Tous ces \'el\'ements de \emph{Mechanics} ont des caractéristiques communes et des caractéristiques qui leur sont propres.
-
-%comment
-\emph{Game Genesis} permet à un \emph{game designer} de répertorier et décrire ces \'el\'ements de \emph{Mechanics} sous forme de diagrammes de classes.
-Chaque catégorie de \emph{Mechanics} est représenté par une classe, et
-chaque \'el\'ement de \emph{Mechanics} est aussi représenté par une classe.
-L'appartenance à une catégorie est définie par des relations d'héritage.
-Les caractéristiques des catégories et des divers \'el\'ements de \emph{Mechanics} sont représentées par des attributs des classes.
-Finalement, les interactions possibles entre \'el\'ements du jeu sont représentées par des associations entre classes, associations auxquelles sont parfois associ\'ees diverses contraintes.
-
-%pourquoi
-L'utilisation de diagrammes de classes UML apporte certain avantages pour la modélisation des \'el\'ements de \emph{Mechanics}:
-\begin{itemize}
-    \item Structure
-    \item Langage de modélisation formel et normalisé
-    \item Support de communication visuel \gt{Pas trop certain de ce que cela veut dire, i.e., un peu vague: <<performant>>!}
-    \item Utilisation d'outils adaptés
-    \item Facilement versionnable
-    \item Assez souple pour s'adapter aux domaines ou aux plateformes de développement \gt{s'adapter \`a quoi!?}
-\end{itemize}
-
-Cependant, UML est un langage avant tout destiné à modéliser les systèmes informatiques et les processus d'affaire. 
-Il est donc nécessaire de l'adapter afin de lui apporter le vocabulaire et les logiques nécessaires à la description de l'aspect \emph{Mechanics} d'un jeu vidéo.
-C'est à cela que sert le profil \emph{Game Genesis}.
-   
-
-
-
-
-\section{\emph{Game Genesis} en détail}
-
-\emph{Game Genesis} est un profil UML permettant d'adapter un diagramme de classe pour la rédaction d'un GDD.
-Dans les sections, ci-dessous nous allons définir les éléments suivants :
-\begin{itemize}
-    \item Les stéréotypes qui permettent d'étendre les classes.
-    \item Les stéréotypes qui permettent d'étendre les associations.
-    \item Les contraintes qui d\'efinissent des règles d'utilisation des stéréotypes.
-\end{itemize}
-
-\subsection{Les stéréotypes}
-
-\gt{Dans la figure, comme ce sont des \'el\'ements de <<code>> ---
-classes UML --- il vaut mieux utiliser la police teletype.}
-
-\gt{Ce serait pr\'ef\'erable que dans les deux parties de la figure,
-les r\'ef\'erences aux annexes soient pr\'esent\'ees de la m\^eme
-fa\c{c}on pouar Animate, Lore, World et Interaction. Sinon, cela donne
-l'impression que la s\'emantique pourrait \^etre diff\'erente ---
-parce que c'est bien la m\^eme, n'est-ce pas?}
+Tous ces \'el\'ements de \emph{Mechanics} ont des caractéristiques qui leur sont propres.
 
 \begin{figure}[H]
     \begin{adjustbox}{width=\linewidth}
@@ -175,10 +152,47 @@ parce que c'est bien la m\^eme, n'est-ce pas?}
     \label{fig.GG2}
 \end{figure}
 
-\begin{figure}[H]
+%comment
+\emph{Game Genesis} permet à un \emph{game designer} de répertorier et décrire ces \'el\'ements de \emph{Mechanics} sous forme de diagrammes de classes.
+Chaque catégorie de \emph{Mechanics} est représentée par une classe, et
+chaque \'el\'ement de \emph{Mechanics} est aussi représenté par une classe.
+L'appartenance à une catégorie est définie par des relations d'héritage.
+Les caractéristiques des catégories et des divers \'el\'ements de \emph{Mechanics} sont représentées par des attributs.
+Finalement, certaines interactions entre \'el\'ements du jeu peuvent être représentées par des associations entre classes, associations auxquelles peuvent être associ\'ees certaines contraintes.
+
+Les figures~\ref{fig.GG} et~\ref{fig.GG2} présentent une vue d'ensemble des différents stéréotypes introduits par \emph{Game Genesis} --- seuls les niveaux supérieurs de la hiérarchie des stéréotypes sont indiqués.
+
+
+
+\goodbreak
+
+\section{\emph{Game Genesis} en détail}
+
+\begin{samepage}
+Dans les sous-sections qui suivent, nous définissons plus en détail les éléments suivants de \emph{Game Genesis}~: 
+\begin{itemize}
+    \item Les stéréotypes qui permettent d'étendre les classes.
+    \item Les stéréotypes qui permettent d'étendre les associations.
+    \item Les contraintes qui d\'efinissent des règles d'utilisation des stéréotypes.
+\end{itemize}
+\end{samepage}
+
+\subsection{Les stéréotypes}
+
+\gt{Dans la figure, comme ce sont des \'el\'ements de <<code>> ---
+classes UML --- il vaut mieux utiliser la police teletype.}
+
+\gt{Ce serait pr\'ef\'erable que dans les deux parties de la figure,
+les r\'ef\'erences aux annexes soient pr\'esent\'ees de la m\^eme
+fa\c{c}on pouar Animate, Lore, World et Interaction. Sinon, cela donne
+l'impression que la s\'emantique pourrait \^etre diff\'erente ---
+parce que c'est bien la m\^eme, n'est-ce pas?}
+
+
+\begin{figure}
     \centering
     \includegraphics[width=\linewidth]{10_img/chap5/metaclass_class.PNG} 
-    \caption{Les stéréotypes appliqués à la m\'etaclasse \texttt{Class}.}
+    \caption{La spécification de certains stéréotypes de \emph{Game Genesis}, obtenus par \emph{extension} de la m\'etaclasse \texttt{Class}.}
     \label{fig.meta_class}
 \end{figure}
 
@@ -186,11 +200,23 @@ parce que c'est bien la m\^eme, n'est-ce pas?}
 <<red\'efinition>> qu'une extension, qu'une cr\'eation de nouvelles
 classes, de nouveaux concepts! Donc, j'ai modifi\'e en cons\'equence.}
 
-Dans la Section~\ref{sect.uml.ster}, nous avons décrit le mécanisme de d'extension de m\'etaclasses afin d'introduire de nouveaux concepts par le biais des Stéréotypes. 
+Dans la Section~\ref{sect.uml.ster}, nous avons décrit le mécanisme de d'extension de m\'etaclasses afin d'introduire de nouveaux concepts par le biais de stéréotypes. 
 Dans \emph{Game Genesis}, nous faisons donc usage des stéréotypes afin d'étendre les classes d'un modèle de jeu et ainsi permettre la rédaction de GDD.
+%
+Les racines des arbres définissant ces divers stéréotypes sont
+présentées aux figures~\ref{fig.GG} et~\ref{fig.GG2}, alors que les
+détails des sous-arbres sont présentés en annexe, dans une figure
+dont le numéro est indiqué sur ces figures.
+
+La figure~\ref{fig.meta_class} \ACOMPLETER{expliquer le rôle de cette
+figure, ce qu'elle représente --- et le fait qu'il ne s'agit que d'un
+extrait!}
+
+
+
 Dans un article de Salazar \emph{et al.}~\cite{GDD_software}, plus particulièrement dans la documentation additionnelle de cet article~\cite{salazar_gdd}, nous avons identifié un certain nombre d'\'el\'ements de \emph{Mechanics} typiquement présents dans un GDD.
-Nous avons constaté que tous les éléments étaient répartis dans des catégories possédant elles-mêmes certaines caractéristiques communes. 
-Nous avons extrait les catégories suivantes :
+Nous avons constaté que les éléments étaient répartis dans des catégories possédant elles-mêmes certaines caractéristiques communes. 
+Nous avons ainsi extrait les catégories suivantes :
 
 \begin{itemize}
     \item \emph{Player Character}
@@ -202,6 +228,9 @@ Nous avons extrait les catégories suivantes :
     \item \emph{Other Object}
 \end{itemize}
 
+\GT{Ci-haut: il faut expliquer pourquoi ces catégories que tu
+identifies ne se retrouvent pas dans les figures 5.1 et 5.2 --- donc
+expliquer (?) qu'elles correspondent à des détails de l'annexe (?).}
 
 \gt{Ci-haut: Si ce sont des noms de classes, pr\'esents dans le
 mod\`ele/profil UML, alors il faut utiliser la convention des noms de
@@ -212,30 +241,38 @@ FinalEnemy, etc.}
 \gt{Par contre, comme ce sont des termes en anglais, il vaut mieux les
 mettre en italiques.}
 
-Les classes UML fonctionnent avec un système d'héritage de classes.
-La classe enfant hérite des attributs et méthodes de la classe parent.
-Dans un GDD, un \'el\'ement de \emph{Mechanics} hérite des attributs énoncés dans les catégories parentes.
+Les classes UML fonctionnant avec un système d'héritage,
+un \'el\'ement de \emph{Mechanics} hérite donc des attributs énoncés dans les catégories parentes.
+\begin{comment}
+Phrase inutile!
 C'est ainsi que nous avons décidé d'utiliser un diagramme de classes afin de représenter les \'el\'ements de \emph{Mechanics} comme des classes et de spécifier leurs caractéristiques dans les attributs.
+\end{comment}
 %
 \gt{Je crois que les phrases qui suivent sont redondantes, n'apportent
 rien de plus. Sinon, il faut les reformuler, car je ne comprends pas
 bien ce qu'elles introduisent de nouveau.}
 \eh{Supprimées}
-%
+
 \begin{figure}
     \centering
     \includegraphics[width=5cm]{10_img/chap5/sniper2.PNG} 
     \caption{Une classe \texttt{Sniper1} utilisant le stéréotype
-    \texttt{SR} et qui h\'erite des attributs associ\'es.}
+    \texttt{SR}, et donc qui h\'erite des attributs (directs et indirects) associ\'es à son stéréotype \texttt{SniperRifle}.}
     \label{fig.sniper}
 \end{figure}
 
 \gt{Idem pour ce qui suit!}
 %
 
-La figure~\ref{fig.sniper} pr\'esente un exemple d'une classe \texttt{Sniper1}, un élément de \emph{Mechanics} du GDD d\'efini avec le profil \emph{Game Genesis}.
-Nous voyons que la classe hérite ainsi des attributs des Stéréotypes précédents dans la logique d'héritage de classes.
-Dans son implémentation la classe \texttt{Sniper1} possèdera les attributs des stéréotypes \texttt{Item}, \texttt{Wearable}, \texttt{Weapon} et \texttt{SR}.
+\GT{Dans la figure 5.4, boite pour Sniper1. a. Changer <<stereotype>>
+par <<SniperRifle>>. b. Il devrait y avoir une ligne (sous-boite de
+couleur différente?) qui sépare le nom de la classe de liste des
+attributs.}
+
+La figure~\ref{fig.sniper} pr\'esente un exemple d'une classe \texttt{Sniper1}, un élément de \emph{Mechanics} d'un GDD pour un jeu qui serait d\'efini avec le profil \emph{Game Genesis}.
+La classe \texttt{Sniper1} est stéréotypée avec \texttt{SniperRifle}, donc elle
+hérite des attributs des divers stéréotypes de la hiérarchie d'héritage de classes.
+Une instance de la classe \texttt{Sniper1} possèdera donc les attributs des stéréotypes \texttt{Item}, \texttt{Wearable}, \texttt{Weapon} et \texttt{SR}.
 
 \gt{Ci-haut et dans la figure: non, ce n'est pas ainsi qu'il faut
 pr\'esenter cela il me semble. Plusieurs remarques. 1) Ce serait bien
@@ -269,37 +306,55 @@ des valeurs \'etiquet\'ees pour sp\'ecifier des attributs.}
 
 \subsection{Les interactions}
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics[width=5cm]{10_img/chap5/metaclass_association.PNG} 
-    \caption{Les stéréotypes appliqués à la  m\'etaclasse \texttt{Association}.}
+    \caption{La spécification du stéréotype \texttt{Interaction} de \emph{Game Genesis}, obtenu par \emph{extension} de la m\'etaclasse \texttt{Association}.}
     \label{fig.meta_assoc}
 \end{figure}
-Les éléments de \emph{Mechanics} ne sont pas tous des éléments isolés et une expérience de jeu ne serait rien sans les interactions que le joueur peut avoir avec les divers \'el\'ements du jeu.
-Ces interactions sont présentées dans le gabarit de GDD de Salazar \emph{et al.}~\cite{salazar_gdd} sous forme de règles d'interaction.
-Ces règles sont composées de divers éléments, notamment les suivants :
-\begin{itemize}
-    \item Deux \'el\'ements (ou plus) de \emph{Mechanics} 
-    \item Une interaction entre ces \'el\'ements
-    \item Une contrainte appliquée à cette interaction (optionnelle)
-\end{itemize}
-Les interactions que nous avons identifi\'ees comme int\'eressantes sont les suivantes --- voir aussi la Figure~\ref{A-Interaction}~:
-\begin{itemize}
-\item \texttt{Use}
-\item \texttt{Drop}
-\item \texttt{Grab}
-\item \texttt{Move}
-\item \texttt{Loot}
-\item \texttt{Destroy}
-\item \texttt{Trade}
-\item \texttt{Stack}
-\item \texttt{Drive}
-\item \texttt{Attack}
-\item \texttt{Equip}
-\item \texttt{Wear}
-\item \texttt{Attach}
 
+Les éléments de \emph{Mechanics} ne sont pas tous des éléments isolés et une expérience de jeu ne serait rien sans les interactions que le joueur peut avoir avec les divers \'el\'ements du jeu.
+%
+\ACOMPLETER{Il faut dire quelques mots sur la\ldots} Figure~\ref{fig.meta_assoc}.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{|l|l|}\hline
+\texttt{Use} &
+\texttt{Drop}
+\\\hline
+\texttt{Grab} &
+\texttt{Move}
+\\\hline
+\texttt{Loot} &
+\texttt{Destroy}
+\\\hline
+\texttt{Trade} &
+\texttt{Stack}
+\\\hline
+\texttt{Drive} &
+\texttt{Attack}
+\\\hline
+\texttt{Equip} &
+\texttt{Wear}
+\\\hline
+\texttt{Attach}&
+\\\hline
+\end{tabular}
+\end{center}
+\caption{Les interactions de Salazar \emph{et al.}~\cite{salazar_gdd} intégrées dans \emph{Game Genesis}.}
+\label{table.interactions}
+\end{table}
+
+
+Des interactions fréquemment rencontrées sont présentées dans le gabarit de GDD de Salazar \emph{et al.}~\cite{salazar_gdd}, qui les présente sous forme de règles d'interaction.
+Ces règles sont composées de divers éléments, dont les suivants :
+\begin{itemize}
+    \item Deux \'el\'ements (ou plus) de \emph{Mechanics};
+    \item Une interaction entre ces \'el\'ements;
+    \item Une contrainte appliquée à cette interaction (optionnelle).
 \end{itemize}
+Les interactions de Salazar \emph{et al.} que nous avons intégrées à \emph{Game Genesis} sont présentées dans le tableau~\ref{table.interactions} --- voir aussi la Figure~\ref{A-Interaction}.
 
 
 \gt{Il faut aussi que tu montres clairement, parce que c'est dans le
@@ -315,19 +370,24 @@ l'annexe --- qu'il s'agit d'extension de la Metaclass Class!}
 
 Dans un profil UML, il est fréquent d'imposer des contraintes d'utilisation sur les \'el\'ements du profil afin de le rendre plus précis et d'éviter des problèmes de compréhension ou d'incohérence du modèle.
 Dans \emph{Game Genesis}, il est difficile d'établir un grand nombre de contraintes, le profil devant s'appliquer à de nombreux types de \emph{gameplay}.
+\begin{comment}
+Je ne comprends pas trop cette phrase
 C'est en essayant de laisser assez de liberté aux \emph{game designers} que certaines contraintes ne peuvent pas être appliquées ou sont situationnelles.
+\end{comment}
 
 Voici quand m\^eme une br\`eve liste de contraintes envisageables dans un profil tel que \emph{Game Genesis} :
 \begin{itemize}
-    \item Une interaction entre \texttt{Player} et \texttt{Weapon} ne peut être que \texttt{Grab} ou \texttt{Equip}
-    \item Une interaction entre \texttt{Player} et \texttt{Equipment} ne peut être que \texttt{Grab} ou \texttt{Equip}
-    \item Une interaction sur un \texttt{AddOn} doit être entre trois parties telles que \texttt{Player} \texttt{<<attach>>} \texttt{Addon} on \texttt{Weapon/Equipment}
+    \item Une interaction entre \texttt{Player} et \texttt{Weapon} ne peut être que \texttt{Grab} ou \texttt{Equip};
+    \item Une interaction entre \texttt{Player} et \texttt{Equipment} ne peut être que \texttt{Grab} ou \texttt{Equip};
+    \item Une interaction sur un \texttt{AddOn} doit être entre trois parties telles que \texttt{Player}, \texttt{<<attach>>}, \texttt{Addon} on \texttt{Weapon/Equipment};
 \end{itemize}
 
-Certaines contraintes peuvent être situationnelles comme celles ci dessous :
+\GT{Je ne comprends pas la contrainte sur AddOn~:(} 
+
+Certaines contraintes peuvent être situationnelles comme celles ci-dessous :
 \begin{itemize}
-    \item Si le jeu est PvP (\emph{Player versus Player}) alors \texttt{Player} \texttt{<<attack>>} \texttt{Player} est possible,
-    \item Si le jeu n'est pas PvP alors \texttt{Player} \texttt{<<attack>>} \texttt{Player} n'est pas possible.
+    \item Si le jeu est \texttt{PvP} (\emph{Player versus Player}) alors \texttt{Player} \texttt{<<attack>>} \texttt{Player} est possible,
+    \item Si le jeu n'est pas \texttt{PvP} alors \texttt{Player} \texttt{<<attack>>} \texttt{Player} n'est pas possible.
 \end{itemize}
 
 
@@ -336,6 +396,13 @@ contrainte, il faudrait que ton profil inclut un attribut qui permet
 d'indiquer si le jeu et PvP ou non.}
 
 \section{Conclusion}
+
+
+\ACOMPLETER{Synthétiser {\bf brièvement} ce qui a été fait, en
+indiquant aussi, dès à présent, les limites --- juste Mechanics,
+inspiré principalement de X, profil spécéfié de façon informel (pas
+dans un outil). Mais tu vas quand même l'utiliser pour décrire les
+éléments de Mechanics d'un jeu.}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
