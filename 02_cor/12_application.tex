@@ -43,6 +43,7 @@ Bien que connu depuis l'ann\'ee 2000, l'intérêt pour le principe du \emph{Batt
 Le succès des \emph{Hunger Games} a amené les développeurs du jeu \emph{Arma II} à créer un mode de jeu basé sur les mêmes règles. Ce mode sera alors appelé \emph{DayZ} et deviendra par la suite un jeu \emph{standalone}. Un mode voit également le jour : \emph{Battle Royale}. Développé par Brendan Greene tout d'abord pour \emph{Arma II} puis pour \emph{Arma III}, ce mode gagne suffisament en popularité pour qu'il donne naissance au projet de jeu \emph{PlayerUnknown's Battlegrounds} (PUBG) --- \emph{PlayerUnknown} étant le pseudonyme en ligne utilisé par Brendan Greene.
 
 \section{Les règles de PUBG}
+\label{sect.pubg}
 Les r\`egles du jeu PUBG vont comme suit.
 Un avion parcourt une ligne droite au-dessus d'un territoire, et les 100 joueurs de la partie doivent sauter de cet avion afin d'être parachutés à l'endroit de leur choix --- à condition qu'il soit à portée de parachutage. Une fois arrivés au sol, les joueurs partent à la recherche d'armes et d'équipements dans des bâtiments et doivent tuer les autres joueurs jusqu'à ce qu'il ne reste qu'un seul survivant, lequel gagne alors la partie. Il est également possible de jouer en \'equipes de deux ou quatre joueurs, o\`u la dernière équipe encore vivante est l'\'equipe gagnante. Afin de limiter la durée d'une partie, une zone circulaire est définie sur la carte une fois que tous les joueurs ont atterri, et cette zone se réduit au cours de la partie --- ce qu'on appelle la \emph{Blue Zone}. Les joueurs en dehors de la zone subissent une certaine quantité de dégâts s'ils restent \`a l'ext\'erieur de cette zone, et ces dégâts augmentent au fur et à mesure que le cercle se resserre. Une autre zone apparaît également sur la carte : la \emph{Red Zone}. C'est une zone de bombardement qui change d'emplacement régulièrement dans une partie. Lorsque cette zone est active, plusieurs bombes tombent au sol, et une seule bombe suffit à tuer un joueur.
 %
@@ -124,12 +125,12 @@ minuscule.
 - Pour la classe associative Attack, je ne vois toujours pas la ligne
   pointillee. De plus, cette classe peut etre stereotypee avec
   <<Attack>> mais elle doit aussi avoir un nom de classe!  Nom
-  possible: PUBGAttack?  SoldierAttack?
+  possible: PUBGAttack?  PlayerAttack?
 
 - Je n'aime toujours pas le terme <<Element>>, trop generique!
   <<WorldElement>> serait-il possible?
 
-- Je n'aime pas non plus <<Contain>> pour les Soldier dans Plane --
+- Je n'aime pas non plus <<Contain>> pour les Player dans Plane --
   trop generique.  Je suggere <<TravelOn>> qui indique qu'une personne
   voyage sur un appareil/moyen de locomotion.
 
@@ -167,14 +168,25 @@ partie de PUBG.
 pour ne pas confondre avec <<une partie du jeu>> (une instance du jeu
 en cours d'ex\'ecution).}
 
-\ACOMPLETER{Ici, il faudrait décrire un peu les éléments de cette
-figure. Pas tous, mais ceux qui te semblent particulièrement
-intéressants ou signficatifs pour expliquer PUBG. Ce que je veux dire,
-en gros, c'est de décrire en quelques mots/phrases certains morceaux
-du diagramme --- classes et associations reliées.}
+Lors de la description du jeu présenté à la Section~\ref{sect.pubg} nous avons cité quelques éléments de \emph{gameplay} présents dans le jeu.
+Nous avions décris :
+\begin{itemize}
+    \item Un avion parcours un territoire, il contient 100 joueurs
+    \item Les joueurs ramassent des armes
+    \item Ils doivent tuer les autres joueurs
+    \item Une \emph{BlueZone} délimite une zone à l'extérieur de laquelle un joueur subit des dégâts
+    \item une \emph{RedZone} délimite une zone de bombardement
+\end{itemize}
 
-
-
+Tous ces éléments aupravant décrits sous forme textuelle ont été modélisés dans un modèle UML utilisant \emph{Game Genesis} dans la Figure~\ref{fig.PUBG_model}. 
+On retrouve :
+\begin{itemize}
+    \item un objet \texttt{Plane} (avion) qui \texttt{Travel} (voyage) une \texttt{Map} (carte)
+    \item un \texttt{Player} qui \texttt{Equip} une \texttt{Weapon} (armes)
+    \item un \texttt{Player} qui \texttt{Attack} un \texttt{Player}
+    \item une \texttt{BlueZone} qui a une \texttt{size} (taille) et qui inflige des \texttt{damages} (dommages).
+    \item une \texttt{RedZone} qui possède un \texttt{BombNumber} (nombre de bombes) et une \texttt{duration} (durée de vie)
+\end{itemize}
 
 
 
@@ -184,11 +196,11 @@ du diagramme --- classes et associations reliées.}
 \begin{figure}
     \centering
     \includegraphics[width=6cm]{10_img/chap6/attack_min.PNG}
-    \caption{Le mod\`ele pour un \texttt{Soldier} qui en attaque un autre.}
+    \caption{Le mod\`ele pour un \texttt{Player} qui en attaque un autre.}
     \label{fig.PUBG_attack_min}
 \end{figure}
 
-Dans une partie de PUBG, le but ultime pour un joueur est d'éliminer les autres joueurs et de sortir vainqueur en tant que dernier survivant. La notion d'attaque entre joueurs est donc essentielle dans la description des éléments de \emph{Mechanics} de PUBG. Ici, elle est représentée par une association récursive sur \texttt{Soldier} avec l'interaction \texttt{Attack} --- présentée dans la Figure~\ref{fig.PUBG_attack_min}. 
+Dans une partie de PUBG, le but ultime pour un joueur est d'éliminer les autres joueurs et de sortir vainqueur en tant que dernier survivant. La notion d'attaque entre joueurs est donc essentielle dans la description des éléments de \emph{Mechanics} de PUBG. Ici, elle est représentée par une association récursive sur \texttt{Player} avec l'interaction \texttt{Attack} --- présentée dans la Figure~\ref{fig.PUBG_attack_min}. 
 
 Afin de définir plus précisément l'interaction \texttt{Attack}, le \emph{game designer} peut décider d'y intégrer des attributs et des méthodes afin de mieux représenter et mieux documenter une attaque entre deux joueurs. Par définition, une attaque sur PUBG consiste en le fait qu'un joueur tire sur un autre joueur pour lui faire subir des dégâts.
 %
@@ -202,15 +214,15 @@ Afin d'exprimer le calcul des dégâts nous avons mis en place la formule suivan
 %
 \begin{equation*}
 \begin{split}
-Damages& = Attacker(Weapon(Damages(Type(Value)))\\
-Protection& = Defender(Protection(DamageReduction))\\
+Damages& = Attacker(Weapon(damages(type(value)))\\
+Protection& = Defender(Protection(damageReduction))\\
 Calcul& = Defender(health) - (Damages - Protection)
 \end{split}
 \end{equation*}
 
 \end{samepage}
 
-\GT{Dans la formule: assure-toi que tu utilises une minuscule comme
+\gt{Dans la formule: assure-toi que tu utilises une minuscule comme
 première lettre si tu réfères à un attribut.}
 
 
@@ -233,26 +245,26 @@ un float, i.e., figure ou table.}
 Appliquer ce calcul des dégâts pourrait par exemple donner la simulation suivante~: 
 {\footnotesize
 \begin{framed}
-Un \texttt{Soldier}, appelé \texttt{Soldier25}, possédant une arme de type \texttt{Kar98k}, effectue un tir à la tête sur un autre joueur, appelé \texttt{Soldier26}, portant un \texttt{HelmetT2}.
+Un \texttt{Player}, appelé \texttt{Player25}, possédant une arme de type \texttt{Kar98k}, effectue un tir à la tête sur un autre joueur, appelé \texttt{Player26}, portant un \texttt{HelmetT2}.
 
 
 \begin{equation*}
 \begin{split}
-Damages& = Attacker:\texttt{Soldier25}(\texttt{Weapon}:\texttt{Kar98k}(Damages(Type:HeadShot(197.50)))\\
-Protection& = Defender:\texttt{Soldier26}(Protection:\texttt{HelmetT2}(DamageReduction:40\%))\\
-Calcul& = Defender:\texttt{Soldier26}(Health:100) - (197.50 - (Protection:40\%))\\
+Damages& = Attacker:\texttt{Player25}(\texttt{Weapon}:\texttt{Kar98k}(damages(type:HeadShot(197.50)))\\
+Protection& = Defender:\texttt{Player26}(Protection:\texttt{HelmetT2}(damageReduction:40\%))\\
+Calcul& = Defender:\texttt{Player26}(health:100) - (197.50 - (Protection:40\%))\\
 Result& = -18.5
 \end{split}
 \end{equation*}
 
 
-Donc, dans cet exemple, l'attaque génère 118.5 points de dégâts, laissant \texttt{Soldier26} avec un total de vie de -18.5. Ce total négatif indique alors la mort de \texttt{Soldier26}.
+Donc, dans cet exemple, l'attaque génère 118.5 points de dégâts, laissant \texttt{Player26} avec un total de vie de -18.5. Ce total négatif indique alors la mort de \texttt{Player26}.
 \end{framed}
 }
 
 \goodbreak
 \begin{samepage}
-La mort d'un \texttt{Soldier} si sa vie est inférieure à 0 peut être exprimée par les contraintes suivantes~:
+La mort d'un \texttt{Player} si sa vie est inférieure à 0 peut être exprimée par les contraintes suivantes~:
 {
 \footnotesize
 \begin{framed}
@@ -290,7 +302,7 @@ La mort d'un \texttt{Soldier} si sa vie est inférieure à 0 peut être exprimé
 \gt{Dans la figure: tu ne peux pas avoir le nom de classe
 \texttt{Player} qui soit en plus st\'er\'eotyp\'e par
 <<\texttt{Player}>>.}
-\eh{Remplacé par Soldier}
+\eh{Remplacé par Player}
 
 \gt{De plus: Pourquoi Player68?  Comme indiqu\'e ailleurs, avec les
 st\'er\'eotypes, tu d\'efinis des classes, et non des instances. Or,
