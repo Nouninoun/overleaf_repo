@@ -104,13 +104,22 @@ Un stéréotype peut être défini pour divers types d'éléments d'un mod\`ele 
     \end{center}
 \end{figure}
 
-Dans la figure~\ref{fig.uml_but_definition} nous pouvons remarquer la présence d'une flêche noire à tête pleine entre les éléments \texttt{<<~stereotype~>> Bouton} et \texttt{<<~metaclass~>>Class}.
-C'est une notation UML indiquant que \texttt{<<~metaclass~>>Class} est étendu par \texttt{<<~stereotype~>> Bouton}.
-Cette notation d'extension peut inclure différents éléments qui ne sont pas requis dans notre cas comme :
+Dans la figure~\ref{fig.uml_but_definition}, on peut remarquer la présence d'une flêche noire à tête pleine entre les éléments "\texttt{<<stereotype>> Bouton}" et "\texttt{<<metaclass>>~Class}".
+C'est la notation (graphique) UML indiquant que le st\'er\'eotype \texttt{Bouton} \textbf{étend} (\emph{extension}) la métaclasse UML \texttt{Class}.
+%
+En d'autres mots, le stéréotype \texttt{Bouton} pourra être utilisé pour \emph{annoter des classes.}
+%
+Signalons aussi qu'une extension, comme on le verra dans le prochain chapitre, peut aussi être utilisée en lien avec la métaclasse \texttt{Association}, ce qui permet alors de stéréotyper une association.
+
+\begin{comment}
+\GT{Pas nécessaire... et pas certain pour la multiplicité!?}
+
+La notation d'extension peut inclure différents éléments, mais qui ne sont pas requis dans notre cas comme :
 \begin{itemize}
     \item la notation \emph{<<~required~>>} qui indiquerait que l'extension est obligatoire sur chaque élément de \texttt{<<~metaclass~>>Class}.
     \item des multiplicités qui définissent si un objet \texttt{<<~metaclass~>>Class} peut être étendu par un ou plusieurs stéréotypes.
 \end{itemize}
+\end{comment}
 
 \gt{Dans la figure \ref{fig.uml_but_definition}, tu dois \^etre plus explicite
 quant au fait que cela \'etend une classe.
@@ -145,7 +154,7 @@ d\'efinir diff\'erentes instances de \texttt{Bouton}, tel qu'illustré à la Fig
 Les valeurs \'etiquet\'ees (\emph{tagged values}) permettent d'ajouter \`a un \'el\'ement des propriétés qui lui sont spécifiques.
 Plus pr\'ecis\'ement, ce m\'ecanisme permet d'ajouter de l'information spécifique aux éléments \`a l'aide de paires clé/valeur.
 %Les attributs présents dans un stéréotype seront affichés visuellement dans une classe faisant usage du stéréotype.
-Ces couples clé/valeur sont indiqués comme tel qu'illustré dans la Figure~\ref{fig.uml_marche}.
+Ces couples clé/valeur sont indiqués comme illustré dans la Figure~\ref{fig.uml_marche}.
 
 \gt{Je ne comprends pas la derni\`ere phrase!?}
 
@@ -192,9 +201,9 @@ Une contrainte est représent\'ee, dans un modèle, sous la forme d'une note ind
 etc. Et j'écrirais plutôt <<Si Marche(etat) = false Alors Action(etat)
 = false>>}
 
-Nous trouvons l'exemple d'une contrainte dans la Figure~\ref{fig.uml_con} entre les boutons \texttt{Marche} et \texttt{Action}.
-Cette contrainte énonce : Si l'état du bouton Marche est à False, alors l'état du bouton Action sera toujours égal à False.
-Ce qui signifie que l'action de la machine ne peut pas être effectuée si la machine est à l'arrêt.
+Nous trouvons l'exemple d'une contrainte dans la Figure~\ref{fig.uml_con}, entre les boutons \texttt{Marche} et \texttt{Action}.
+Cette contrainte énonce que si l'état du bouton \texttt{Marche} est \texttt{false}, alors l'état du bouton \texttt{Action} sera lui aussi \texttt{false},
+ce qui signifie que l'action de la machine ne peut pas être effectuée si la machine est à l'arrêt.
 On pourra alors sp\'ecifier, dans un diagramme UML, la contrainte présent\'ee dans la figure~\ref{fig.uml_con}.
 
 %\newpage
