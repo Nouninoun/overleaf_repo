@@ -95,7 +95,7 @@ Tous ces \'el\'ements de \emph{Mechanics} ont des caractéristiques qui leur son
                     [Fig.~\ref{A-Tool},tier=bottom]
                  ]
              ]
-             [\texttt{Add-on},tier=2
+             [\texttt{AddOn},tier=2
                     [Fig.~\ref{A-Add-on},tier=bottom]
              ]
              [\texttt{Usable},tier=2
@@ -113,6 +113,7 @@ Tous ces \'el\'ements de \emph{Mechanics} ont des caractéristiques qui leur son
     \end{adjustbox}
     \caption{L'arbre des stéréotypes de \emph{Game Genesis}.}
     \label{fig.GG}
+    \label{fig.GG1}
 \end{figure}
     
 \begin{figure}[H]
@@ -209,9 +210,11 @@ détails des sous-arbres sont présentés en annexe, dans une figure
 dont le numéro est indiqué sur ces figures.
 
 La figure~\ref{fig.meta_class} présente les différentes <<~racines~>> de \emph{Game Genesis}. 
-Ce sont les premiers stéréotypes du profil qui serviront majoritairement de catégories de haut niveau pour classifier les éléments de \emph{Mechanics} décris dans un \emph{Game design document}.
+Ce sont les premiers stéréotypes du profil qui serviront majoritairement de catégories de haut niveau pour classifier les éléments de \emph{Mechanics} décrits dans un \emph{Game Design Document}.
 Nous présentons le profil plus en détail dans l'Annexe~\ref{AnnexeA}.
-
+%
+Comme on le remarque, ces stéréotypes sont des \emph{extensions} de la
+métaclasse \texttt{Class}, donc ils serviront à annoter des classes, des concepts.
 
 
 Dans un article de Salazar \emph{et al.}~\cite{GDD_software}, plus particulièrement dans la documentation additionnelle de cet article~\cite{salazar_gdd}, nous avons identifié un certain nombre d'\'el\'ements de \emph{Mechanics} typiquement présents dans un GDD.
@@ -228,11 +231,14 @@ Nous avons ainsi extrait les catégories suivantes :
     \item \emph{Other Object}
 \end{itemize}
 
-Ces catégories sont cependant très larges et spécifiques au jeu décrit dans le \emph{Game design document}~\cite{salazar_gdd}.
-Ces catégories ne permettent pas forcément de représenter les éléments de \emph{Mechanics} de jeux différents de \emph{Donkey Kong}.
-Par la suite nous avons essayé de définir des catégories et des éléments en fonction de différents \emph{Game design document} et de notre expérience personnelle de l'utilisation des jeux vidéos.
-Nous avons donc définis les stéréotypes présents dans les figures~\ref{fig.GG1} et~\ref{fig.GG2}.
-Ces deux figures renvoient vers une modélisation plus en détail présente dans l'Annexe~\ref{AnnexeA}.
+
+\gt{J'ai oté <<très larges>> car <<très larges et spécifiques>> me semblait contradictoire!}
+
+Ces catégories sont cependant plutôt spécifiques au jeu décrit dans cet exemple de \emph{Game Design Document}, à savoir \emph{Donkey Kong}~\cite{salazar_gdd}.
+Donc, ces catégories ne permettent pas forcément de représenter les éléments de \emph{Mechanics} de jeux différents de \emph{Donkey Kong}.
+Par la suite, nous avons essayé de définir des catégories et des éléments en fonction de différents \emph{Game Design Documents} et de notre expérience personnelle de l'utilisation des jeux vidéos.
+Nous avons alors défini les stéréotypes présents dans les figures~\ref{fig.GG1} et~\ref{fig.GG2},
+figures qui renvoient vers une modélisation plus en détail présentée dans l'Annexe~\ref{AnnexeA}.
 
 \gt{Ci-haut: il faut expliquer pourquoi ces catégories que tu
 identifies ne se retrouvent pas dans les figures 5.1 et 5.2 --- donc
@@ -321,8 +327,8 @@ des valeurs \'etiquet\'ees pour sp\'ecifier des attributs.}
 
 Les éléments de \emph{Mechanics} ne sont pas tous des éléments isolés et une expérience de jeu ne serait rien sans les interactions que le joueur peut avoir avec les divers \'el\'ements du jeu.
 
-La Figure~\ref{fig.meta_assoc} représente l'extension possible avec les stéréotypes présents dans la catégorie \texttt{Interaction}.
-Contrairement aux autres stéréorypes du profil qui étendent les classes, celui d'\texttt{Interaction} étend la \texttt{<<~metaclass~>>} \texttt{Association}.
+La Figure~\ref{fig.meta_assoc} représente la spécification des stéréotypes présents dans la catégorie \texttt{Interaction}.
+Contrairement aux autres stéréotypes du profil \emph{Game Genesis} qui étendent les classes, celui d'\texttt{Interaction} étend plutôt la métaclasse \texttt{Association}.
 
 \begin{table}
 \begin{center}
@@ -386,7 +392,7 @@ Voici quand m\^eme une br\`eve liste de contraintes envisageables dans un profil
 \begin{itemize}
     \item Une interaction entre \texttt{Player} et \texttt{Weapon} ne peut être que \texttt{Grab} ou \texttt{Equip};
     \item Une interaction entre \texttt{Player} et \texttt{Equipment} ne peut être que \texttt{Grab} ou \texttt{Equip};
-    \item Une interaction entre \texttt{Addon} et \texttt{Weapon/Equipment} ne peut être que \texttt{Attach};
+    \item Une interaction entre \texttt{AddOn} et \texttt{Weapon} ou \texttt{Equipment} ne peut être que \texttt{Attach};
 \end{itemize}
 
 \gt{Je ne comprends pas la contrainte sur AddOn~:(} 
@@ -405,18 +411,20 @@ d'indiquer si le jeu et PvP ou non.}
 Le PVP ou PVE sont des mécaniques de gameplay }
 
 \section{Conclusion}
-Dans ce chapitre nous avons donc réussi à exprimer les concepts de base d'un profil pour la rédaction d'un \emph{Game design document}.
-Ce profil, \emph{Game Genesis}, est cependant une version conceptuelle et incomplète de ce qui pourrait couvrir tous les besoin d'un \emph{game designer}.
-\emph{Game genesis} est partiel et incomplet car :
+%
+%\GT{Dire que tu as <<réussi>> est trop fort!}
+%
+Dans ce chapitre, nous avons tenté d'exprimer les concepts de base d'un profil UML pour la rédaction d'un \emph{Game Design Document}.
+Dans son état actuel, ce profil, \emph{Game Genesis}, est cependant plus une <<preuve de concept>> qu'une version complète qui pourrait couvrir tous les besoin d'un \emph{game designer}.
+\emph{Game Genesis} est incomplet car :
 \begin{itemize}
-    \item il ne couvre que les aspects \emph{Mechanics} du design d'un jeu vidéo
-    \item les catégories sont non exhaustives
-    \item le profil est spécifié de façon non formelle, aucun outil n'est développé pour l'utiliser
+    \item seuls les aspects \emph{Mechanics} sont traités;
+    \item les catégories sont non exhaustives;
+    \item le profil est spécifié de façon non formelle, aucun outil UML <<officiel>> n'ayant été utilisé pour le spécifier.
 \end{itemize}
 
-Cependant malgré le fait que \emph{Game genesis} ne soit qu'à l'état de preuve de concept il est intéressant de voir comment il pourrait être utilisé dans le cadre de la rédaction d'un \emph{Game design document}.
-Pouvoir utiliser le profil afin de modéliser un jeu déjà existant pourra permettre de tester le profil, l'adapter et vérifier les mécanismes qu'il propose.
-C'est ce que nous allons effectuer et présenter dans le Chapitre~\ref{chap.pubg}.
+Il serait quand même intéressant de voir comment \emph{Game Genesis} peut être utilisé dans le cadre de la rédaction d'un \emph{Game Design Document} pour un jeu existant.
+C'est ce que nous faisons dans le prochain chapitre.
 
 
 
