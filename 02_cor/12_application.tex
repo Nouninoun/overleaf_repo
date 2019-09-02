@@ -168,24 +168,22 @@ partie de PUBG.
 pour ne pas confondre avec <<une partie du jeu>> (une instance du jeu
 en cours d'ex\'ecution).}
 
-Lors de la description du jeu présenté à la Section~\ref{sect.pubg} nous avons cité quelques éléments de \emph{gameplay} présents dans le jeu.
-Nous avions décris :
+Lors de la description du jeu présenté à la Section~\ref{sect.pubg}, nous avons cité quelques éléments de \emph{gameplay} présents dans PUBG~: 
 \begin{itemize}
-    \item Un avion parcours un territoire, il contient 100 joueurs
-    \item Les joueurs ramassent des armes
-    \item Ils doivent tuer les autres joueurs
-    \item Une \emph{BlueZone} délimite une zone à l'extérieur de laquelle un joueur subit des dégâts
-    \item une \emph{RedZone} délimite une zone de bombardement
+    \item Un avion parcourt un territoire et contient initialement 100 joueurs;
+    \item Les joueurs ramassent des armes;
+    \item Un joueur doit tuer les autres joueurs;
+    \item Une \emph{BlueZone} délimite une zone à l'extérieur de laquelle un joueur subit des dégâts;
+    \item une \emph{RedZone} délimite une zone de bombardement.
 \end{itemize}
 
-Tous ces éléments aupravant décrits sous forme textuelle ont été modélisés dans un modèle UML utilisant \emph{Game Genesis} dans la Figure~\ref{fig.PUBG_model}. 
-On retrouve :
+Ces éléments sont représentés dans un modèle UML utilisant \emph{Game Genesis} présenté à la Figure~\ref{fig.PUBG_model}~: 
 \begin{itemize}
-    \item un objet \texttt{Plane} (avion) qui \texttt{Travel} (voyage) une \texttt{Map} (carte)
-    \item un \texttt{Player} qui \texttt{Equip} une \texttt{Weapon} (armes)
-    \item un \texttt{Player} qui \texttt{Attack} un \texttt{Player}
-    \item une \texttt{BlueZone} qui a une \texttt{size} (taille) et qui inflige des \texttt{damages} (dommages).
-    \item une \texttt{RedZone} qui possède un \texttt{BombNumber} (nombre de bombes) et une \texttt{duration} (durée de vie)
+    \item un objet \texttt{Plane} (avion) qui \texttt{Travel} (voyage) à travers une \texttt{Map} (carte);
+    \item une \texttt{Weapon} (arme) qui \texttt{Equip} un \texttt{Player};
+    \item un \texttt{Player} qui \texttt{Attack} un \texttt{Player};
+    \item une \texttt{BlueZone} qui a une \texttt{size} (taille) et qui inflige des \texttt{damages} (dommages);
+    \item une \texttt{RedZone} qui possède un \texttt{BombNumber} (nombre de bombes) et une \texttt{duration} (durée de vie).
 \end{itemize}
 
 
@@ -409,3 +407,6 @@ Pour représenter toutes les armes de PUBG il faudrait reproduire la Figure~\ref
 
 
 \section{Conclusion}
+
+\ACOMPLETER{Quelques mots!}
+
