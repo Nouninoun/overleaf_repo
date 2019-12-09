@@ -201,7 +201,7 @@ parce que c'est bien la m\^eme, n'est-ce pas?}
 <<red\'efinition>> qu'une extension, qu'une cr\'eation de nouvelles
 classes, de nouveaux concepts! Donc, j'ai modifi\'e en cons\'equence.}
 
-Dans la Section~\ref{sect.uml.ster}, nous avons décrit le mécanisme de d'extension de m\'etaclasses afin d'introduire de nouveaux concepts par le biais de stéréotypes. 
+Dans la section~\ref{sect.uml.ster}, nous avons décrit le mécanisme d'extension de m\'etaclasses afin d'introduire de nouveaux concepts par le biais de stéréotypes. 
 Dans \emph{Game Genesis}, nous faisons donc usage des stéréotypes afin d'étendre les classes d'un modèle de jeu et ainsi permettre la rédaction de GDD.
 %
 Les racines des arbres définissant ces divers stéréotypes sont
@@ -269,7 +269,7 @@ bien ce qu'elles introduisent de nouveau.}
     \centering
     \includegraphics[width=5cm]{10_img/chap5/sniper2.PNG} 
     \caption{Une classe \texttt{Sniper1} utilisant le stéréotype
-    \texttt{SR}, et donc qui h\'erite des attributs (directs et indirects) associ\'es à son stéréotype \texttt{SniperRifle}.}
+    \texttt{SniperRifle}, et donc qui h\'erite des attributs (directs et indirects) associ\'es à son stéréotype \texttt{SniperRifle}.}
     \label{fig.sniper}
 \end{figure}
 
@@ -284,7 +284,7 @@ attributs.}
 La figure~\ref{fig.sniper} pr\'esente un exemple d'une classe \texttt{Sniper1}, un élément de \emph{Mechanics} d'un GDD pour un jeu qui serait d\'efini avec le profil \emph{Game Genesis}.
 La classe \texttt{Sniper1} est stéréotypée avec \texttt{SniperRifle}, donc elle
 hérite des attributs des divers stéréotypes de la hiérarchie d'héritage de classes.
-Une instance de la classe \texttt{Sniper1} possèdera donc les attributs des stéréotypes \texttt{Item}, \texttt{Wearable}, \texttt{Weapon} et \texttt{SR}.
+Une instance de la classe \texttt{Sniper1} possèdera donc les attributs des stéréotypes \texttt{Item}, \texttt{Wearable}, \texttt{Weapon} et \texttt{SniperRifle}.
 
 \gt{Ci-haut et dans la figure: non, ce n'est pas ainsi qu'il faut
 pr\'esenter cela il me semble. Plusieurs remarques. 1) Ce serait bien
@@ -376,7 +376,7 @@ l'annexe --- qu'il s'agit d'extension de la Metaclass Class!}
 \subsection{Quelques contraintes}
 
 Dans un profil UML, il est fréquent d'imposer des contraintes d'utilisation sur les \'el\'ements du profil afin de le rendre plus précis et d'éviter des problèmes de compréhension ou d'incohérence du modèle.
-Dans \emph{Game Genesis}, il est difficile d'établir un grand nombre de contraintes, le profil devant s'appliquer à de nombreux types de \emph{gameplay}.
+Dans \emph{Game Genesis}, il est difficile d'établir un grand nombre de contraintes, le profil devant s'appliquer à de nombreux types de mécaniques de jeu.
 \begin{comment}
 Je ne comprends pas trop cette phrase
 C'est en essayant de laisser assez de liberté aux \emph{game designers} que certaines contraintes ne peuvent pas être appliquées ou sont situationnelles.
@@ -443,3 +443,5 @@ Il faut que la modélisation soit assez souple pour pouvoir répondre aux besoin
 \paragraph{Les supports de réflexion actuellement utilisés : cahier des charges, réunions, notes écrites, mails, minds-maps... L'organisation de ces différents supports dans un ensemble cohérent est tr;s compliqué. Dans un cahier des charges il est compliqué de classer les idées à la volée. Un mind-map nécessite une numérisation ou une retranscription sur un outil de mind-mapping qui sont toutes les deux des techniques non péreines et risquées dans la conservation des données. Des notes écrites peuvent se perdre et n'ont pas de durabilité sur le long terme. Des mails sont péreins mais il est difficile de les organiser pour le stockage de l'information.}
 \paragraph{Un langage de modélisation graphique et textuel permettrait de mind-mapper les idées à la volée sous forme de cubes contenant les données nécessaires. La hiérarchisation des éléments permettrait de gérer des héritages et des relations ainsi que d'éviter la répétition trop abondante des mêmes informations. Les faces des cubes permettrait d'isoler les informations nécessaires à chacun des corps de métier.}
 \end{comment}
+
+
