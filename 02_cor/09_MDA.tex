@@ -12,11 +12,11 @@ Un jeu vidéo est cependant difficile à concevoir et, surtout, à documenter.
 Un logiciel classique vise généralement \`a répondre à un besoin précis identifié et demandé par les utilisateurs.
 Le logiciel est donc une réponse à une problématique et son utilisation est logique si le logiciel répond au besoin énoncé.
 %
-Par contre, un jeu vidéo doit créer le besoin chez un utilisateur, qui n'a pas de besoins liés à son utilisation.
+Par contre, un jeu vidéo doit souvent créer <<un besoin>> chez un utilisateur, qui n'a pas de besoins liés à son utilisation.
 Il doit proposer un but au joueur, lui donner l'envie de continuer à l'utiliser et doit générer des émotions pour être apprécié, car il ne vise pas \`a r\'esoudre une problématique.
 
 Il est compliqué de définir une méthode précise pour décrire une émotion ainsi que les moyens à mettre en place pour parvenir à la générer.
-Le \emph{framework} \glsfirst{mda} tente de définir une structure pour accompagner un \emph{game designer} durant les étapes de documentation d'un jeu.
+Le \emph{framework} \glsfirst{mda} de Hunicke, Leblanc et Zubek~\cite{MDA_formal} tente de définir une structure pour accompagner un \emph{game designer} durant les étapes de documentation d'un jeu.
 MDA essaie d'apporter une solution en apportant une catégorisation des émotions et des approches et techniques pour parvenir à les générer.
 
 
@@ -127,7 +127,7 @@ motiver pourquoi d'autres frameworks ont \'et\'e propos\'es.}
 
 Le \gls{dpe}, illustr\'e \`a la figure~\ref{fig.dpe}, est un \emph{framework} reposant sur les mêmes principes que MDA. 
 Plus sp\'ecifiquement, des modifications sont appliquées au MDA afin d'étendre ses capacités de design pour les jeux sérieux. 
-Ainsi, DPE étend MDA afin d'y intégrer les notions d'apprentissage, de \emph{story telling}, de mécaniques de jeu et de composants technologiques spécifiques aux jeux sérieux. 
+Ainsi, DPE étend MDA afin d'y intégrer les notions d'apprentissage, de sc\'enarisation (\emph{story telling}), de mécaniques de jeu et de composants technologiques spécifiques aux jeux sérieux. 
 La figure~\ref{fig.dpe_extended} donne les différentes parties du DPE, telles que présentées par Winn~\cite{Winn2011}.
 
 
@@ -191,6 +191,11 @@ Walk \emph{et al.} effectuent donc un découpage différent et intègrent de nou
 profond comme numérotation et ça rend cela débalancé par rapport aux
 autres sous-sections.}
 
+
+\goodbreak
+
+\begin{samepage}
+
 \subsubsection*{\emph{Design}}
 
 Les \'el\'ements associ\'es \`a l'aspect \emph{Design} sont les suivants~: 
@@ -206,7 +211,9 @@ Les \'el\'ements associ\'es \`a l'aspect \emph{Design} sont les suivants~:
     cinématiques, les textes affichés, et tout ce qu'il est possible
     de voir ou d'entendre dans le jeu.
 \end{itemize}
-%
+
+\end{samepage}
+
 \subsubsection*{\emph{Dynamics}} 
 
 La catégorie \emph{Dynamics} de DDE correspond à celle de MDA, mais elle classifie les interactions de manière à les rendre plus précises, d\'ecompos\'ees en trois sous-catégories: 
@@ -220,7 +227,7 @@ La catégorie \emph{Dynamics} de DDE correspond à celle de MDA, mais elle class
 
 \subsubsection*{\emph{Experience}}
     Dans le \emph{framework} MDA, la troisième partie est l'\emph{Aesthetics} : tout ce que le joueur sent et ressent lors de son activité et interaction avec le jeu. 
-    La partie \emph{Experience} du jeu étend l'\emph{Aesthetics} afin de prendre en considération que le joueur n'est pas uniquement la somme des émotions générées par le jeu. 
+    La partie \emph{Experience} du jeu étend l'\emph{Aesthetics} afin de prendre en considération que le joueur n'est pas uniquement l'ensemble des émotions générées par le jeu. 
     Le joueur devient un élément avec une expérience déjà présente avant l'utilisation du jeu, ce qui peut modifier les émotions générées d'un joueur à l'autre. Une même couleur, un même son ou une même image peuvent générer différentes réactions de la part du joueur et la partie \emph{Experience} de DDE essaie de prendre cela en compte.
     \begin{itemize}
         \item \emph{Senses}: expérience sensorielle du joueur du début à la fin du jeu.
