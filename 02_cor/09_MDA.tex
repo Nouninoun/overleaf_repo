@@ -37,7 +37,8 @@ MDA essaie d'apporter une solution en apportant une catégorisation des émotion
 Un \emph{game designer} cr\'ee un jeu dans le but de générer une expérience de jeu. 
 Cependant, l'utilisation que le joueur fera du produit fini est difficile \`a pr\'evoir, comme
 le d\'ecrivent Hunicke, LeBlanc et Zubek~\cite{MDA_formal}, qui découpent un jeu en trois aspects distincts : les règles, le système et le <<~\emph{fun}~>>. 
-Ces trois aspects sont à l'origine des trois parties du \emph{framework} MDA, tel qu'illustré dans la Figure~\ref{fig:mda}, que nous expliquons plus en d\'etail dans les sections qui suivent.
+Les flèches de la figure~\ref{fig:mda} montrent l'interaction entre ces trois aspects. Selon l'article de Hunicke, LeBlanc et Zubek~\cite{MDA_formal}, un \emph{Game designer} met en place des \emph{Mechanics} dont découlent des \emph{Dynamics} dont naissent des \emph{Aesthetics}. Le joueur quant à lui interagit avec des \emph{Aesthetics}. Ces actions lui permettent de faire usage des \emph{Dynamics} afin de déclencher les éléments de \emph{Mechanics}.
+Ces trois aspects sont à l'origine des trois parties du \emph{framework} MDA, tel qu'illustré dans la figure~\ref{fig:mda}, que nous expliquons plus en d\'etail dans les sections qui suivent.
 
 
 %MDA: A Formal Approach to Game Design and Game Research Robin Hunicke, Marc LeBlanc, Robert Zubek
@@ -149,8 +150,8 @@ La figure~\ref{fig.dpe_extended} donne les différentes parties du DPE, telles q
 
 Dans le \emph{framework} DPE, le \emph{game designer} a le contrôle direct sur l'ensemble des catégories. 
 Notamment, le \emph{game designer} définit explicitement des objectifs d'\emph{Experience}. 
-C'est ce qui est représenté, dans la figure~\ref{fig.dpe_extended}, par la flèche entre allant d'\emph{Experience} vers \emph{Design}. 
-Cette flèche représente également le processus itératif du design décrit par Salen et Zimmermann~\cite{Salen2013}, tel qu'illustr\'e \`a la figure~\ref{fig.dpe_iteratif}. 
+Dans la figure~\ref{fig.dpe} les flèches représentent les relations entre le \emph{Game designer}, le jeu et le joueur. Le \emph{Game designer} \emph{Design} le jeu, le joueur joue au jeu (\emph{Play}) et il en résulte l'expérience de jeu (\emph{Experience}). 
+La flèche allant d'\emph{Experience} vers \emph{Design} représente le processus itératif du design décrit par Salen et Zimmermann~\cite{Salen2013}, tel qu'illustr\'e \`a la figure~\ref{fig.dpe_iteratif}. 
 La conception permet de produire un prototype, et l'expérience sur ce prototype permet de modifier le design afin que l'\emph{Experience} corresponde aux attentes du \emph{game designer}.
 
 
@@ -160,7 +161,7 @@ La conception permet de produire un prototype, et l'expérience sur ce prototype
 \label{sect.MDA_DDE}
 %ARTICLE DDE Design, Dynamics, Experience (DDE): An Advancement of the MDA framework for Game Design Wolfgang
 
-\begin{figure}
+\begin{figure}[H]
     \begin{center}
     \includegraphics[width=10cm]{10_img/chap3/dde.png} 
     \caption{Les \'el\'ements du \emph{framework} DDE~\cite{DDE}.}
@@ -168,7 +169,7 @@ La conception permet de produire un prototype, et l'expérience sur ce prototype
     \end{center}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \begin{center}
     \includegraphics[width=13cm]{10_img/chap3/dde_extended_modif.png} 
     \caption{Les d\'etails du \emph{framework} DDE~\cite{DDE}.}
@@ -181,10 +182,8 @@ Le framework \gls{dde}, illustr\'e \`a la figure~\ref{fig.dde}, a \'et\'e propos
 Ils apportent une vision critique du \emph{framework} MDA et avancent que celui-ci néglige de nombreux aspects du design de jeux vidéos. 
 Ils estiment également que MDA se concentre trop sur l'aspect \emph{Mechanics} et ne permet donc pas de décrire tous les types de mécaniques de jeu présents sur le marché. 
 Ce focus sur l'aspect \emph{Mechanics} entraîne, selon Walk \emph{et~al.}, un manque de contrôle du \emph{game designer} sur les aspect \emph{Dynamics} et \emph{Aesthetics} qui ne font que découler de l'aspect \emph{Mechanics}. 
-%
-Walk \emph{et al.} effectuent donc un découpage différent et intègrent de nouvelles notions dans les catégories, tel qu'illustr\'e dans la figure~\ref{fig.dde_extended}.
 
-
+Walk \emph{et al.} effectuent donc un découpage différent et intègrent de nouvelles notions dans les catégories, telles qu'illustr\'ees dans la figure~\ref{fig.dde_extended}. Dans cette figure les flèches entre les trois parties nous indiquent que nous gardons l'interaction présente entre les trois parties qui sont \emph{Design}, \emph{Dynamics} et \emph{Experience}. Au sein de la section \emph{Experience} les flèches indiquent que la combinaison de \emph{Senses}, \emph{Cerebellum} et \emph{Cerebrum} appliquée sur un joueur \textbf{en particulier} (\emph{Player<Subject>}) devient ce que l'on appelle la \emph{Perception}.
 
 
 \gt{J'ai mis des sous-sections non-numérotées, sinon c'est trop
